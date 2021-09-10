@@ -2,10 +2,18 @@
 	"hash": "d41d8cd98f00b204e9800998ecf8427e",
 	"updated": "2021-09-10T11:11:34.1562533-03:00",
 	"installedModules": {
+		"https://github.com/ricksolucoes/rickloading": {
+			"name": "rickloading",
+			"version": "1.1.2",
+			"hash": "1c14dd5433c9062a9b41885ad2f07e98",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"https://github.com/ricksolucoes/rickshowform": {
 			"name": "rickshowform",
 			"version": "1.0.0",
-			"hash": "c2b379899a7e4eba0100c2e7c5d3b222",
+			"hash": "b08876e27205556e2e5695fb8770627d",
 			"artifacts": {},
 			"failed": false,
 			"changed": false

@@ -6,8 +6,12 @@ uses
 type
   TRICK4D = class(TInterfacedObject, iRICK4D)
   private
-    FRICK4DShowForm : iRICK4DShowForm;
+    FShowForm : iRICK4DShowForm;
+    FLoading : iRICK4DLoading;
+
     function ShowForm : iRICK4DShowForm;
+    function Loading : iRICK4DLoading;
+
     constructor Create;
   public
     class function New: iRICK4D;
@@ -17,6 +21,7 @@ type
 implementation
 
 uses
+  RICK4D.Loading,
   RICK4D.ShowForm;
 
 
@@ -33,6 +38,15 @@ begin
   inherited;
 end;
 
+function TRICK4D.Loading: iRICK4DLoading;
+begin
+  if not Assigned(FLoading) then
+    FLoading := TRICK4DLoading.New(Self);
+
+  Result := FLoading;
+
+end;
+
 class function TRICK4D.New: iRICK4D;
 begin
   Result:= Self.Create;
@@ -40,10 +54,10 @@ end;
 
 function TRICK4D.ShowForm: iRICK4DShowForm;
 begin
-  if not Assigned(FRICK4DShowForm) then
-    FRICK4DShowForm := TRICK4DShowForm.New(Self);
+  if not Assigned(FShowForm) then
+    FShowForm := TRICK4DShowForm.New(Self);
 
-  Result := FRICK4DShowForm;
+  Result := FShowForm;
 end;
 
 end.

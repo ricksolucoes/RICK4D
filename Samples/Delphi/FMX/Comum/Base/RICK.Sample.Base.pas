@@ -21,6 +21,9 @@ type
     recContents: TRectangle;
     StyleBook: TStyleBook;
     imgLogo: TImage;
+    recTitle: TRectangle;
+    lblTitle: TLabel;
+    recLogo: TRectangle;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   protected
     procedure BeforeShow; virtual;

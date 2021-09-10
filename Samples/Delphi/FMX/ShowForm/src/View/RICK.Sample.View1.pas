@@ -9,12 +9,13 @@ uses
   FMX.Layouts,
   FMX.Objects,
   FMX.Controls,
+  FMX.StdCtrls,
+  FMX.Controls.Presentation,
 
   System.Classes,
   System.UITypes,
 
-  FMX.Controls.Presentation, FMX.StdCtrls,
-  FMX.Effects, RICK.Sample.Base;
+  RICK.Sample.Base;
 
 type
   TPageView1 = class(TPageBase)
