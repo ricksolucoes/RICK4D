@@ -4,8 +4,7 @@ interface
 
 uses
   System.Classes,
-
-  RICK.ShowForm.CallBack;
+  RICK4D.CallBack;
 
 type
   iRICK4DShowForm = interface;
@@ -19,8 +18,8 @@ type
     ['{754DD786-C10F-457D-94AB-EF12C49884A4}']
     function Formulary(const AValue: TComponentClass): iRICK4DShowForm;
     function ChangeDefaultMainForm: iRICK4DShowForm;
-    function ExecuteBefore(const AValue: TRickShowFormCallBackProc): iRICK4DShowForm;
-    function ExecuteAfter(const AValue: TRickShowFormCallBackProc): iRICK4DShowForm;
+    function ExecuteBefore(const AValue: TRICK4DCallBackProc): iRICK4DShowForm;
+    function ExecuteAfter(const AValue: TRICK4DCallBackProc): iRICK4DShowForm;
     function ShowOther: iRICK4DShowForm;
     function Show: iRICK4DShowForm;
 

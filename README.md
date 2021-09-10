@@ -22,7 +22,7 @@
 <li> Download the middleware:<br>
   <ul>
   <li><b>RICK4D: </b><pre>https://github.com/ricksolucoes/RICK4D</pre>
-  <li><b>RICKShowForm: </b><pre>https://github.com/ricksolucoes/RICK4D</pre>
+  <li><b>RICKShowForm: </b><pre>https://github.com/ricksolucoes/RICKShowForm</pre>
   </ul>
 </ul>
   
