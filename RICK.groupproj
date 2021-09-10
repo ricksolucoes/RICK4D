@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BF896A75-CE63-411C-BD0F-0C654CFA4743}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="RICK4Delphi.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RICK4Delphi">
+        <MSBuild Projects="RICK4Delphi.dproj"/>
+    </Target>
+    <Target Name="RICK4Delphi:Clean">
+        <MSBuild Projects="RICK4Delphi.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICK4Delphi:Make">
+        <MSBuild Projects="RICK4Delphi.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RICKSampleFormShow">
+        <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj"/>
+    </Target>
+    <Target Name="RICKSampleFormShow:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKSampleFormShow:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RICK4Delphi;RICKSampleFormShow"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RICK4Delphi:Clean;RICKSampleFormShow:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RICK4Delphi:Make;RICKSampleFormShow:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

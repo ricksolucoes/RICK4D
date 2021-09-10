@@ -1,0 +1,11 @@
+{
+	"name": "RICK4D",
+	"description": "Framework with all the Suites from RICK Soluções",
+	"version": "1.0.1",
+	"homepage": "",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"https://github.com/ricksolucoes/rickshowform": "^1.0.0"
+	}
+}
