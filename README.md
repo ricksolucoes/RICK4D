@@ -30,13 +30,15 @@
 Add the following folders to your project, in <em>Project &gt; Options &gt; Resource Compiler &gt; Directories and Conditionals &gt; Include file search path</em></li>
 <pre><code>
   ../RICK4D/src<br>
-  ../RICKShowForm/src<br>
+  ../RICKShowForm/src
+  
 </code></pre>
 
 <h2>⚡️ How to use the project</h2>
 <pre><code>
   RICK4D, <br>
-  RICK4D.Interfaces
+  RICK4D.Interfaces;
+  
 </code></pre>
 
 <li><strong>How to show a form.</strong>: <br>
