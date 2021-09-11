@@ -9,8 +9,8 @@
 
 ##  📘 Library Functions
 
-- **ShowForm** it was inspired by [RICKShowForm][2] where you can open a form as well as perform procedures before and after the opening.
-- **Loading** It was inspired by [RICKLoading][3], which features a loading screen that can be customized.
+- **[ShowForm](#sample-show-form)** it was inspired by [RICKShowForm][2] where you can open a form as well as perform procedures before and after the opening.
+- **[Loading](#loading)** It was inspired by [RICKLoading][3], which features a loading screen that can be customized.
 
 ## ⚙️ Pre-requisites
 
