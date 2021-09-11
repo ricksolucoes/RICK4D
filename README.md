@@ -144,6 +144,8 @@ Example of using the **RICK4D** library
   uses
     RICK4D,
     RICK4D.Interfaces;
+  var
+    LRICK4D: iRICK4D;
   begin
     LRICK4D:= TRICK4D.New;
     LRICK4D.Loading.DoMessage('Loading Modified'); //Changes the initial loading message
