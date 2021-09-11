@@ -27,4 +27,9 @@ $ boss install https://github.com/ricksolucoes/RICK4D
     - [RICK4D][1]
     - [RICKShowForm][2]
     - [RICKLoading][3]
+  - Add the following folders to your project, in <em>Project &gt; Options &gt; Resource Compiler &gt; Directories and Conditionals &gt; Include file search path
+    - ``` ../RICK4D/src ```
+    - ``` ../RICKShowForm/src ```
+    - ``` ../RICKLoading/src ```
+
 
