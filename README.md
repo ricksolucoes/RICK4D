@@ -32,4 +32,39 @@ $ boss install https://github.com/ricksolucoes/RICK4D
     - ``` ../RICKShowForm/src ```
     - ``` ../RICKLoading/src ```
 
+## ⚡️ How to use the project
 
+### Sample Show Form
+
+- How to show a form
+```delphi  
+  uses
+    RICK4D;
+  begin
+    TRICK4D
+      .New
+        .ShowForm //Enable the Middleware
+          .Formulary(TPageView2) //Inform the form's class
+          .ExecuteBefore(BeforeShow) //Procedure to be performed before show form
+          .ExecuteAfter(AfterShowClose) //Procedure to be performed after show form
+          .ChangeDefaultMainForm //Set the specified form as the main form
+        .Show;  //Open the formulary
+  end;
+```
+- How to show two or more forms
+```delphi  
+  uses
+    RICK4D;
+  begin
+    TRICK4D
+      .New
+        .ShowForm //Enable the Middleware
+          .Formulary(TPageView2) //Inform the form's class
+          .ExecuteBefore(BeforeShow) //Procedure to be performed before show form
+          .ExecuteAfter(AfterShow) //Procedure to be performed after show form
+        .Show //Open the formulary
+        .ShowOther //Prepare new form to show
+          .Formulary(TPageView3) //Inform the form's class
+        .Show;  //Open the formulary}
+  end;
+```
