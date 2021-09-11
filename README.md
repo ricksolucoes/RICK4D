@@ -1,3 +1,4 @@
+[0]: https://github.com/ricksolucoes/boss "Site do BOOS"
 [1]: https://github.com/ricksolucoes/RICK4D "Site do RICK4D"
 [2]: https://github.com/ricksolucoes/RICKShowForm "Site do Show Form"
 [3]: https://github.com/ricksolucoes/RICKLoading "Site do Loading"
@@ -14,7 +15,7 @@
 ## ⚙️ Pre-requisites
 
 1. Delphi FMX
-2. Install the dependency [BOOS](https://github.com/ricksolucoes/boss) manager to facilitate the installation of the library.
+2. Install the dependency [BOOS][0] ```https://github.com/ricksolucoes/boss``` manager to facilitate the installation of the library.
 
 ## 💻 Installation
 
@@ -24,17 +25,18 @@ $ boss install https://github.com/ricksolucoes/RICK4D
 ```
 - Manual Installation
   - Download the middleware:
-    - [RICK4D][1]
-    - [RICKShowForm][2]
-    - [RICKLoading][3]
+    - [RICK4D][1] ``` https://github.com/ricksolucoes/RICK4D ```
+    - [RICKShowForm][2] ``` https://github.com/ricksolucoes/RICKShowForm ```
+    - [RICKLoading][3] ``` https://github.com/ricksolucoes/RICKLoading ```
   - Add the following folders to your project, in <em>Project &gt; Options &gt; Resource Compiler &gt; Directories and Conditionals &gt; Include file search path
     - ``` ../RICK4D/src ```
     - ``` ../RICKShowForm/src ```
     - ``` ../RICKLoading/src ```
 
 ## ⚡️ How to use the project
+Example of using the **RICK4D** library
 
-### Sample Show Form
+## Sample Show Form
 
 - How to show a form
 ```delphi  
@@ -68,7 +70,7 @@ $ boss install https://github.com/ricksolucoes/RICK4D
         .Show;  //Open the formulary}
   end;
 ```
-### Loading
+## Loading
 
 - How to use Loading
 ```delphi  
