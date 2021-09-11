@@ -1,7 +1,6 @@
 [0]: https://github.com/ricksolucoes/boss "Site do BOOS"
-[1]: https://github.com/ricksolucoes/RICK4D "Site do RICK4D"
-[2]: https://github.com/ricksolucoes/RICKShowForm "Site do Show Form"
-[3]: https://github.com/ricksolucoes/RICKLoading "Site do Loading"
+[1]: https://github.com/ricksolucoes/RICKShowForm "Site do Show Form"
+[2]: https://github.com/ricksolucoes/RICKLoading "Site do Loading"
 
 # RICK4D
 
@@ -9,8 +8,8 @@
 
 ##  📘 Library Functions
 
-- **[ShowForm](#sample-show-form)** it was inspired by [RICKShowForm][2] where you can open a form as well as perform procedures before and after the opening.
-- **[Loading](#loading)** It was inspired by [RICKLoading][3], which features a loading screen that can be customized.
+- **[ShowForm](#sample-show-form)** it was inspired by [RICKShowForm][1] where you can open a form as well as perform procedures before and after the opening.
+- **[Loading](#loading)** It was inspired by [RICKLoading][2], which features a loading screen that can be customized.
 
 ## ⚙️ Pre-requisites
 
@@ -25,9 +24,9 @@ $ boss install https://github.com/ricksolucoes/RICK4D
 ```
 - Manual Installation
   - Download the middleware:
-    - [RICK4D][1] ``` https://github.com/ricksolucoes/RICK4D ```
-    - [RICKShowForm][2] ``` https://github.com/ricksolucoes/RICKShowForm ```
-    - [RICKLoading][3] ``` https://github.com/ricksolucoes/RICKLoading ```
+    - [RICK4D](#rick4d) ``` https://github.com/ricksolucoes/RICK4D ```
+    - [RICKShowForm][1] ``` https://github.com/ricksolucoes/RICKShowForm ```
+    - [RICKLoading][2] ``` https://github.com/ricksolucoes/RICKLoading ```
   - Add the following folders to your project, in <em>Project &gt; Options &gt; Resource Compiler &gt; Directories and Conditionals &gt; Include file search path
     - ``` ../RICK4D/src ```
     - ``` ../RICKShowForm/src ```
