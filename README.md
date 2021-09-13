@@ -1,7 +1,8 @@
 [0]: https://github.com/ricksolucoes/boss "Site do BOOS"
 [1]: https://github.com/ricksolucoes/RICKShowForm "Site do Show Form"
 [2]: https://github.com/ricksolucoes/RICKLoading "Site do Loading"
-[3]: https://github.com/ricksolucoes/RICKLibrarys "Site do Loading"
+[3]: https://github.com/ricksolucoes/RICKLibrarys "Site do Librarys"
+[4]: https://github.com/ricksolucoes/RICKCheckConnection "Site do Check Connection"
 
 # RICK4D
 
@@ -13,7 +14,8 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 
 - **[ShowForm](#sample-show-form)** it was inspired by [RICKShowForm][1] where you can open a form as well as perform procedures before and after the opening.
 - **[Loading](#sample-loading)** It was inspired by [RICKLoading][2], which features a loading screen that can be customized.
-- **[Librarys](#sample-Library)** It was inspired by [RICKLibrarys][3], which generates validations with return.
+- **[Librarys](#sample-library)** It was inspired by [RICKLibrarys][3], which generates validations with return.
+- **[CheckConnection](#sample-check-connection)** It was inspired by [RICKCheckConnection][4], which generates validations with return.
 
 ## ⚙️ Pre-requisites
 
