@@ -15,7 +15,7 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 - **[ShowForm](#sample-show-form)** it was inspired by [RICKShowForm][1] where you can open a form as well as perform procedures before and after the opening.
 - **[Loading](#sample-loading)** It was inspired by [RICKLoading][2], which features a loading screen that can be customized.
 - **[Librarys](#sample-library)** It was inspired by [RICKLibrarys][3], which generates validations with return.
-- **[CheckConnection](#sample-check-connection)** It was inspired by [RICKCheckConnection][4], which generates validations with return.
+- **[CheckConnection](#sample-check-connection)** It was inspired by [RICKCheckConnection][4], that allows you to check the state of the internet and the type (mobile only) of the connection.
 
 ## ⚙️ Pre-requisites
 
@@ -34,11 +34,13 @@ $ boss install https://github.com/ricksolucoes/RICK4D
     - [RICKShowForm][1] ``` https://github.com/ricksolucoes/RICKShowForm ```
     - [RICKLoading][2] ``` https://github.com/ricksolucoes/RICKLoading ```
     - [RICKLibrarys][3] ``` https://github.com/ricksolucoes/RICKLibrarys ```
+    - [RICKCheckConnection][4] ``` https://github.com/ricksolucoes/RICKCheckConnection ```
   - Add the following folders to your project, in <em>Project &gt; Options &gt; Resource Compiler &gt; Directories and Conditionals &gt; Include file search path
     - ``` ../RICK4D/src ```
     - ``` ../RICKShowForm/src ```
     - ``` ../RICKLoading/src ```
     - ``` ../RICKLibrarys/src ```
+    - ``` ../RICKCheckConnection/src ```
 
 ## ⚡️ How to use the project
 Example of using the **RICK4D** library
@@ -226,4 +228,60 @@ begin
       lblResult.Text:= LRICK4D.Librarys.FormatPeso(edtData.Text);
   end;
 end;
+```
+## Sample Check Connection
+
+- How to Check Connection
+  
+```delphi  
+  uses
+    RICK4D,
+    RICK4D.Interfaces;
+  var
+    LRICK4D: iRICK4D;
+  begin
+    lblConn.Text:= 'Wait....';
+    lblConn.TextSettings.FontColor:= $FF65A6D5;
+
+    LRICK4D:= TRICK4D.New;
+
+    if not LRICK4D.CheckConnection.ConnectionState then
+      Self.Fill.Color:= TAlphaColorRec.Red;
+
+    lblConn.Text:= LRICK4D.CheckConnection.ConnectionType;
+  end;
+```
+
+- How to Connection Type
+  
+```delphi  
+  uses
+    RICK4D;
+  begin
+    lblConn.Text:= TRICK4D.New.CheckConnection.ConnectionType;
+  end;
+```
+
+- How to check url
+  
+```delphi  
+  uses
+    RICK4D,
+    RICK4D.Interfaces;
+  var
+    LRICK4D: iRICK4D;
+  begin
+    inherited;
+    lblConn.Text:= 'Wait....';
+    lblConn.TextSettings.FontColor:= $FF65A6D5;
+
+    LRICK4D:= TRICK4D.New;
+    LRICK4D.CheckConnection.ClearURL.URL(edtTestLink.Text);
+    LRICK4D.CheckConnection.ClearStausCode.StatusCode(200); //Status Code Defualt 400
+
+    if not LRICK4D.CheckConnection.URLState then
+      lblConn.TextSettings.FontColor:= TAlphaColorRec.Red;
+
+    lblConn.Text:= LRICK4D.CheckConnection.ConnectionType;
+  end;
 ```
