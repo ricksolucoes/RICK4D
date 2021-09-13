@@ -21,7 +21,7 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 
 1. Delphi FMX
 2. Framework: [RICKShowForm][1], [RICKLoading][2], [RICKLibrarys][3], [RICKCheckConnection][4]
-3. If you choose to use [BOOS][0] ```https://github.com/ricksolucoes/boss```  the dependency manager, you will have the facility to install all frameworks that are [Pre-requisites](#pre-requisites) for the project.
+3. If you choose to use [BOOS][0] ```https://github.com/ricksolucoes/boss or https://github.com/HashLoad/boss```  the dependency manager, you will have the facility to install all frameworks that are [Pre-requisites](#pre-requisites) for the project.
 
 ## 💻 Installation
 
