@@ -8,9 +8,11 @@ type
   private
     FShowForm : iRICK4DShowForm;
     FLoading : iRICK4DLoading;
+    FLibrarys : iRICK4DLibrarys;
 
     function ShowForm : iRICK4DShowForm;
     function Loading : iRICK4DLoading;
+    function Librarys : iRICK4DLibrarys;
 
     constructor Create;
   public
@@ -22,7 +24,8 @@ implementation
 
 uses
   RICK4D.Loading,
-  RICK4D.ShowForm;
+  RICK4D.ShowForm,
+  RICK4D.Librarys;
 
 
 { TRICK4D }
@@ -36,6 +39,14 @@ destructor TRICK4D.Destroy;
 begin
 
   inherited;
+end;
+
+function TRICK4D.Librarys: iRICK4DLibrarys;
+begin
+   if not Assigned(FLibrarys) then
+    FLibrarys := TRICK4DLibrarys.New(Self);
+
+  Result := FLibrarys;
 end;
 
 function TRICK4D.Loading: iRICK4DLoading;

@@ -7,7 +7,8 @@ uses
   RICK4D in 'src\RICK4D.pas',
   RICK4D.ShowForm in 'src\RICK4D.ShowForm.pas',
   RICK4D.CallBack in 'src\RICK4D.CallBack.pas',
-  RICK4D.Loading in 'src\RICK4D.Loading.pas';
+  RICK4D.Loading in 'src\RICK4D.Loading.pas',
+  RICK4D.Librarys in 'src\RICK4D.Librarys.pas';
 
 {$R *.res}
 

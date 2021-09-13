@@ -43,21 +43,21 @@ uses
 
 procedure TPageView1.btnShowFormTwoClick(Sender: TObject);
 var
-  LRICKLoading: iRICK4D;
+  LRICK4D: iRICK4D;
 begin
   inherited;
 
-  LRICKLoading:= TRICK4D.New;
-  LRICKLoading.Loading.DoMessage('Loading Modified'); //Changes the initial loading message
-  LRICKLoading.Loading.SourceSize(32); //Change the font size
-  LRICKLoading.Loading.SourceName('Segoe UI'); //Change the font type
-  LRICKLoading.Loading.SourceColor($FFF52121); //Change the font color
-  LRICKLoading.Loading.AnimationColor($FFF52121); //Changes the color of the animation
-  LRICKLoading.Loading.BackgroundColor($FF24CCC6); //Changes the color of the loading background
-  LRICKLoading.Loading.OpacityBackground(0.9); //Changes the opacity of the background;
-  LRICKLoading.Loading.OpacityAnimationText(0.6); //Change the opacity of text
+  LRICK4D:= TRICK4D.New;
+  LRICK4D.Loading.DoMessage('Loading Modified'); //Changes the initial loading message
+  LRICK4D.Loading.SourceSize(32); //Change the font size
+  LRICK4D.Loading.SourceName('Segoe UI'); //Change the font type
+  LRICK4D.Loading.SourceColor($FFF52121); //Change the font color
+  LRICK4D.Loading.AnimationColor($FFF52121); //Changes the color of the animation
+  LRICK4D.Loading.BackgroundColor($FF24CCC6); //Changes the color of the loading background
+  LRICK4D.Loading.OpacityBackground(0.9); //Changes the opacity of the background;
+  LRICK4D.Loading.OpacityAnimationText(0.6); //Change the opacity of text
 
-  LRICKLoading.Loading.Execute(
+  LRICK4D.Loading.Execute(
   procedure
   begin
 
@@ -66,7 +66,7 @@ begin
     TThread.Synchronize(TThread.Current,
     procedure
     begin
-      LRICKLoading.Loading.ChangeMessage('Changing message'); //Change the message to the user
+      LRICK4D.Loading.ChangeMessage('Changing message'); //Change the message to the user
     end);
 
     TThread.Sleep(1500);

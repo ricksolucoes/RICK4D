@@ -6,6 +6,7 @@
 	"mainsrc": "./src",
 	"projects": [],
 	"dependencies": {
+		"https://github.com/ricksolucoes/ricklibrarys": "^1.0.2",
 		"https://github.com/ricksolucoes/rickloading": "^1.1.2",
 		"https://github.com/ricksolucoes/rickshowform": "^1.0.0"
 	}
