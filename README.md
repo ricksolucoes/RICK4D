@@ -1,6 +1,7 @@
 [0]: https://github.com/ricksolucoes/boss "Site do BOOS"
 [1]: https://github.com/ricksolucoes/RICKShowForm "Site do Show Form"
 [2]: https://github.com/ricksolucoes/RICKLoading "Site do Loading"
+[3]: https://github.com/ricksolucoes/RICKLibrarys "Site do Loading"
 
 # RICK4D
 
@@ -11,7 +12,8 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 ##  📘 Library Functions
 
 - **[ShowForm](#sample-show-form)** it was inspired by [RICKShowForm][1] where you can open a form as well as perform procedures before and after the opening.
-- **[Loading](#loading)** It was inspired by [RICKLoading][2], which features a loading screen that can be customized.
+- **[Loading](#sample-loading)** It was inspired by [RICKLoading][2], which features a loading screen that can be customized.
+- **[RICKLibrarys](#sample-Library)** It was inspired by [RICKLibrarys][3], which generates validations with return.
 
 ## ⚙️ Pre-requisites
 
@@ -29,10 +31,12 @@ $ boss install https://github.com/ricksolucoes/RICK4D
     - [RICK4D](#rick4d) ``` https://github.com/ricksolucoes/RICK4D ```
     - [RICKShowForm][1] ``` https://github.com/ricksolucoes/RICKShowForm ```
     - [RICKLoading][2] ``` https://github.com/ricksolucoes/RICKLoading ```
+    - [RICKLibrarys][3] ``` https://github.com/ricksolucoes/RICKLibrarys ```
   - Add the following folders to your project, in <em>Project &gt; Options &gt; Resource Compiler &gt; Directories and Conditionals &gt; Include file search path
     - ``` ../RICK4D/src ```
     - ``` ../RICKShowForm/src ```
     - ``` ../RICKLoading/src ```
+    - ``` ../RICKLibrarys/src ```
 
 ## ⚡️ How to use the project
 Example of using the **RICK4D** library
@@ -71,7 +75,7 @@ Example of using the **RICK4D** library
         .Show;  //Open the formulary}
   end;
 ```
-## Loading
+## Sample Loading
 
 - How to use Loading
 ```delphi  
@@ -182,4 +186,42 @@ Example of using the **RICK4D** library
     end);
   end;
 ```
-  
+
+## Sample Library
+
+- How to use the library
+```delphi  
+  uses
+    RICK4D,
+    RICK4D.Interfaces;
+var
+  LRICK4D: iRICK4D;
+begin
+  inherited;
+  LRICK4D := TRICK4D.New;
+
+  case ListView.Tag of
+    0:
+      if LRICK4D.Librarys.StringInSet(edtData.Text.ToLower, ['ok', 'cancel']) then
+      begin
+        lblResult.Text:= Format('There is %s', [edtData.Text]);
+      end
+      else
+      begin
+        lblResult.Text:= Format('Does Not Exist %s', [edtData.Text]);
+      end;
+    1:
+      lblResult.Text:= LRICK4D.Librarys.OnlyNumber(edtData.Text);
+    2:
+      lblResult.Text:= LRICK4D.Librarys.Mask('###-###', edtData.Text);
+    3:
+      lblResult.Text:= LRICK4D.Librarys.IEFormat(edtData.Text, 'RJ');
+    4:
+      lblResult.Text:= LRICK4D.Librarys.FormatValue(edtData.Text);
+    5:
+      lblResult.Text:= LRICK4D.Librarys.FormatDate(edtData.Text);
+    6:
+      lblResult.Text:= LRICK4D.Librarys.FormatPeso(edtData.Text);
+  end;
+end;
+```
