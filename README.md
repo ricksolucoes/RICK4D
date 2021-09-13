@@ -30,7 +30,7 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 $ boss install https://github.com/ricksolucoes/RICK4D
 ```
 - Manual Installation
-  - Download the middleware:
+  - Download the frameworks:
     - [RICK4D](#rick4d) ``` https://github.com/ricksolucoes/RICK4D ```
     - [RICKShowForm][1] ``` https://github.com/ricksolucoes/RICKShowForm ```
     - [RICKLoading][2] ``` https://github.com/ricksolucoes/RICKLoading ```
