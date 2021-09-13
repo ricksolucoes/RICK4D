@@ -4,7 +4,9 @@
 
 # RICK4D
 
-**RICK4D** is a collection of Delphi libraries, based mainly on those developed at **RICKSolutions** and may contain third-party libraries. Using delphi's Fluent Interface.
+Framework that customizes a series of everyday processes.
+
+RICK4D is intended to ease data transition in your system, assigning styles to components, performing connection checking, loading screen, custom message and more.
 
 ##  📘 Library Functions
 
