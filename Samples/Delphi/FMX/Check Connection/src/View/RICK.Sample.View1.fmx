@@ -753,7 +753,7 @@ inherited PageView1: TPageView1
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.FontColor = xFF65A6D5
         TextSettings.HorzAlign = Center
-        Text = 'Aguardando...'
+        Text = 'Wait...'
         TabOrder = 0
       end
     end

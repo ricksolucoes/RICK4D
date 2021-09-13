@@ -59,7 +59,7 @@ var
   LRICK4D: iRICK4D;
 begin
   inherited;
-  lblConn.Text:= 'Agurade....';
+  lblConn.Text:= 'Wait....';
   lblConn.TextSettings.FontColor:= $FF65A6D5;
 
   LRICK4D:= TRICK4D.New;
@@ -75,7 +75,7 @@ var
   LRICK4D: iRICK4D;
 begin
   inherited;
-  lblConn.Text:= 'Agurade....';
+  lblConn.Text:= 'Wait....';
   lblConn.TextSettings.FontColor:= $FF65A6D5;
 
   LRICK4D:= TRICK4D.New;
