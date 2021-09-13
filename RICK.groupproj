@@ -9,10 +9,13 @@
         <Projects Include="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj">
+        <Projects Include="Samples\Delphi\FMX\Librarys\RICKSampleLibrarys.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Samples\Delphi\FMX\Librarys\RICKSampleLibrarys.dproj">
+        <Projects Include="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -41,15 +44,6 @@
     <Target Name="RICKSampleFormShow:Make">
         <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj" Targets="Make"/>
     </Target>
-    <Target Name="RICKSampleLoading">
-        <MSBuild Projects="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj"/>
-    </Target>
-    <Target Name="RICKSampleLoading:Clean">
-        <MSBuild Projects="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="RICKSampleLoading:Make">
-        <MSBuild Projects="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj" Targets="Make"/>
-    </Target>
     <Target Name="RICKSampleLibrarys">
         <MSBuild Projects="Samples\Delphi\FMX\Librarys\RICKSampleLibrarys.dproj"/>
     </Target>
@@ -59,14 +53,32 @@
     <Target Name="RICKSampleLibrarys:Make">
         <MSBuild Projects="Samples\Delphi\FMX\Librarys\RICKSampleLibrarys.dproj" Targets="Make"/>
     </Target>
+    <Target Name="RICKSampleCheckConnetion">
+        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj"/>
+    </Target>
+    <Target Name="RICKSampleCheckConnetion:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKSampleCheckConnetion:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RICKSampleLoading">
+        <MSBuild Projects="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj"/>
+    </Target>
+    <Target Name="RICKSampleLoading:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKSampleLoading:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="RICK4Delphi;RICKSampleFormShow;RICKSampleLoading;RICKSampleLibrarys"/>
+        <CallTarget Targets="RICK4Delphi;RICKSampleFormShow;RICKSampleLibrarys;RICKSampleCheckConnetion;RICKSampleLoading"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="RICK4Delphi:Clean;RICKSampleFormShow:Clean;RICKSampleLoading:Clean;RICKSampleLibrarys:Clean"/>
+        <CallTarget Targets="RICK4Delphi:Clean;RICKSampleFormShow:Clean;RICKSampleLibrarys:Clean;RICKSampleCheckConnetion:Clean;RICKSampleLoading:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="RICK4Delphi:Make;RICKSampleFormShow:Make;RICKSampleLoading:Make;RICKSampleLibrarys:Make"/>
+        <CallTarget Targets="RICK4Delphi:Make;RICKSampleFormShow:Make;RICKSampleLibrarys:Make;RICKSampleCheckConnetion:Make;RICKSampleLoading:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

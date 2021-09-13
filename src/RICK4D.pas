@@ -9,10 +9,12 @@ type
     FShowForm : iRICK4DShowForm;
     FLoading : iRICK4DLoading;
     FLibrarys : iRICK4DLibrarys;
+    FCheckConnection : iRICK4DCheckConnection;
 
     function ShowForm : iRICK4DShowForm;
     function Loading : iRICK4DLoading;
     function Librarys : iRICK4DLibrarys;
+    function CheckConnection : iRICK4DCheckConnection;
 
     constructor Create;
   public
@@ -25,10 +27,20 @@ implementation
 uses
   RICK4D.Loading,
   RICK4D.ShowForm,
-  RICK4D.Librarys;
+  RICK4D.Librarys,
+  RICK4D.CheckConnection;
 
 
 { TRICK4D }
+
+function TRICK4D.CheckConnection: iRICK4DCheckConnection;
+begin
+   if not Assigned(FCheckConnection) then
+    FCheckConnection := TRICK4DCheckConnection.New(Self);
+
+  Result := FCheckConnection;
+
+end;
 
 constructor TRICK4D.Create;
 begin

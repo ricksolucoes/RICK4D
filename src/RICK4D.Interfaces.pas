@@ -16,12 +16,14 @@ type
   iRICK4DShowForm = interface;
   iRICK4DLoading = interface;
   iRICK4DLibrarys = interface;
+  iRICK4DCheckConnection = interface;
 
   iRICK4D = interface
     ['{1E306179-2275-48E2-9252-4210B6031DCB}']
     function ShowForm : iRICK4DShowForm;
     function Loading : iRICK4DLoading;
     function Librarys : iRICK4DLibrarys;
+    function CheckConnection : iRICK4DCheckConnection;
   end;
 
   iRICK4DShowForm = interface
@@ -67,6 +69,17 @@ type
     function &End: iRICK4D;
   end;
 
+  iRICK4DCheckConnection = interface
+    function ConnectionState: Boolean;
+    function URLState: Boolean;
+    function ConnectionType: string;
+    function URL(Const AValue: string): iRICK4DCheckConnection;
+    function ClearURL: iRICK4DCheckConnection;
+    function StatusCode(Const AValue: Integer): iRICK4DCheckConnection;
+    function ClearStausCode: iRICK4DCheckConnection;
+
+    function &End: iRICK4D;
+  end;
 implementation
 
 end.

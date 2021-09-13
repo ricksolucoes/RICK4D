@@ -2,6 +2,14 @@
 	"hash": "d41d8cd98f00b204e9800998ecf8427e",
 	"updated": "2021-09-10T11:11:34.1562533-03:00",
 	"installedModules": {
+		"https://github.com/ricksolucoes/rickcheckconnection": {
+			"name": "rickcheckconnection",
+			"version": "1.0.4",
+			"hash": "f6eed29e3813a0a1d50734117092058c",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"https://github.com/ricksolucoes/ricklibrarys": {
 			"name": "ricklibrarys",
 			"version": "1.0.2",
