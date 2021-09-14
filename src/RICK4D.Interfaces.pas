@@ -93,9 +93,9 @@ type
     function CNPJorCPF(AValue: TObject): iRICK4DFormat;
     function StateRegistration(AValue: TObject): iRICK4DFormat;
     function CurrencyValue(AValue: TObject): iRICK4DFormat;
-    function CEP(AValue: TObject): iRICK4DFormat;
+    function ZipCode(AValue: TObject): iRICK4DFormat;
     function DateValue(AValue: TObject): iRICK4DFormat;
-    function Peso(AValue: TObject): iRICK4DFormat;
+    function Weight(AValue: TObject): iRICK4DFormat;
     function Customized(AValue: TObject): iRICK4DFormat;
 
     function &End: iRICK4D;

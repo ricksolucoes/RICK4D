@@ -69,9 +69,9 @@ begin
     5 : LRICK4D.Format.FormatExtra('rj').StateRegistration(Sender);
     6 : LRICK4D.Format.CurrencyValue(Sender);
     7 : LRICK4D.Format.FormatExtra('R$').CurrencyValue(Sender);
-    8 : LRICK4D.Format.CEP(Sender);
+    8 : LRICK4D.Format.ZipCode(Sender);
     9 : LRICK4D.Format.DateValue(Sender);
-    10: LRICK4D.Format.Peso(Sender);
+    10: LRICK4D.Format.Weight(Sender);
     11: LRICK4D.Format.FormatExtra('##.###-###-####>###').Customized(Sender);
   end;
 end;
@@ -94,6 +94,8 @@ end;
 procedure TPageView1.LoadingListView;
 begin
   ListView.Items.Clear;
+  edtData.Text:= EmptyStr;
+  lytInputData.Visible:= False;
   if Switch.IsChecked = True then
   begin
     lblTranslate.Text:= 'Traduzir para o Inglês';

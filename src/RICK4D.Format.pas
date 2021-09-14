@@ -22,9 +22,9 @@ type
     function CNPJorCPF(AValue: TObject): iRICK4DFormat;
     function StateRegistration(AValue: TObject): iRICK4DFormat;
     function CurrencyValue(AValue: TObject): iRICK4DFormat;
-    function CEP(AValue: TObject): iRICK4DFormat;
+    function ZIPCode(AValue: TObject): iRICK4DFormat;
     function DateValue(AValue: TObject): iRICK4DFormat;
-    function Peso(AValue: TObject): iRICK4DFormat;
+    function Weight(AValue: TObject): iRICK4DFormat;
     function Customized(AValue: TObject): iRICK4DFormat;
 
     function &End: iRICK4D;
@@ -39,10 +39,10 @@ implementation
 uses
   RICK.Format;
 
-function TRICK4DFormat.CEP(AValue: TObject): iRICK4DFormat;
+function TRICK4DFormat.ZipCode(AValue: TObject): iRICK4DFormat;
 begin
   Result:= Self;
-  FFormat.CEP(AValue);
+  FFormat.ZipCode(AValue);
 end;
 
 function TRICK4DFormat.CNPJ(AValue: TObject): iRICK4DFormat;
@@ -128,10 +128,10 @@ begin
   Result:= Self.Create(AParent);
 end;
 
-function TRICK4DFormat.Peso(AValue: TObject): iRICK4DFormat;
+function TRICK4DFormat.Weight(AValue: TObject): iRICK4DFormat;
 begin
   Result:= Self;
-  FFormat.Peso(AValue);
+  FFormat.Weight(AValue);
 end;
 
 function TRICK4DFormat.StateRegistration(AValue: TObject): iRICK4DFormat;

@@ -697,7 +697,7 @@ inherited PageView1: TPageView1
           Margins.Top = 5.000000000000000000
           Margins.Bottom = 10.000000000000000000
           Size.Width = 290.000000000000000000
-          Size.Height = 253.000000000000000000
+          Size.Height = 298.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
           OnClick = ListViewClick
@@ -708,6 +708,7 @@ inherited PageView1: TPageView1
           Size.Width = 290.000000000000000000
           Size.Height = 45.000000000000000000
           Size.PlatformDefault = False
+          Visible = False
           TabOrder = 1
           object edtData: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
