@@ -249,8 +249,9 @@ end;
     lblConn.TextSettings.FontColor:= $FF65A6D5;
 
     LRICK4D:= TRICK4D.New;
-
-    if not LRICK4D.CheckConnection.ConnectionState then //Returns if the connection is active (true) and if not, returns (false)
+  
+    //Returns if the connection is active (true) and if not, returns (false)
+    if not LRICK4D.CheckConnection.ConnectionState then 
       Self.Fill.Color:= TAlphaColorRec.Red;
 
     lblConn.Text:= LRICK4D.CheckConnection.ConnectionType;
@@ -284,7 +285,8 @@ end;
     LRICK4D.CheckConnection.ClearURL.URL(edtTestLink.Text);
     LRICK4D.CheckConnection.ClearStausCode.StatusCode(200); //Status Code Defualt 400
 
-    if not LRICK4D.CheckConnection.URLState then //Returns if the url is active (true) and if not, returns (false)
+    //Returns if the url is active (true) and if not, returns (false)
+    if not LRICK4D.CheckConnection.URLState then 
       lblConn.TextSettings.FontColor:= TAlphaColorRec.Red;
 
     lblConn.Text:= LRICK4D.CheckConnection.ConnectionType;
