@@ -16,8 +16,8 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 - **[ShowForm](#sample-show-form)** it was inspired by [RICKShowForm][1] where you can open a form as well as perform procedures before and after the opening.
 - **[Loading](#sample-loading)** It was inspired by [RICKLoading][2], which features a loading screen that can be customized.
 - **[Librarys](#sample-library)** It was inspired by [RICKLibrarys][3], which generates validations with return.
-- **[CheckConnection](#sample-check-connection)** It was inspired by [RICKCheckConnection][4], that allows you to check the state of the internet and the type (mobile only) of the connection.
-- **[Format](#sample-format)** It was inspired by [RickFormat][4], which generates validations with return.
+- **[CheckConnection](#sample-check-connection)** It was inspired by [RICKCheckConnection][4], where it allows you to check the internet status and the type (mobile only) of the connection.
+- **[Format](#sample-format)** It was inspired by [RickFormat][4], where a mask is formatted in the Edit as it is typed.
 
 ## ⚙️ Pre-requisites
 
