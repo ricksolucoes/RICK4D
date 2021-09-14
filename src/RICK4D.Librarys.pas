@@ -38,8 +38,8 @@ uses
 
 constructor TRICK4DLibrarys.Create(AParent: iRICK4D);
 begin
+  FParent := AParent;
   FLibrarys:= TRICKLibrarys.New;
-
 end;
 
 procedure TRICK4DLibrarys.DelayedSetFocus(Const AValue: TControl);

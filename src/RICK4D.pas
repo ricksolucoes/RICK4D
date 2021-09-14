@@ -10,11 +10,13 @@ type
     FLoading : iRICK4DLoading;
     FLibrarys : iRICK4DLibrarys;
     FCheckConnection : iRICK4DCheckConnection;
+    FFormat: iRICK4DFormat;
 
     function ShowForm : iRICK4DShowForm;
     function Loading : iRICK4DLoading;
     function Librarys : iRICK4DLibrarys;
     function CheckConnection : iRICK4DCheckConnection;
+    function Format : iRICK4DFormat;
 
     constructor Create;
   public
@@ -25,6 +27,7 @@ type
 implementation
 
 uses
+  RICK4D.Format,
   RICK4D.Loading,
   RICK4D.ShowForm,
   RICK4D.Librarys,
@@ -51,6 +54,14 @@ destructor TRICK4D.Destroy;
 begin
 
   inherited;
+end;
+
+function TRICK4D.Format: iRICK4DFormat;
+begin
+   if not Assigned(FFormat) then
+    FFormat := TRICK4DFormat.New(Self);
+
+  Result := FFormat;
 end;
 
 function TRICK4D.Librarys: iRICK4DLibrarys;

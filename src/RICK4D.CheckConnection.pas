@@ -56,7 +56,8 @@ end;
 
 constructor TRICK4DCheckConnection.Create(AParent: iRICK4D);
 begin
-   FCheckConnection:= TRICKCheckConnection.New;
+  FParent := AParent;
+  FCheckConnection:= TRICKCheckConnection.New;
 end;
 
 destructor TRICK4DCheckConnection.Destroy;

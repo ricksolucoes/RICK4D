@@ -68,7 +68,7 @@ begin
   inherited;
   LRICK4D := TRICK4D.New;
 
-  case ListView.Tag of
+  case ListView.ItemIndex of
     0:
       if LRICK4D.Librarys.StringInSet(edtData.Text.ToLower, ['ok', 'cancel']) then
       begin
@@ -112,7 +112,6 @@ procedure TPageView1.ListViewItemClick(const Sender: TObject;
   const AItem: TListViewItem);
 begin
   inherited;
-  ListView.Tag:= AItem.Index;
   lytExecute.Visible:= False;
   lytInputData.Visible:= False;
   recInformation.Visible:= False;

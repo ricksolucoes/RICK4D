@@ -72,6 +72,7 @@ end;
 
 constructor TRICK4DShowForm.Create(AParent: iRICK4D);
 begin
+  FParent := AParent;
   FShowForm:= TRICKShowForm.New;
 end;
 

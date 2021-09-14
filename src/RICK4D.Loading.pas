@@ -66,6 +66,7 @@ end;
 
 constructor TRICK4DLoading.Create(AParent: iRICK4D);
 begin
+  FParent := AParent;
   FLoading:= TRICKLoading.New;
 end;
 

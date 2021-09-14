@@ -17,6 +17,7 @@ type
   iRICK4DLoading = interface;
   iRICK4DLibrarys = interface;
   iRICK4DCheckConnection = interface;
+  iRICK4DFormat = interface;
 
   iRICK4D = interface
     ['{1E306179-2275-48E2-9252-4210B6031DCB}']
@@ -24,6 +25,7 @@ type
     function Loading : iRICK4DLoading;
     function Librarys : iRICK4DLibrarys;
     function CheckConnection : iRICK4DCheckConnection;
+    function Format : iRICK4DFormat;
   end;
 
   iRICK4DShowForm = interface
@@ -77,6 +79,24 @@ type
     function ClearURL: iRICK4DCheckConnection;
     function StatusCode(Const AValue: Integer): iRICK4DCheckConnection;
     function ClearStausCode: iRICK4DCheckConnection;
+
+    function &End: iRICK4D;
+  end;
+
+  iRICK4DFormat = interface
+    function FormatExtra(const AValue: string): iRICK4DFormat;
+    function FormatMask(const AValue: string): iRICK4DFormat;
+    function LandlinePhone(AValue: TObject): iRICK4DFormat;
+    function Mobile(AValue: TObject): iRICK4DFormat;
+    function CNPJ(AValue: TObject): iRICK4DFormat;
+    function CPF(AValue: TObject): iRICK4DFormat;
+    function CNPJorCPF(AValue: TObject): iRICK4DFormat;
+    function StateRegistration(AValue: TObject): iRICK4DFormat;
+    function CurrencyValue(AValue: TObject): iRICK4DFormat;
+    function CEP(AValue: TObject): iRICK4DFormat;
+    function DateValue(AValue: TObject): iRICK4DFormat;
+    function Peso(AValue: TObject): iRICK4DFormat;
+    function Customized(AValue: TObject): iRICK4DFormat;
 
     function &End: iRICK4D;
   end;
