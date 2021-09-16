@@ -4,6 +4,7 @@
 [3]: https://github.com/ricksolucoes/RICKLibrarys "Site do Librarys"
 [4]: https://github.com/ricksolucoes/RICKCheckConnection "Site do Check Connection"
 [5]: https://github.com/ricksolucoes/RickFormat "Site do Format"
+[6]: https://github.com/ricksolucoes/RICKDialog "Site do Dialogs"
 
 # RICK4D
 
@@ -17,12 +18,13 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 - **[Loading](#sample-loading)** It was inspired by [RICKLoading][2], which features a loading screen that can be customized.
 - **[Librarys](#sample-library)** It was inspired by [RICKLibrarys][3], which generates validations with return.
 - **[CheckConnection](#sample-check-connection)** It was inspired by [RICKCheckConnection][4], where it allows you to check the internet status and the type (mobile only) of the connection.
-- **[Format](#sample-format)** It was inspired by [RickFormat][4], where a mask is formatted in the Edit as it is typed.
+- **[Format](#sample-format)** It was inspired by [RickFormat][5], where a mask is formatted in the Edit as it is typed.
+- **[Dialog](#sample-Dialog)** It was inspired by [RICKDialog][6], where a customized dialog screen is presented.
 
 ## ⚙️ Pre-requisites
 
 1. Delphi FMX
-2. Framework: [RICKShowForm][1], [RICKLoading][2], [RICKLibrarys][3], [RICKCheckConnection][4], [RickFormat][5]
+2. Framework: [RICKShowForm][1], [RICKLoading][2], [RICKLibrarys][3], [RICKCheckConnection][4], [RickFormat][5], [RICKDialog][6]
 3. If you choose to use [BOOS][0] ```https://github.com/ricksolucoes/boss or https://github.com/HashLoad/boss```  the dependency manager, you will have the facility to install all frameworks that are [Pre-requisites](#pre-requisites) for the project.
 
 ## 💻 Installation
@@ -39,6 +41,7 @@ $ boss install https://github.com/ricksolucoes/RICK4D
     - [RICKLibrarys][3] ``` https://github.com/ricksolucoes/RICKLibrarys ```
     - [RICKCheckConnection][4] ``` https://github.com/ricksolucoes/RICKCheckConnection ```
     - [RickFormat][5] ``` https://github.com/ricksolucoes/RickFormat ```
+    - [RICKDialog][6] ``` https://github.com/ricksolucoes/RICKDialog ```
   - Add the following folders to your project, in <em>Project &gt; Options &gt; Resource Compiler &gt; Directories and Conditionals &gt; Include file search path
     - ``` ../RICK4D/src ```
     - ``` ../RICKShowForm/src ```
@@ -46,6 +49,7 @@ $ boss install https://github.com/ricksolucoes/RICK4D
     - ``` ../RICKLibrarys/src ```
     - ``` ../RICKCheckConnection/src ```
     - ``` ../RickFormat/src ```
+    - ``` ../RICKDialog/src ```
 
 ## ⚡️ How to use the project
 Example of using the **RICK4D** library
@@ -314,10 +318,13 @@ end;
       5 : LRICK4D.Format.FormatExtra('rj').StateRegistration(Sender); // Brazil's State Registration mask
       6 : LRICK4D.Format.CurrencyValue(Sender); //Brazil's Currency Value
       7 : LRICK4D.Format.FormatExtra('R$').CurrencyValue(Sender); //Brazil's Currency value with acronym mask
-      8 : LRICK4D.Format.CEP(Sender); // Brazil's ZIP CODE mask
+      8 : LRICK4D.Format.ZipCode(Sender); // Brazil's ZIP CODE mask
       9 : LRICK4D.Format.DateValue(Sender); //Brazil's Date mask
-      10: LRICK4D.Format.Peso(Sender); // Brazil's Weight mask
+      10: LRICK4D.Format.Weight(Sender); // Brazil's Weight mask
       11: LRICK4D.Format.FormatExtra('##.###-###-####>###').Customized(Sender); //custom mask
     end;
 end;
 ```
+
+ ## Sample Dialog
+
