@@ -331,7 +331,7 @@ end;
 1. One Button
 ```delphi  
   uses
-    RICK4D
+    RICK4D;
   begin
     TRICK4D
       .New
@@ -350,7 +350,7 @@ end;
 2. Two Button
 ```delphi  
   uses
-    RICK4D
+    RICK4D;
   begin
     TRICK4D
       .New
@@ -380,7 +380,7 @@ end;
 1. One Button
 ```delphi  
   uses
-    RICK4D
+    RICK4D;
   begin
     TRICK4D
       .New
@@ -399,7 +399,7 @@ end;
 2. Two Button
 ```delphi  
   uses
-    RICK4D
+    RICK4D;
   begin
     TRICK4D
       .New
@@ -430,7 +430,7 @@ end;
 1. One Button
 ```delphi  
   uses
-    RICK4D
+    RICK4D;
   begin
     TRICK4D
       .New
@@ -449,7 +449,7 @@ end;
 2. Two Button
 ```delphi  
   uses
-    RICK4D
+    RICK4D;
   begin
     TRICK4D
       .New
@@ -480,7 +480,7 @@ end;
 1. One Button
 ```delphi  
   uses
-    RICK4D
+    RICK4D;
   begin
     TRICK4D
       .New
@@ -499,7 +499,7 @@ end;
 2. Two Button
 ```delphi  
   uses
-    RICK4D
+    RICK4D;
   begin
     TRICK4D
       .New
@@ -529,7 +529,7 @@ end;
 1. One Button
 ```delphi  
   uses
-    RICK4D
+    RICK4D;
   begin
     TRICK4D
       .New
@@ -548,7 +548,7 @@ end;
 2. Two Button
 ```delphi  
   uses
-    RICK4D
+    RICK4D;
   begin
     TRICK4D
       .New
@@ -572,5 +572,195 @@ end;
             .&End
           .&End
         .&End
+  end;
+```
+
+- How to use Question Dialog
+```delphi  
+  uses
+    RICK4D;
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Button
+              .First
+                .Process(FirstResponseProcedure)
+              .&End
+              .Second
+                .Process(SecondResponseProcedure)
+              .&End
+            .&End
+            .Execute
+              .Question
+            .&End
+          .&End
+        .&End;
+  end;
+```
+
+- How to use Custom Dialog
+```delphi  
+  uses
+    RICK4D;
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomMain
+            .Background
+              .Opacity(0.7)
+              .Color(TAlphaColorRec.Blue)
+            .&End
+          .&End
+          .CustomDialog
+            .Background
+              .Color(TAlphaColorRec.White)
+            .&End
+            .Rectangle
+              .Width(Self.Width - 60)
+              .Height(Self.Height - 120)
+            .&End
+            .Icon
+              .Color(TAlphaColorRec.Coral)
+            .&End
+            .Title
+              .Text('Question')
+              .FontSize(24)
+              .FontColor(TAlphaColorRec.Black)
+            .&End
+            .Info
+              .Text('The policy of the War on Terror, undertaken by the United States at the beginning of the 21st century, culminated in one of the most important recent geopolitical conflicts. This conflict has become known as the')
+              .FontSize(12)
+              .FontColor(TAlphaColorRec.Darkcyan)
+            .&End
+            .Button
+              .First
+                .Color(TAlphaColorRec.Darkgray)
+                .Text('Afghan War')
+                .FontSize(14)
+                .FontColor(TAlphaColorRec.White)
+                .Process(FirstResponseProcedure)
+              .&End
+              .Second
+                .Color(TAlphaColorRec.Darkgray)
+                .Text('Syria''s War')
+                .FontSize(14)
+                .FontColor(TAlphaColorRec.White)
+                .Process(SecondResponseProcedure)
+              .&End
+            .&End
+            .Execute
+              .Question
+            .&End
+          .&End
+        .&End;
+  end;
+```
+
+
+- How to use Interface
+```delphi  
+  uses
+    RICK4D,
+    RICK4D.Interfaces;
+  var
+    LRICK4D: iRICK4D;
+  begin
+    LRICK4D:= TRICK4D.New;
+
+    //Customizing Background
+    LRICK4D.Dialog
+      .CustomMain
+        .Background
+          .Opacity(0.7)
+          .Color(TAlphaColorRec.Blue)
+        .&End
+      .&End;
+
+    //Customizing the Message Window Background
+    LRICK4D.Dialog
+      .CustomDialog
+        .Background
+          .Color(TAlphaColorRec.White)
+        .&End
+      .&End;
+
+    //Customizing the Message Window
+    LRICK4D.Dialog
+      .CustomDialog
+        .Rectangle
+          .Width(Self.Width - 60)
+          .Height(Self.Height - 120)
+        .&End
+      .&End;
+
+
+    //Customizing Icon
+    LRICK4D.Dialog
+      .CustomDialog
+        .Icon
+          .Color(TAlphaColorRec.Coral)
+        .&End
+      .&End;
+
+    //Customizing Title
+    LRICK4D.Dialog
+      .CustomDialog
+        .Title
+          .Text('Question')
+          .FontSize(24)
+          .FontColor(TAlphaColorRec.Black)
+        .&End
+      .&End;
+
+    //Customizing message
+    LRICK4D.Dialog
+      .CustomDialog
+        .Info
+          .Text('The policy of the War on Terror, undertaken by the United States at the beginning of the 21st century, culminated in one of the most important recent geopolitical conflicts. This conflict has become known as the')
+          .FontSize(12)
+          .FontColor(TAlphaColorRec.Darkcyan)
+        .&End
+      .&End;
+
+    //Customizing the First Button
+    LRICK4D.Dialog
+      .CustomDialog
+        .Button
+          .First
+            .Color(TAlphaColorRec.Darkgray)
+            .Text('Afghan War')
+            .FontSize(14)
+            .FontColor(TAlphaColorRec.White)
+            .Process(FirstResponseProcedure)
+          .&End
+      .&End;
+
+    //Customizing the Second Button
+    LRICK4D.Dialog
+      .CustomDialog
+        .Button
+          .Second
+            .Color(TAlphaColorRec.Darkgray)
+            .Text('Syria''s War')
+            .FontSize(14)
+            .FontColor(TAlphaColorRec.White)
+            .Process(SecondResponseProcedure)
+          .&End
+        .&End
+      .&End;
+
+    //Display screen
+    LRICK4D.Dialog
+      .CustomDialog
+        .Execute
+          .Question
+        .&End
+      .&End;
   end;
 ```
