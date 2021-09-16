@@ -21,7 +21,9 @@ type
     function FormatValue(Const AValue: string): string;
     function FormatDate(Const AValue: string): string;
     function FormatPeso(const AValue: string): string;
-    procedure DelayedSetFocus(Const AValue: TControl);
+    function DelayedSetFocus(Const AValue: TControl): iRICK4DLibrarys;
+    function ShowKeyboard(Const AValue: TControl): iRICK4DLibrarys;
+    function HideKeyboard(Const AValue: TControl): iRICK4DLibrarys;
 
     function &End: iRICK4D;
 
@@ -42,8 +44,9 @@ begin
   FLibrarys:= TRICKLibrarys.New;
 end;
 
-procedure TRICK4DLibrarys.DelayedSetFocus(Const AValue: TControl);
+function TRICK4DLibrarys.DelayedSetFocus(Const AValue: TControl): iRICK4DLibrarys;
 begin
+  Result:= Self;
   FLibrarys.DelayedSetFocus(AValue);
 end;
 
@@ -74,6 +77,12 @@ begin
   Result:= FLibrarys.FormatValue(AValue);
 end;
 
+function TRICK4DLibrarys.HideKeyboard(const AValue: TControl): iRICK4DLibrarys;
+begin
+  Result:= Self;
+  FLibrarys.HideKeyboard(AValue);
+end;
+
 function TRICK4DLibrarys.IEFormat(const ANumber, AState: string): string;
 begin
   Result:= FLibrarys.IEFormat(ANumber, AState);
@@ -92,6 +101,12 @@ end;
 function TRICK4DLibrarys.OnlyNumber(const AValue: string): string;
 begin
   Result:= FLibrarys.OnlyNumber(AValue);
+end;
+
+function TRICK4DLibrarys.ShowKeyboard(const AValue: TControl): iRICK4DLibrarys;
+begin
+  Result:= Self;
+  FLibrarys.ShowKeyboard(AValue);
 end;
 
 function TRICK4DLibrarys.StringInSet(const S: String;

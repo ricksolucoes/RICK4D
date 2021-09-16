@@ -9,7 +9,7 @@
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='Win32'">
         <DeployFile Include="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\Assets\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\Assets\</RemoteDir>
             <RemoteName>Logo150x150.png</RemoteName>
             <DeployClass>UWP_DelphiLogo150</DeployClass>
             <Operation>1</Operation>
@@ -18,7 +18,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\Assets\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\Assets\</RemoteDir>
             <RemoteName>Logo44x44.png</RemoteName>
             <DeployClass>UWP_DelphiLogo44</DeployClass>
             <Operation>1</Operation>
@@ -26,9 +26,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Win32\Debug\RICKSampleFormShow.exe" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\</RemoteDir>
-            <RemoteName>RICKSampleFormShow.exe</RemoteName>
+        <DeployFile Include="Win32\Debug\RICKSampleLibrarys.exe" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>RICKSampleLibrarys\</RemoteDir>
+            <RemoteName>RICKSampleLibrarys.exe</RemoteName>
             <DeployClass>ProjectOutput</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
@@ -39,7 +39,7 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Win64'">
         <DeployFile Include="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\Assets\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\Assets\</RemoteDir>
             <RemoteName>Logo44x44.png</RemoteName>
             <DeployClass>UWP_DelphiLogo44</DeployClass>
             <Operation>1</Operation>
@@ -48,7 +48,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\Assets\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\Assets\</RemoteDir>
             <RemoteName>Logo150x150.png</RemoteName>
             <DeployClass>UWP_DelphiLogo150</DeployClass>
             <Operation>1</Operation>
@@ -59,7 +59,7 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Android'">
         <DeployFile Include="src\image\Splash\Splash 960X720.9.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xlarge\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
             <Operation>1</Operation>
@@ -68,7 +68,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
             <Operation>1</Operation>
@@ -77,7 +77,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick96x96.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
             <Operation>1</Operation>
@@ -86,7 +86,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
             <Operation>1</Operation>
@@ -95,7 +95,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
             <Operation>1</Operation>
@@ -104,7 +104,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 426X320.9.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-small\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
             <Operation>1</Operation>
@@ -113,7 +113,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\styles-v21.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\values-v21\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV21</DeployClass>
             <Operation>1</Operation>
@@ -122,7 +122,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
             <Operation>1</Operation>
@@ -131,7 +131,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 470X320.9.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-normal\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
             <Operation>1</Operation>
@@ -140,7 +140,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
             <Operation>1</Operation>
@@ -149,7 +149,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\colors.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_Colors</DeployClass>
             <Operation>1</Operation>
@@ -158,7 +158,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
             <Operation>1</Operation>
@@ -167,7 +167,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick144X144.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
@@ -176,7 +176,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 426X320.9.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-small\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
             <Operation>1</Operation>
@@ -184,18 +184,8 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android\Release\libRICKSampleFormShow.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libRICKSampleFormShow.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="Android\Debug\strings.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>strings.xml</RemoteName>
             <DeployClass>Android_Strings</DeployClass>
             <Operation>1</Operation>
@@ -204,7 +194,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
             <Operation>1</Operation>
@@ -213,7 +203,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\styles.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
             <Operation>1</Operation>
@@ -222,7 +212,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick48x48.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
@@ -231,7 +221,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\classes.dex" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\classes\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\classes\</RemoteDir>
             <RemoteName>classes.dex</RemoteName>
             <DeployClass>AndroidClassesDexFile</DeployClass>
             <Operation>1</Operation>
@@ -240,7 +230,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
             <Operation>1</Operation>
@@ -249,7 +239,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\styles.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
             <Operation>1</Operation>
@@ -258,7 +248,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\strings.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>strings.xml</RemoteName>
             <DeployClass>Android_Strings</DeployClass>
             <Operation>1</Operation>
@@ -267,7 +257,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 470X320.9.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-normal\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
             <Operation>1</Operation>
@@ -276,7 +266,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\colors.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_Colors</DeployClass>
             <Operation>1</Operation>
@@ -285,7 +275,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\styles-v21.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\values-v21\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV21</DeployClass>
             <Operation>1</Operation>
@@ -294,7 +284,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\AndroidManifest.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
             <Operation>1</Operation>
@@ -303,7 +293,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick144X144.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
@@ -312,7 +302,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
             <Operation>1</Operation>
@@ -321,7 +311,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick48x48.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
@@ -329,8 +319,18 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android\Debug\libRICKSampleLibrarys.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>RICKSampleLibrarys\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libRICKSampleLibrarys.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="src\image\Android\rick36x36.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-ldpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
             <Operation>1</Operation>
@@ -339,7 +339,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick36x36.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-ldpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
             <Operation>1</Operation>
@@ -348,7 +348,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
             <Operation>1</Operation>
@@ -357,7 +357,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
             <Operation>1</Operation>
@@ -365,18 +365,8 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android\Debug\libRICKSampleFormShow.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libRICKSampleFormShow.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="src\image\Android\rick72x72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
             <Operation>1</Operation>
@@ -385,7 +375,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick72x72.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
             <Operation>1</Operation>
@@ -394,7 +384,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
             <Operation>1</Operation>
@@ -403,7 +393,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android\Release\classes.dex" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\classes\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\classes\</RemoteDir>
             <RemoteName>classes.dex</RemoteName>
             <DeployClass>AndroidClassesDexFile</DeployClass>
             <Operation>1</Operation>
@@ -412,7 +402,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 960X720.9.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xlarge\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
             <Operation>1</Operation>
@@ -421,7 +411,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 640x480.9.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-large\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
@@ -429,8 +419,18 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android\Release\libRICKSampleLibrarys.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>RICKSampleLibrarys\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libRICKSampleLibrarys.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 640x480.9.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-large\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
@@ -441,7 +441,7 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Android64'">
         <DeployFile Include="src\image\Android\rick48x48.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
@@ -450,7 +450,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 960X720.9.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xlarge\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
             <Operation>1</Operation>
@@ -459,7 +459,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-ldpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
             <Operation>1</Operation>
@@ -468,7 +468,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick72x72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
             <Operation>1</Operation>
@@ -477,7 +477,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
@@ -485,8 +485,18 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android64\Debug\libRICKSampleLibrarys.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>RICKSampleLibrarys\library\lib\arm64-v8a\</RemoteDir>
+            <RemoteName>libRICKSampleLibrarys.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="Android64\Debug\classes.dex" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\classes\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\classes\</RemoteDir>
             <RemoteName>classes.dex</RemoteName>
             <DeployClass>AndroidClassesDexFile</DeployClass>
             <Operation>1</Operation>
@@ -495,7 +505,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
             <Operation>1</Operation>
@@ -504,7 +514,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\strings.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>strings.xml</RemoteName>
             <DeployClass>Android_Strings</DeployClass>
             <Operation>1</Operation>
@@ -513,7 +523,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick96x96.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
             <Operation>1</Operation>
@@ -522,7 +532,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
             <Operation>1</Operation>
@@ -530,9 +540,19 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android64\Release\libRICKSampleLibrarys.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>RICKSampleLibrarys\library\lib\arm64-v8a\</RemoteDir>
+            <RemoteName>libRICKSampleLibrarys.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libRICKSampleFormShow.so</RemoteName>
+            <RemoteDir>RICKSampleLibrarys\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libRICKSampleLibrarys.so</RemoteName>
             <DeployClass>AndroidLibnativeArmeabiv7aFile</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
@@ -540,7 +560,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 426X320.9.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-small\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
             <Operation>1</Operation>
@@ -549,7 +569,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 470X320.9.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-normal\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
             <Operation>1</Operation>
@@ -558,7 +578,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\classes.dex" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\classes\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\classes\</RemoteDir>
             <RemoteName>classes.dex</RemoteName>
             <DeployClass>AndroidClassesDexFile</DeployClass>
             <Operation>1</Operation>
@@ -567,7 +587,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
             <Operation>1</Operation>
@@ -576,7 +596,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\styles-v21.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\values-v21\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV21</DeployClass>
             <Operation>1</Operation>
@@ -585,7 +605,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
             <Operation>1</Operation>
@@ -594,7 +614,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Splash\Splash 640x480.9.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-large\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
@@ -603,7 +623,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\strings.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>strings.xml</RemoteName>
             <DeployClass>Android_Strings</DeployClass>
             <Operation>1</Operation>
@@ -612,7 +632,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
             <Operation>1</Operation>
@@ -621,7 +641,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
             <Operation>1</Operation>
@@ -630,7 +650,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick144X144.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
@@ -639,7 +659,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
             <Operation>1</Operation>
@@ -648,8 +668,8 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\library\lib\armeabi\</RemoteDir>
-            <RemoteName>libRICKSampleFormShow.so</RemoteName>
+            <RemoteDir>RICKSampleLibrarys\library\lib\armeabi\</RemoteDir>
+            <RemoteName>libRICKSampleLibrarys.so</RemoteName>
             <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
@@ -657,7 +677,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="..\Comum\image\Splash\Splash 426X320.9.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-small\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
             <Operation>1</Operation>
@@ -666,7 +686,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-mdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
             <Operation>1</Operation>
@@ -675,7 +695,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\styles.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
             <Operation>1</Operation>
@@ -684,7 +704,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
             <Operation>1</Operation>
@@ -693,7 +713,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
             <Operation>1</Operation>
@@ -702,7 +722,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\provider_paths.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\xml\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\xml\</RemoteDir>
             <RemoteName>provider_paths.xml</RemoteName>
             <DeployClass>AndroidFileProvider</DeployClass>
             <Operation>1</Operation>
@@ -711,7 +731,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
             <Operation>1</Operation>
@@ -720,7 +740,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="..\Comum\image\Splash\Splash 640x480.9.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-large\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
@@ -729,7 +749,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\styles.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
             <Operation>1</Operation>
@@ -738,7 +758,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="..\Comum\image\Splash\Splash 960X720.9.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xlarge\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
             <Operation>1</Operation>
@@ -746,18 +766,8 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android64\Release\libRICKSampleFormShow.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\library\lib\arm64-v8a\</RemoteDir>
-            <RemoteName>libRICKSampleFormShow.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-hdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
             <Operation>1</Operation>
@@ -766,7 +776,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
             <Operation>1</Operation>
@@ -775,7 +785,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\colors.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_Colors</DeployClass>
             <Operation>1</Operation>
@@ -784,8 +794,8 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\library\lib\mips\</RemoteDir>
-            <RemoteName>libRICKSampleFormShow.so</RemoteName>
+            <RemoteDir>RICKSampleLibrarys\library\lib\mips\</RemoteDir>
+            <RemoteName>libRICKSampleLibrarys.so</RemoteName>
             <DeployClass>AndroidLibnativeMipsFile</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
@@ -793,7 +803,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Release\AndroidManifest.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
             <Operation>1</Operation>
@@ -802,7 +812,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Android64\Debug\colors.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\values\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
             <DeployClass>Android_Colors</DeployClass>
             <Operation>1</Operation>
@@ -811,7 +821,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
             <Operation>1</Operation>
@@ -820,7 +830,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="..\Comum\image\Splash\Splash 470X320.9.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-normal\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image_def.9.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
             <Operation>1</Operation>
@@ -829,7 +839,7 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="src\image\Android\rick36x36.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>RICKSampleFormShow\res\drawable-ldpi\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
             <Operation>1</Operation>
@@ -837,18 +847,8 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android64\Debug\libRICKSampleFormShow.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\library\lib\arm64-v8a\</RemoteDir>
-            <RemoteName>libRICKSampleFormShow.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="Android64\Debug\styles-v21.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>RICKSampleFormShow\res\values-v21\</RemoteDir>
+            <RemoteDir>RICKSampleLibrarys\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV21</DeployClass>
             <Operation>1</Operation>

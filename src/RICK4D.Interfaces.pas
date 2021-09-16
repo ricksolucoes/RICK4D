@@ -96,7 +96,9 @@ type
     function FormatValue(Const AValue: string): string;
     function FormatDate(Const AValue: string): string;
     function FormatPeso(const AValue: string): string;
-    procedure DelayedSetFocus(Const AValue: TControl);
+    function DelayedSetFocus(Const AValue: TControl): iRICK4DLibrarys;
+    function ShowKeyboard(Const AValue: TControl): iRICK4DLibrarys;
+    function HideKeyboard(Const AValue: TControl): iRICK4DLibrarys;
 
     function &End: iRICK4D;
   end;

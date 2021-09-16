@@ -126,13 +126,18 @@ begin
     4: edtData.Text:= '123123232123';
     5: edtData.Text:= '31122100';
     6: edtData.Text:= '233821';
+    7: TRICK4D.New.Librarys.DelayedSetFocus(edtData); //Dealy on Focus
+    8: TRICK4D.New.Librarys.HideKeyboard(edtData); //Close Keyboard
+    9: TRICK4D.New.Librarys.ShowKeyboard(edtData); //Open Keyboard
   end;
-  
+
   if AItem.Index > -1 then
-  begin  
+  begin
     lytExecute.Visible:= True;
     lytInputData.Visible:= True;
-    TRICK4D.New.Librarys.DelayedSetFocus(edtData); //Dealy on Focus
+
+    if not (AItem.Index in [7, 8, 9]) then
+      TRICK4D.New.Librarys.DelayedSetFocus(edtData);
   end;
 
   if AItem.Index = 0 then
@@ -160,8 +165,10 @@ begin
     ListView.Items.Add.Text:= 'Formatar Data';
     ListView.Items.Add.Text:= 'Formatar Peso';
     ListView.Items.Add.Text:= 'Dealy no Focus';
+    ListView.Items.Add.Text:= 'Fechar Teclado Virtual';
+    ListView.Items.Add.Text:= 'Abrir Teclado Virtual';
     lblData.Text:= 'Informar dados:';
-      
+
   end
   else
   begin
@@ -177,6 +184,8 @@ begin
     ListView.Items.Add.Text:= 'Formatting Date';
     ListView.Items.Add.Text:= 'Formatting Weight';
     ListView.Items.Add.Text:= 'Dealy on Focus';
+    ListView.Items.Add.Text:= 'Hide Keyboard';
+    ListView.Items.Add.Text:= 'Show KeyBoard';
   end;
 end;
 
@@ -189,3 +198,4 @@ begin
 end;
 
 end.
+

@@ -51,6 +51,7 @@ uses
 procedure TPageView1.btConnectionTypeClick(Sender: TObject);
 begin
   inherited;
+  lblConn.TextSettings.FontColor:= $FF8D8D8D;
   lblConn.Text:= TRICK4D.New.CheckConnection.ConnectionType;
 end;
 
