@@ -327,4 +327,250 @@ end;
 ```
 
  ## Sample Dialog
+- How to use Info Dialog
+1. One Button
+```delphi  
+  uses
+    RICK4D
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Execute
+              .Info
+            .&End
+          .&End
+        .&End
+  end;
+```
+2. Two Button
+```delphi  
+  uses
+    RICK4D
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Button
+              .First
+                .Text('Yes')
+                .Process(FirstResponseProcedure)
+              .&End
+              .Second
+                .Text('No')
+                .Process(SecondResponseProcedure)
+              .&End
+            .&End
+            .Execute
+              .Info
+            .&End
+          .&End
+        .&End
+  end;
+```
+- How to use Success Dialog
+1. One Button
+```delphi  
+  uses
+    RICK4D
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Execute
+              .Success
+            .&End
+          .&End
+        .&End
+  end;
+```
+2. Two Button
+```delphi  
+  uses
+    RICK4D
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Button
+              .First
+                .Text('Yes')
+                .Process(FirstResponseProcedure)
+              .&End
+              .Second
+                .Text('No')
+                .Process(SecondResponseProcedure)
+              .&End
+            .&End
+            .Execute
+              .Success
+            .&End
+          .&End
+        .&End
+  end;
+```
+  
+- How to use Success Dialog
+1. One Button
+```delphi  
+  uses
+    RICK4D
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Execute
+              .Success
+            .&End
+          .&End
+        .&End
+  end;
+```
+2. Two Button
+```delphi  
+  uses
+    RICK4D
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Button
+              .First
+                .Text('Yes')
+                .Process(FirstResponseProcedure)
+              .&End
+              .Second
+                .Text('No')
+                .Process(SecondResponseProcedure)
+              .&End
+            .&End
+            .Execute
+              .Success
+            .&End
+          .&End
+        .&End
+  end;
+```
 
+- How to use Warnig Dialog
+1. One Button
+```delphi  
+  uses
+    RICK4D
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Execute
+              .Warnig
+            .&End
+          .&End
+        .&End
+  end;
+```
+2. Two Button
+```delphi  
+  uses
+    RICK4D
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Button
+              .First
+                .Text('Yes')
+                .Process(FirstResponseProcedure)
+              .&End
+              .Second
+                .Text('No')
+                .Process(SecondResponseProcedure)
+              .&End
+            .&End
+            .Execute
+              .Warnig
+            .&End
+          .&End
+        .&End
+  end;
+```
+- How to use Error Dialog
+1. One Button
+```delphi  
+  uses
+    RICK4D
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Execute
+              .Error
+            .&End
+          .&End
+        .&End
+  end;
+```
+2. Two Button
+```delphi  
+  uses
+    RICK4D
+  begin
+    TRICK4D
+      .New
+        .Dialog
+          .CustomDialog
+            .Info
+              .Text('Your message here')
+            .&End
+            .Button
+              .First
+                .Text('Yes')
+                .Process(FirstResponseProcedure)
+              .&End
+              .Second
+                .Text('No')
+                .Process(SecondResponseProcedure)
+              .&End
+            .&End
+            .Execute
+              .Error
+            .&End
+          .&End
+        .&End
+  end;
+```
