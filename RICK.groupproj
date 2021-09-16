@@ -9,9 +9,6 @@
         <Projects Include="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj">
             <Dependencies/>
         </Projects>
@@ -19,6 +16,12 @@
             <Dependencies/>
         </Projects>
         <Projects Include="Samples\Delphi\FMX\Librarys\RICKSampleLibrarys.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Samples\Delphi\FMX\Dialogs\RICKSampleDialog.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -47,15 +50,6 @@
     <Target Name="RICKSampleFormShow:Make">
         <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj" Targets="Make"/>
     </Target>
-    <Target Name="RICKSampleCheckConnetion">
-        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj"/>
-    </Target>
-    <Target Name="RICKSampleCheckConnetion:Clean">
-        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="RICKSampleCheckConnetion:Make">
-        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj" Targets="Make"/>
-    </Target>
     <Target Name="RICKSampleLoading">
         <MSBuild Projects="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj"/>
     </Target>
@@ -83,14 +77,32 @@
     <Target Name="RICKSampleLibrarys:Make">
         <MSBuild Projects="Samples\Delphi\FMX\Librarys\RICKSampleLibrarys.dproj" Targets="Make"/>
     </Target>
+    <Target Name="RICKSampleDialog">
+        <MSBuild Projects="Samples\Delphi\FMX\Dialogs\RICKSampleDialog.dproj"/>
+    </Target>
+    <Target Name="RICKSampleDialog:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\Dialogs\RICKSampleDialog.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKSampleDialog:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\Dialogs\RICKSampleDialog.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RICKSampleCheckConnetion">
+        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj"/>
+    </Target>
+    <Target Name="RICKSampleCheckConnetion:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKSampleCheckConnetion:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="RICK4Delphi;RICKSampleFormShow;RICKSampleCheckConnetion;RICKSampleLoading;RICKSampleFormat;RICKSampleLibrarys"/>
+        <CallTarget Targets="RICK4Delphi;RICKSampleFormShow;RICKSampleLoading;RICKSampleFormat;RICKSampleLibrarys;RICKSampleDialog;RICKSampleCheckConnetion"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="RICK4Delphi:Clean;RICKSampleFormShow:Clean;RICKSampleCheckConnetion:Clean;RICKSampleLoading:Clean;RICKSampleFormat:Clean;RICKSampleLibrarys:Clean"/>
+        <CallTarget Targets="RICK4Delphi:Clean;RICKSampleFormShow:Clean;RICKSampleLoading:Clean;RICKSampleFormat:Clean;RICKSampleLibrarys:Clean;RICKSampleDialog:Clean;RICKSampleCheckConnetion:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="RICK4Delphi:Make;RICKSampleFormShow:Make;RICKSampleCheckConnetion:Make;RICKSampleLoading:Make;RICKSampleFormat:Make;RICKSampleLibrarys:Make"/>
+        <CallTarget Targets="RICK4Delphi:Make;RICKSampleFormShow:Make;RICKSampleLoading:Make;RICKSampleFormat:Make;RICKSampleLibrarys:Make;RICKSampleDialog:Make;RICKSampleCheckConnetion:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

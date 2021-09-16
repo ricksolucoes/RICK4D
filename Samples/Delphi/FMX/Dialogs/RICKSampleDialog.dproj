@@ -1,9 +1,9 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{1B855C4B-8720-49E6-A449-20B047EE6240}</ProjectGuid>
+        <ProjectGuid>{9BCCF93E-1E8C-4861-9C12-A339D3AF27E9}</ProjectGuid>
         <ProjectVersion>18.8</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
-        <MainSource>RICKSampleLibrarys.dpr</MainSource>
+        <MainSource>RICKSampleDialog.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -177,7 +177,7 @@
         <AUP_READ_PHONE_STATE>true</AUP_READ_PHONE_STATE>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
-        <SanitizedProjectName>RICKSampleLibrarys</SanitizedProjectName>
+        <SanitizedProjectName>RICKSampleDialog</SanitizedProjectName>
         <DCC_UnitSearchPath>.\..\..\..\..\src;.\..\..\..\..\modules\rickshowform\src;.\..\..\..\..\modules\rickloading\src;.\..\..\..\..\modules\ricklibrarys\src;.\..\..\..\..\modules\rickformat\src;.\..\..\..\..\modules\rickcheckconnection\src;.\..\..\..\..\modules\rickdialog\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
@@ -568,7 +568,7 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">RICKSampleLibrarys.dpr</Source>
+                    <Source Name="MainSource">RICKSampleDialog.dpr</Source>
                 </Source>
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
@@ -631,6 +631,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Android\Debug\libRICKSampleDialog.so" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteName>libRICKSampleDialog.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
                     <Platform Name="Android">
                         <Enabled>false</Enabled>
@@ -647,12 +653,6 @@
                     <Platform Name="Win64">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Android64\Debug\libRICKSampleLibrarys.so" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Android64">
-                        <RemoteName>libRICKSampleLibrarys.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -770,12 +770,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Android64\Release\libRICKSampleLibrarys.so" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Android64">
-                        <RemoteName>libRICKSampleLibrarys.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiv7aFile">
                     <Platform Name="Android64">
                         <RemoteName>libRICKSampleFormShow.so</RemoteName>
@@ -885,6 +879,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Win32\Debug\RICKSampleDialog.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>RICKSampleDialog.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Configuration="Debug" Class="Android_NotificationIcon48">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
@@ -927,12 +927,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Android\Debug\libRICKSampleLibrarys.so" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Android">
-                        <RemoteName>libRICKSampleLibrarys.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="src\image\Android\rick36x36.png" Configuration="Release" Class="Android_LauncherIcon36">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
@@ -942,6 +936,12 @@
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Configuration="Release" Class="Android_NotificationIcon72">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Android\Release\libRICKSampleDialog.so" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteName>libRICKSampleDialog.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1032,6 +1032,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Android64\Debug\libRICKSampleDialog.so" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Android64">
+                        <RemoteName>libRICKSampleDialog.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android\Release\classes.dex" Configuration="Release" Class="AndroidClassesDexFile">
                     <Platform Name="Android">
                         <RemoteName>classes.dex</RemoteName>
@@ -1089,6 +1095,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Android64\Release\libRICKSampleDialog.so" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Android64">
+                        <RemoteName>libRICKSampleDialog.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android64\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
                     <Platform Name="Android64">
                         <Enabled>false</Enabled>
@@ -1098,12 +1110,6 @@
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Configuration="Release" Class="Android_NotificationIcon96">
                     <Platform Name="Android64">
                         <RemoteName>ic_notification.png</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Win32\Debug\RICKSampleLibrarys.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
-                        <RemoteName>RICKSampleLibrarys.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1122,12 +1128,6 @@
                 <DeployFile LocalName="Android64\Release\splash_image_def.xml" Configuration="Release" Class="AndroidSplashImageDef">
                     <Platform Name="Android64">
                         <Enabled>false</Enabled>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Android\Release\libRICKSampleLibrarys.so" Configuration="Release" Class="ProjectOutput">
-                    <Platform Name="Android">
-                        <RemoteName>libRICKSampleLibrarys.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

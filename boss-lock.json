@@ -10,6 +10,14 @@
 			"failed": false,
 			"changed": false
 		},
+		"https://github.com/ricksolucoes/rickdialog": {
+			"name": "rickdialog",
+			"version": "1.0.3",
+			"hash": "feb85437a8254e5baee18b1ec2ba75a8",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"https://github.com/ricksolucoes/rickformat": {
 			"name": "rickformat",
 			"version": "1.0.2",

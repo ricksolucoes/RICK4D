@@ -10,7 +10,20 @@ uses
   RICK4D.Loading in 'src\RICK4D.Loading.pas',
   RICK4D.Librarys in 'src\RICK4D.Librarys.pas',
   RICK4D.CheckConnection in 'src\RICK4D.CheckConnection.pas',
-  RICK4D.Format in 'src\RICK4D.Format.pas';
+  RICK4D.Format in 'src\RICK4D.Format.pas',
+  RICK4D.Dialog in 'src\RICK4D.Dialog.pas',
+  RICK4D.Dialog.Custom.Main in 'src\RICK4D.Dialog.Custom.Main.pas',
+  RICK4D.Dialog.Custom.Main.Background in 'src\RICK4D.Dialog.Custom.Main.Background.pas',
+  RICK4D.Dialog.Custom in 'src\RICK4D.Dialog.Custom.pas',
+  RICK4D.Dialog.Custom.Background in 'src\RICK4D.Dialog.Custom.Background.pas',
+  RICK4D.Dialog.Custom.Rectangle in 'src\RICK4D.Dialog.Custom.Rectangle.pas',
+  RICK4D.Dialog.Custom.Icon in 'src\RICK4D.Dialog.Custom.Icon.pas',
+  RICK4D.Dialog.Custom.Title in 'src\RICK4D.Dialog.Custom.Title.pas',
+  RICK4D.Dialog.Custom.Info in 'src\RICK4D.Dialog.Custom.Info.pas',
+  RICK4D.Dialog.Custom.Button in 'src\RICK4D.Dialog.Custom.Button.pas',
+  RICK4D.Dialog.Custom.Execute in 'src\RICK4D.Dialog.Custom.Execute.pas',
+  RICK4D.Dialog.Custom.Button.First in 'src\RICK4D.Dialog.Custom.Button.First.pas',
+  RICK4D.Dialog.Custom.Button.Second in 'src\RICK4D.Dialog.Custom.Button.Second.pas';
 
 {$R *.res}
 

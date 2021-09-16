@@ -29,6 +29,7 @@ type
     procedure AfterShow; override;
     procedure AfterShowClose;
 
+
   end;
 
 var

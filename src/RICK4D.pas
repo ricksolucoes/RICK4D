@@ -11,12 +11,14 @@ type
     FLibrarys : iRICK4DLibrarys;
     FCheckConnection : iRICK4DCheckConnection;
     FFormat: iRICK4DFormat;
+    FDialog: iRICK4DDialog;
 
     function ShowForm : iRICK4DShowForm;
     function Loading : iRICK4DLoading;
     function Librarys : iRICK4DLibrarys;
     function CheckConnection : iRICK4DCheckConnection;
     function Format : iRICK4DFormat;
+    function Dialog : iRICK4DDialog;
 
     constructor Create;
   public
@@ -28,13 +30,11 @@ implementation
 
 uses
   RICK4D.Format,
+  RICK4D.Dialog,
   RICK4D.Loading,
   RICK4D.ShowForm,
   RICK4D.Librarys,
   RICK4D.CheckConnection;
-
-
-{ TRICK4D }
 
 function TRICK4D.CheckConnection: iRICK4DCheckConnection;
 begin
@@ -54,6 +54,15 @@ destructor TRICK4D.Destroy;
 begin
 
   inherited;
+end;
+
+function TRICK4D.Dialog: iRICK4DDialog;
+begin
+   if not Assigned(FDialog) then
+    FDialog := TRICK4DDialog.New(Self);
+
+  Result := FDialog;
+
 end;
 
 function TRICK4D.Format: iRICK4DFormat;

@@ -118,7 +118,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <SanitizedProjectName>RICK4Delphi</SanitizedProjectName>
-        <DCC_UnitSearchPath>$(DCC_UnitSearchPath);modules\.dcp;modules\.dcu;modules;modules\rickcheckconnection\src;modules\rickformat\src;modules\ricklibrarys\src;modules\rickloading\src;modules\rickshowform\src</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\rickcheckconnection\src;modules\rickdialog\src;modules\rickformat\src;modules\ricklibrarys\src;modules\rickloading\src;modules\rickshowform\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;IndyIPCommon;RESTComponents;bindcompdbx;DBXInterBaseDriver;IndyIPServer;IndySystem;tethering;fmxFireDAC;FireDAC;bindcompfmx;FireDACSqliteDriver;FMXTee;soaprtl;DbxCommonDriver;FmxTeeUI;fmx;FireDACIBDriver;xmlrtl;soapmidas;rtl;DbxClientDriver;CustomIPTransport;dbexpress;IndyCore;bindcomp;dsnap;FireDACCommon;IndyIPClient;RESTBackendComponents;soapserver;dbxcds;bindengine;CloudService;dsnapxml;dbrtl;IndyProtocols;FireDACCommonDriver;inet;$(DCC_UsePackage)</DCC_UsePackage>
@@ -417,6 +417,19 @@
         <DCCReference Include="src\RICK4D.Librarys.pas"/>
         <DCCReference Include="src\RICK4D.CheckConnection.pas"/>
         <DCCReference Include="src\RICK4D.Format.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Main.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Main.Background.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Background.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Rectangle.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Icon.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Title.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Info.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Button.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Execute.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Button.First.pas"/>
+        <DCCReference Include="src\RICK4D.Dialog.Custom.Button.Second.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
