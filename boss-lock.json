@@ -2,10 +2,26 @@
 	"hash": "d41d8cd98f00b204e9800998ecf8427e",
 	"updated": "2021-09-10T11:11:34.1562533-03:00",
 	"installedModules": {
+		"github.com/viniciussanchez/dataset-serialize": {
+			"name": "dataset-serialize",
+			"version": "v2.3.3",
+			"hash": "65a1995f3a283f09382722a7a8c21d1a",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"https://github.com/ricksolucoes/bcrypt": {
 			"name": "bcrypt",
 			"version": "1.0.5",
 			"hash": "c3e5526f99c34f9eb0696838f74c0e0b",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/ricksolucoes/restrequest4delphi": {
+			"name": "restrequest4delphi",
+			"version": "v3.0.11",
+			"hash": "faa76fa196cecf21abeb4f4e1f0b627e",
 			"artifacts": {},
 			"failed": false,
 			"changed": false

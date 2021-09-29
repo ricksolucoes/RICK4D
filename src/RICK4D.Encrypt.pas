@@ -5,7 +5,7 @@ interface
 uses
   RICK4D.Interfaces,
   BCrypt.Intf,
-  RICK4D.Enum;
+  RICK4D.Contract;
 type
   TRICK4DEncrypt = class(TInterfacedObject, iRICK4DEncrypt)
   private

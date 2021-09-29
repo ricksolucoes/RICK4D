@@ -223,7 +223,7 @@ inherited PageView1: TPageView1
       end
       inherited recTitle: TRectangle
         inherited lblTitle: TLabel
-          Text = 'Encypt Project'
+          Text = 'Encrypt Project'
         end
       end
       inherited recLogo: TRectangle

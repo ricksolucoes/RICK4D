@@ -6,19 +6,17 @@ uses
   FMX.Types,
   FMX.Controls,
 
+  System.JSON,
   System.UITypes,
   System.Classes,
   System.SysUtils,
 
-  RICK4D.CallBack
-
-{$IFDEF MSWINDOWS OR MACOS OR LINUX}
-  ,
-  RICK4D.Enum
-{$ENDIF}
-;
+  RICK4D.CallBack,
+  RICK4D.Contract;
 
 type
+
+{$REGION 'Interfaces'}
   //Show Form Functions
   iRICK4DShowForm = interface;
   //Loading Functions
@@ -29,7 +27,8 @@ type
   iRICK4DCheckConnection = interface;
   //Format Functions
   iRICK4DFormat = interface;
-  //Dialog Functions
+
+{$REGION 'Dialgo'}
   iRICK4DDialog = interface;
     //Dialog Main Functions
     iRICK4DDialogMain = interface;
@@ -48,13 +47,20 @@ type
       iRICK4DDialogButtonSecondCustom = interface;
     //Displays the Dialog for the user
     iRICK4DDialogExecute = interface;
+{$ENDREGION}
 
+{$REGION 'Runs only on Windows or Mac or IOS'}
   {$IFDEF MSWINDOWS OR MACOS OR LINUX}
   //Encryp Functions (Start Custom)
   iRICK4DEncrypt = interface;
   {$ENDIF}
 
-  //Main Functions
+{$ENDREGION}
+
+{$ENDREGION}
+
+{$REGION 'Main Functions'}
+
   iRICK4D = interface
     ['{1E306179-2275-48E2-9252-4210B6031DCB}']
     function ShowForm : iRICK4DShowForm;
@@ -67,9 +73,13 @@ type
     {$IFDEF MSWINDOWS OR MACOS OR LINUX}
     function Encrypt: iRICK4DEncrypt;
     {$ENDIF}
+
   end;
 
-  //Show Form Functions
+{$ENDREGION}
+
+{$REGION 'Show Form Functions'}
+
   iRICK4DShowForm = interface
     ['{754DD786-C10F-457D-94AB-EF12C49884A4}']
     function Formulary(const AValue: TComponentClass): iRICK4DShowForm;
@@ -82,7 +92,10 @@ type
     function &End: iRICK4D;
   end;
 
-  //Loading Functions
+{$ENDREGION}
+
+{$REGION 'Loading Functions'}
+
   iRICK4DLoading = interface
     ['{F26CEBE6-119A-4F19-9615-6B18266FE164}']
     function Execute(const AProc: TProc): iRICK4DLoading;
@@ -100,7 +113,10 @@ type
 
   end;
 
-  //Library Functions
+{$ENDREGION}
+
+{$REGION 'Library Functions'}
+
   iRICK4DLibrarys = interface
     ['{DBF1DFCF-B159-43D6-92F2-4C2450C020EB}']
     function StringInSet(const S: String;
@@ -118,7 +134,10 @@ type
     function &End: iRICK4D;
   end;
 
-  //Check Connection Functions
+{$ENDREGION}
+
+{$REGION 'Check Connection Functions'}
+
   iRICK4DCheckConnection = interface
     ['{91CCC944-7F7B-4FF3-9501-5050A0F1E9FC}']
     function ConnectionState: Boolean;
@@ -132,7 +151,10 @@ type
     function &End: iRICK4D;
   end;
 
-  //Format Functions
+{$ENDREGION}
+
+{$REGION 'Format Functions'}
+
   iRICK4DFormat = interface
     ['{E2E46BC0-CCE2-4E4B-BA54-40AF7EDB4832}']
     function FormatExtra(const AValue: string): iRICK4DFormat;
@@ -152,7 +174,10 @@ type
     function &End: iRICK4D;
   end;
 
-  //Dialogs Functions
+{$ENDREGION}
+
+{$REGION 'Dialogs Functions'}
+
   iRICK4DDialog = interface
     ['{FE1E5611-AB76-40BD-9C66-6AFEF9EF6B18}']
     function CustomMain: iRICK4DDialogMain;
@@ -161,7 +186,8 @@ type
     function &End: iRICK4D; overload;
   end;
 
-  //Dialogs Main Functions (Start Main)
+{$REGION 'Main'}
+
   iRICK4DDialogMain = interface
     ['{B3F6BB5D-202C-433B-B0D6-CF498162F905}']
     function Background: iRICK4DDialogMainBackgroundCustom;
@@ -176,9 +202,11 @@ type
 
     function &End: iRICK4DDialogMain;
   end;
-  //Dialogs Main Functions (End Main)
 
-  //Dialogs Custom Functions (Start Custom)
+{$ENDREGION}
+
+{$REGION 'Custom'}
+
   iRICK4DDialogCustom = interface
     ['{B1313CF9-EE5E-442E-B0F0-BA13D0064159}']
     function Background: iRICK4DDialogBackgroundCustom;
@@ -276,11 +304,14 @@ type
 
     function &End: iRICK4DDialogCustom;
   end;
-  //Dialogs Custom Functions (End Custom)
 
+{$ENDREGION}
+
+{$ENDREGION}
+
+{$REGION 'Encrypt Functions'}
 
 {$IFDEF MSWINDOWS OR MACOS OR LINUX}
-  //Encryp Functions (Start Custom)
   iRICK4DEncrypt = interface
     ['{A5EBCAF3-DB5A-40C3-A3F8-0B854F06BF4B}']
 
@@ -295,8 +326,34 @@ type
     function &End: iRICK4D;
   end;
 {$ENDIF}
-  //Encryp Functions (End Custom)
 
+{$ENDREGION}
+
+{$REGION 'Rest'}
+  iRICKRequest = interface
+    ['{94770BC3-6FDD-40E7-B445-48250C90EB4D}']
+
+    function BaseURL(Const AValue: string): iRICKRequest;
+    function Resource(Const AValue: string): iRICKRequest;
+    function ResourceSuffix(Const AValue: string): iRICKRequest;
+    function ClearParams: iRICKRequest;
+    function AddParam(Const AKey, AValue: string): iRICKRequest;
+    function ClearBody: iRICKRequest;
+    function AddBody(Const ABody: TJSONObject; Const AOwns: Boolean = True): iRICKRequest; overload;
+    function AddBody(Const ABody: TMemoryStream; Const AOwns: Boolean = True): iRICKRequest; overload;
+    function ContentType(const AContentType: string): iRICKRequest;
+    function BasicAuthentication(const AUsername, APassword: string): iRICKRequest;
+    function Token(const AToken: string): iRICKRequest;
+    function TokenBearer(const AToken: string): iRICKRequest;
+    function Get: IResponse;
+    function Post: IResponse;
+    function Put: IResponse;
+    function Patch: IResponse;
+    function Delete: IResponse;
+
+    function &End: iRICK4D;
+  end;
+{$ENDREGION}
 
 implementation
 
