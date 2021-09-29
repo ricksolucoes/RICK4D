@@ -2,6 +2,14 @@
 	"hash": "d41d8cd98f00b204e9800998ecf8427e",
 	"updated": "2021-09-10T11:11:34.1562533-03:00",
 	"installedModules": {
+		"https://github.com/ricksolucoes/bcrypt": {
+			"name": "bcrypt",
+			"version": "1.0.5",
+			"hash": "c3e5526f99c34f9eb0696838f74c0e0b",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"https://github.com/ricksolucoes/rickcheckconnection": {
 			"name": "rickcheckconnection",
 			"version": "1.0.7",

@@ -12,13 +12,18 @@ type
     FCheckConnection : iRICK4DCheckConnection;
     FFormat: iRICK4DFormat;
     FDialog: iRICK4DDialog;
-
+    {$IFDEF MSWINDOWS OR MACOS OR LINUX}
+    FEncrypt: iRICK4DEncrypt;
+    {$ENDIF}
     function ShowForm : iRICK4DShowForm;
     function Loading : iRICK4DLoading;
     function Librarys : iRICK4DLibrarys;
     function CheckConnection : iRICK4DCheckConnection;
     function Format : iRICK4DFormat;
     function Dialog : iRICK4DDialog;
+    {$IFDEF MSWINDOWS OR MACOS OR LINUX}
+    function Encrypt: iRICK4DEncrypt;
+    {$ENDIF}
 
     constructor Create;
   public
@@ -32,6 +37,7 @@ uses
   RICK4D.Format,
   RICK4D.Dialog,
   RICK4D.Loading,
+  RICK4D.Encrypt,
   RICK4D.ShowForm,
   RICK4D.Librarys,
   RICK4D.CheckConnection;
@@ -65,6 +71,16 @@ begin
 
 end;
 
+{$IFDEF MSWINDOWS OR MACOS OR LINUX}
+function TRICK4D.Encrypt: iRICK4DEncrypt;
+begin
+   if not Assigned(FEncrypt) then
+    FEncrypt := TRICK4DEncrypt.New(Self);
+
+  Result := FEncrypt;
+
+end;
+{$ENDIF}
 function TRICK4D.Format: iRICK4DFormat;
 begin
    if not Assigned(FFormat) then

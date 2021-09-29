@@ -10,7 +10,13 @@ uses
   System.Classes,
   System.SysUtils,
 
-  RICK4D.CallBack;
+  RICK4D.CallBack
+
+{$IFDEF MSWINDOWS OR MACOS OR LINUX}
+  ,
+  RICK4D.Enum
+{$ENDIF}
+;
 
 type
   //Show Form Functions
@@ -43,6 +49,11 @@ type
     //Displays the Dialog for the user
     iRICK4DDialogExecute = interface;
 
+  {$IFDEF MSWINDOWS OR MACOS OR LINUX}
+  //Encryp Functions (Start Custom)
+  iRICK4DEncrypt = interface;
+  {$ENDIF}
+
   //Main Functions
   iRICK4D = interface
     ['{1E306179-2275-48E2-9252-4210B6031DCB}']
@@ -52,6 +63,10 @@ type
     function CheckConnection : iRICK4DCheckConnection;
     function Format : iRICK4DFormat;
     function Dialog : iRICK4DDialog;
+
+    {$IFDEF MSWINDOWS OR MACOS OR LINUX}
+    function Encrypt: iRICK4DEncrypt;
+    {$ENDIF}
   end;
 
   //Show Form Functions
@@ -262,6 +277,27 @@ type
     function &End: iRICK4DDialogCustom;
   end;
   //Dialogs Custom Functions (End Custom)
+
+
+{$IFDEF MSWINDOWS OR MACOS OR LINUX}
+  //Encryp Functions (Start Custom)
+  iRICK4DEncrypt = interface
+    ['{A5EBCAF3-DB5A-40C3-A3F8-0B854F06BF4B}']
+
+    function GenerateHash(const APassword: string): string; overload;
+    function GenerateHash(const APassword: string; ACost: Byte): string; overload;
+    function GenerateHash(const APassword: string; ACost: Byte; AHashType: THashType): string; overload;
+    function CompareHash(const APassword: string; const AHash: string): Boolean;
+    function NeedsRehash(const AHash: string): Boolean; overload;
+    function NeedsRehash(const AHash: string; ACost: Byte): Boolean; overload;
+    function GetHashInfo(const AHash: string): THashInfo;
+
+    function &End: iRICK4D;
+  end;
+{$ENDIF}
+  //Encryp Functions (End Custom)
+
+
 implementation
 
 end.
