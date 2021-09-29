@@ -5,6 +5,7 @@
 [4]: https://github.com/ricksolucoes/RICKCheckConnection "Site do Check Connection"
 [5]: https://github.com/ricksolucoes/RickFormat "Site do Format"
 [6]: https://github.com/ricksolucoes/RICKDialog "Site do Dialogs"
+[7]: https://github.com/ricksolucoes/bcrypt "Site do BCrypt"
 
 # RICK4D
 
@@ -18,20 +19,21 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 - **[Loading](#sample-loading)** It was inspired by [RICKLoading][2], which features a loading screen that can be customized.
 - **[Librarys](#sample-library)** It was inspired by [RICKLibrarys][3], which generates validations with return.
 - **[CheckConnection](#sample-check-connection)** It was inspired by [RICKCheckConnection][4], where it allows you to check the internet status and the type (mobile only) of the connection.
-- **[Format](#sample-format)** It was inspired by [RickFormat][5], where a mask is formatted in the Edit as it is typed.
+- **[Format](#sample-format)** It was inspired by [RICKFormat][5], where a mask is formatted in the Edit as it is typed.
 - **[Dialog](#sample-Dialog)** It was inspired by [RICKDialog][6], where a customized dialog screen is presented.
+- **[Encrypt HASH](#Encrypt-HASH)** It was inspired by [BCrypt][7], to help you hash passwords.
 
 ## ⚙️ Pre-requisites
 
 1. Delphi FMX
-2. Framework: [RICKShowForm][1], [RICKLoading][2], [RICKLibrarys][3], [RICKCheckConnection][4], [RickFormat][5], [RICKDialog][6]
+2. Framework: [RICKShowForm][1], [RICKLoading][2], [RICKLibrarys][3], [RICKCheckConnection][4], [RickFormat][5], [RICKDialog][6], [BCrypt][7]
 3. If you choose to use [BOOS][0] ```https://github.com/ricksolucoes/boss or https://github.com/HashLoad/boss```  the dependency manager, you will have the facility to install all frameworks that are [Pre-requisites](#pre-requisites) for the project.
 
 ## 💻 Installation
 
 - By using BOOS
 ```shell
-$ boss install https://github.com/ricksolucoes/RICK4D
+boss install https://github.com/ricksolucoes/RICK4D
 ```
 - Manual Installation
   - Download the frameworks:
@@ -40,16 +42,18 @@ $ boss install https://github.com/ricksolucoes/RICK4D
     - [RICKLoading][2] ``` https://github.com/ricksolucoes/RICKLoading ```
     - [RICKLibrarys][3] ``` https://github.com/ricksolucoes/RICKLibrarys ```
     - [RICKCheckConnection][4] ``` https://github.com/ricksolucoes/RICKCheckConnection ```
-    - [RickFormat][5] ``` https://github.com/ricksolucoes/RickFormat ```
+    - [RICKFormat][5] ``` https://github.com/ricksolucoes/RickFormat ```
     - [RICKDialog][6] ``` https://github.com/ricksolucoes/RICKDialog ```
+    - [BCrypt][7] ``` https://github.com/ricksolucoes/bcrypt ```
   - Add the following folders to your project, in <em>Project &gt; Options &gt; Resource Compiler &gt; Directories and Conditionals &gt; Include file search path
     - ``` ../RICK4D/src ```
     - ``` ../RICKShowForm/src ```
     - ``` ../RICKLoading/src ```
     - ``` ../RICKLibrarys/src ```
     - ``` ../RICKCheckConnection/src ```
-    - ``` ../RickFormat/src ```
+    - ``` ../RICKFormat/src ```
     - ``` ../RICKDialog/src ```
+    - ``` ../bcrypt/src ```
 
 ## ⚡️ How to use the project
 Example of using the **RICK4D** library
@@ -779,5 +783,30 @@ end;
           .Question
         .&End
       .&End;
+  end;
+```
+ ## Encrypt HASH
+  
+- How to use Generate hash
+
+```delphi 
+  uses
+    RICK4D;
+  var
+    LHash: string;
+  begin
+    LHash := TRICK4D.New.Encrypt.GenerateHash(password, cost, type);
+  end;
+```
+  
+ - How to use Compare hash
+  
+```delphi 
+  uses
+    RICK4D;
+  var
+    LVerify : Boolean;
+  begin
+    LVerify := TRICK4D.New.Encrypt.CompareHash(password, hash);
   end;
 ```
