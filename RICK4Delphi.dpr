@@ -25,7 +25,11 @@ uses
   RICK4D.Dialog.Custom.Button.First in 'src\RICK4D.Dialog.Custom.Button.First.pas',
   RICK4D.Dialog.Custom.Button.Second in 'src\RICK4D.Dialog.Custom.Button.Second.pas',
   RICK4D.Encrypt in 'src\RICK4D.Encrypt.pas',
-  RICK4D.Contract in 'src\RICK4D.Contract.pas';
+  RICK4D.Contract in 'src\RICK4D.Contract.pas',
+  RICK4D.Rest in 'src\RICK4D.Rest.pas',
+  RICK4D.Session.Token in 'src\RICK4D.Session.Token.pas',
+  RICK4D.Session.URL in 'src\RICK4D.Session.URL.pas',
+  RICK4D.Session in 'src\RICK4D.Session.pas';
 
 {$R *.res}
 

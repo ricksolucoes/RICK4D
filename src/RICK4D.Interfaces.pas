@@ -11,6 +11,8 @@ uses
   System.Classes,
   System.SysUtils,
 
+  Data.DB,
+
   RICK4D.CallBack,
   RICK4D.Contract;
 
@@ -57,6 +59,8 @@ type
 
 {$ENDREGION}
 
+  iRICK4DRest = interface;
+
 {$ENDREGION}
 
 {$REGION 'Main Functions'}
@@ -73,6 +77,8 @@ type
     {$IFDEF MSWINDOWS OR MACOS OR LINUX}
     function Encrypt: iRICK4DEncrypt;
     {$ENDIF}
+
+    function Rest : iRICK4DRest;
 
   end;
 
@@ -330,21 +336,30 @@ type
 {$ENDREGION}
 
 {$REGION 'Rest'}
-  iRICKRequest = interface
+  iRICK4DRest = interface
     ['{94770BC3-6FDD-40E7-B445-48250C90EB4D}']
 
-    function BaseURL(Const AValue: string): iRICKRequest;
-    function Resource(Const AValue: string): iRICKRequest;
-    function ResourceSuffix(Const AValue: string): iRICKRequest;
-    function ClearParams: iRICKRequest;
-    function AddParam(Const AKey, AValue: string): iRICKRequest;
-    function ClearBody: iRICKRequest;
-    function AddBody(Const ABody: TJSONObject; Const AOwns: Boolean = True): iRICKRequest; overload;
-    function AddBody(Const ABody: TMemoryStream; Const AOwns: Boolean = True): iRICKRequest; overload;
-    function ContentType(const AContentType: string): iRICKRequest;
-    function BasicAuthentication(const AUsername, APassword: string): iRICKRequest;
-    function Token(const AToken: string): iRICKRequest;
-    function TokenBearer(const AToken: string): iRICKRequest;
+    function BaseURL(Const AValue: string): iRICK4DRest;
+    function Resource(Const AValue: string): iRICK4DRest;
+    function ResourceSuffix(Const AValue: string): iRICK4DRest;
+    function ClearParams: iRICK4DRest;
+    function AddParam(Const AKey, AValue: string): iRICK4DRest;
+    function ClearBody: iRICK4DRest;
+    function AddBody(Const ABody: TJSONObject; Const AOwns: Boolean = True): iRICK4DRest; overload;
+    function AddBody(Const ABody: TJSONArray; Const AOwns: Boolean = True): iRICK4DRest; overload;
+    function AddBody(Const ABody: TObject; Const AOwns: Boolean = True): iRICK4DRest; overload;
+    function AddBody(Const ABody: TStream; Const AOwns: Boolean = True): iRICK4DRest; overload;
+    function ContentType(const AContentType: string): iRICK4DRest;
+    function BasicAuthentication(const AUsername, APassword: string): iRICK4DRest;
+    function Token(const AToken: string): iRICK4DRest;
+    function TokenBearer(const AToken: string): iRICK4DRest;
+    function RenewTokenAutomatically: iRICK4DRest;
+    function AcceptEncoding(const AAcceptEncoding: string): iRICK4DRest; overload;
+    function AcceptCharset(const AAcceptCharset: string): iRICK4DRest; overload;
+    function Accept(const AAccept: string): iRICK4DRest; overload;
+    function Timeout(const ATimeout: Integer): iRICK4DRest; overload;
+    function ClearHeaders: iRICK4DRest;
+
     function Get: IResponse;
     function Post: IResponse;
     function Put: IResponse;

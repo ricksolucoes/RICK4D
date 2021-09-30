@@ -212,6 +212,7 @@
         <AUP_CHANGE_WIFI_STATE>true</AUP_CHANGE_WIFI_STATE>
         <EL_SecureFileSharing>true</EL_SecureFileSharing>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <DCC_UnitSearchPath>.\..\..\..\..\modules\dataset-serialize\src;.\..\..\..\..\modules\restrequest4delphi\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>

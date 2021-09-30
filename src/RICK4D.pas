@@ -15,6 +15,8 @@ type
     {$IFDEF MSWINDOWS OR MACOS OR LINUX}
     FEncrypt: iRICK4DEncrypt;
     {$ENDIF}
+    FRest : iRICK4DRest;
+
     function ShowForm : iRICK4DShowForm;
     function Loading : iRICK4DLoading;
     function Librarys : iRICK4DLibrarys;
@@ -24,6 +26,7 @@ type
     {$IFDEF MSWINDOWS OR MACOS OR LINUX}
     function Encrypt: iRICK4DEncrypt;
     {$ENDIF}
+    function Rest : iRICK4DRest;
 
     constructor Create;
   public
@@ -34,6 +37,7 @@ type
 implementation
 
 uses
+  RICK4D.Rest,
   RICK4D.Format,
   RICK4D.Dialog,
   RICK4D.Loading,
@@ -109,6 +113,15 @@ end;
 class function TRICK4D.New: iRICK4D;
 begin
   Result:= Self.Create;
+end;
+
+function TRICK4D.Rest: iRICK4DRest;
+begin
+  if not Assigned(FRest) then
+    FRest := TRICK4DRest.New(Self);
+
+  Result := FRest;
+
 end;
 
 function TRICK4D.ShowForm: iRICK4DShowForm;
