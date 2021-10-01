@@ -22,7 +22,7 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 - **[CheckConnection](#sample-check-connection)** It was inspired by [RICKCheckConnection][4], where it allows you to check the internet status and the type (mobile only) of the connection.
 - **[Format](#sample-format)** It was inspired by [RICKFormat][5], where a mask is formatted in the Edit as it is typed.
 - **[Dialog](#sample-Dialog)** It was inspired by [RICKDialog][6], where a customized dialog screen is presented.
-- **[Encrypt HASH](#Encrypt-HASH)** It was inspired by [BCrypt][7], to help you hash passwords.
+- **[Encrypt](#Encrypt-HASH)** It was inspired by [BCrypt][7], to help you hash passwords.
 - **[Rest](#Rest)** It was inspired by [RESTRequest4Delphi][8], to help you API to consume REST services written in any programming language.
 
 ## ⚙️ Pre-requisites
