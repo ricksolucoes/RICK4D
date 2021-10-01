@@ -11,6 +11,8 @@ uses
   System.Classes,
   System.SysUtils,
 
+  REST.Types,
+
   Data.DB,
 
   RICK4D.CallBack,
@@ -343,7 +345,6 @@ type
     function Resource(Const AValue: string): iRICK4DRest;
     function ResourceSuffix(Const AValue: string): iRICK4DRest;
     function ClearParams: iRICK4DRest;
-    function AddParam(Const AKey, AValue: string): iRICK4DRest;
     function ClearBody: iRICK4DRest;
     function AddBody(Const ABody: TJSONObject; Const AOwns: Boolean = True): iRICK4DRest; overload;
     function AddBody(Const ABody: TJSONArray; Const AOwns: Boolean = True): iRICK4DRest; overload;
@@ -359,6 +360,12 @@ type
     function Accept(const AAccept: string): iRICK4DRest; overload;
     function Timeout(const ATimeout: Integer): iRICK4DRest; overload;
     function ClearHeaders: iRICK4DRest;
+
+    function SynchronizedEvents(const AValue: Boolean): iRICK4DRest;
+    function AddHeader(const AName, AValue: string; const AOptions: TRESTRequestParameterOptions = []): iRICK4DRest;
+    function AddParam(const AName, AValue: string; const AKind: TRESTRequestParameterKind = {$IF COMPILERVERSION < 33}TRESTRequestParameterKind.pkGETorPOST{$ELSE}TRESTRequestParameterKind.pkQUERY{$ENDIF}): iRICK4DRest;
+    function AddBody(const AContent: string; const AContentType: TRESTContentType = ctAPPLICATION_JSON): iRICK4DRest; overload;
+    function FallbackCharsetEncoding(const AFallbackCharsetEncoding: string): iRICK4DRest;
 
     function Get: IResponse;
     function Post: IResponse;

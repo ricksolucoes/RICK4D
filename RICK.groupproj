@@ -24,6 +24,9 @@
         <Projects Include="Samples\Delphi\FMX\Encrypt\RICKEncrypt.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Samples\Delphi\FMX\Rest\RICKRest.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="Samples\Delphi\FMX\Dialogs\RICKSampleDialog.dproj">
             <Dependencies/>
         </Projects>
@@ -98,6 +101,15 @@
     <Target Name="RICKEncrypt:Make">
         <MSBuild Projects="Samples\Delphi\FMX\Encrypt\RICKEncrypt.dproj" Targets="Make"/>
     </Target>
+    <Target Name="RICKRest">
+        <MSBuild Projects="Samples\Delphi\FMX\Rest\RICKRest.dproj"/>
+    </Target>
+    <Target Name="RICKRest:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\Rest\RICKRest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKRest:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\Rest\RICKRest.dproj" Targets="Make"/>
+    </Target>
     <Target Name="RICKSampleDialog">
         <MSBuild Projects="Samples\Delphi\FMX\Dialogs\RICKSampleDialog.dproj"/>
     </Target>
@@ -108,13 +120,13 @@
         <MSBuild Projects="Samples\Delphi\FMX\Dialogs\RICKSampleDialog.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="RICK4Delphi;RICKSampleFormShow;RICKSampleLoading;RICKSampleFormat;RICKSampleLibrarys;RICKSampleCheckConnetion;RICKEncrypt;RICKSampleDialog"/>
+        <CallTarget Targets="RICK4Delphi;RICKSampleFormShow;RICKSampleLoading;RICKSampleFormat;RICKSampleLibrarys;RICKSampleCheckConnetion;RICKEncrypt;RICKRest;RICKSampleDialog"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="RICK4Delphi:Clean;RICKSampleFormShow:Clean;RICKSampleLoading:Clean;RICKSampleFormat:Clean;RICKSampleLibrarys:Clean;RICKSampleCheckConnetion:Clean;RICKEncrypt:Clean;RICKSampleDialog:Clean"/>
+        <CallTarget Targets="RICK4Delphi:Clean;RICKSampleFormShow:Clean;RICKSampleLoading:Clean;RICKSampleFormat:Clean;RICKSampleLibrarys:Clean;RICKSampleCheckConnetion:Clean;RICKEncrypt:Clean;RICKRest:Clean;RICKSampleDialog:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="RICK4Delphi:Make;RICKSampleFormShow:Make;RICKSampleLoading:Make;RICKSampleFormat:Make;RICKSampleLibrarys:Make;RICKSampleCheckConnetion:Make;RICKEncrypt:Make;RICKSampleDialog:Make"/>
+        <CallTarget Targets="RICK4Delphi:Make;RICKSampleFormShow:Make;RICKSampleLoading:Make;RICKSampleFormat:Make;RICKSampleLibrarys:Make;RICKSampleCheckConnetion:Make;RICKEncrypt:Make;RICKRest:Make;RICKSampleDialog:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

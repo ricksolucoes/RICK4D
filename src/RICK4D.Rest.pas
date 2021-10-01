@@ -31,7 +31,6 @@ type
     function Resource(Const AValue: string): iRICK4DRest;
     function ResourceSuffix(Const AValue: string): iRICK4DRest;
     function ClearParams: iRICK4DRest;
-    function AddParam(Const AKey, AValue: string): iRICK4DRest;
     function ClearBody: iRICK4DRest;
     function AddBody(Const ABody: TJSONObject; Const AOwns: Boolean = True): iRICK4DRest; overload;
     function AddBody(Const ABody: TJSONArray; Const AOwns: Boolean = True): iRICK4DRest; overload;
@@ -41,21 +40,27 @@ type
     function BasicAuthentication(const AUsername, APassword: string): iRICK4DRest;
     function Token(const AToken: string): iRICK4DRest;
     function TokenBearer(const AToken: string): iRICK4DRest;
-    function Get: IResponse;
-    function Post: IResponse;
-    function Put: IResponse;
-    function Patch: IResponse;
-    function Delete: IResponse;
-
     function RenewTokenAutomatically: iRICK4DRest;
-
     function AcceptEncoding(const AAcceptEncoding: string): iRICK4DRest; overload;
     function AcceptCharset(const AAcceptCharset: string): iRICK4DRest; overload;
     function Accept(const AAccept: string): iRICK4DRest; overload;
     function Timeout(const ATimeout: Integer): iRICK4DRest; overload;
     function ClearHeaders: iRICK4DRest;
 
+    function SynchronizedEvents(const AValue: Boolean): iRICK4DRest;
+    function AddHeader(const AName, AValue: string; const AOptions: TRESTRequestParameterOptions = []): iRICK4DRest;
+    function AddParam(const AName, AValue: string; const AKind: TRESTRequestParameterKind = {$IF COMPILERVERSION < 33}TRESTRequestParameterKind.pkGETorPOST{$ELSE}TRESTRequestParameterKind.pkQUERY{$ENDIF}): iRICK4DRest;
+    function AddBody(const AContent: string; const AContentType: TRESTContentType = ctAPPLICATION_JSON): iRICK4DRest; overload;
+    function FallbackCharsetEncoding(const AFallbackCharsetEncoding: string): iRICK4DRest;
+
+    function Get: IResponse;
+    function Post: IResponse;
+    function Put: IResponse;
+    function Patch: IResponse;
+    function Delete: IResponse;
+
     function &End: iRICK4D;
+
 
     constructor Create(AParent: iRICK4D);
   public
@@ -87,6 +92,13 @@ begin
   FRequest.AcceptEncoding(AAcceptEncoding);
 end;
 
+function TRICK4DRest.AddBody(const AContent: string;
+  const AContentType: TRESTContentType): iRICK4DRest;
+begin
+  Result:= Self;
+  FRequest.AddBody(AContent, AContentType);
+end;
+
 function TRICK4DRest.AddBody(const ABody: TStream;
   const AOwns: Boolean): iRICK4DRest;
 begin
@@ -113,12 +125,6 @@ function TRICK4DRest.AddBody(const ABody: TJSONArray;
 begin
   Result:= Self;
   FRequest.AddBody(ABody, AOwns);
-end;
-
-function TRICK4DRest.AddParam(const AKey, AValue: string): iRICK4DRest;
-begin
-  Result:= Self;
-  FRequest.AddParam(AKey, AValue);
 end;
 
 function TRICK4DRest.BaseURL(const AValue: string): iRICK4DRest;
@@ -211,6 +217,13 @@ begin
 
 end;
 
+function TRICK4DRest.FallbackCharsetEncoding(
+  const AFallbackCharsetEncoding: string): iRICK4DRest;
+begin
+  Result:= Self;
+  FRequest.FallbackCharsetEncoding(AFallbackCharsetEncoding);
+end;
+
 function TRICK4DRest.Get: IResponse;
 begin
   Result:= Execute(TRESTRequestMethod.rmGET);
@@ -266,6 +279,12 @@ begin
   FRequest.ResourceSuffix(AValue);
 end;
 
+function TRICK4DRest.SynchronizedEvents(const AValue: Boolean): iRICK4DRest;
+begin
+  Result:= Self;
+  FRequest.SynchronizedEvents(AValue);
+end;
+
 function TRICK4DRest.Timeout(const ATimeout: Integer): iRICK4DRest;
 begin
   Result:= Self;
@@ -298,6 +317,20 @@ begin
     raise Exception.Create('Inform the Token Refresh');
 
   FRenewTokenAutomatically:= True;
+end;
+
+function TRICK4DRest.AddHeader(const AName, AValue: string;
+  const AOptions: TRESTRequestParameterOptions): iRICK4DRest;
+begin
+  Result:= Self;
+  FRequest.AddHeader(AName, AName, AOptions);
+end;
+
+function TRICK4DRest.AddParam(const AName, AValue: string;
+  const AKind: TRESTRequestParameterKind): iRICK4DRest;
+begin
+  Result:= Self;
+  FRequest.AddParam(AName, AValue, AKind);
 end;
 
 end.
