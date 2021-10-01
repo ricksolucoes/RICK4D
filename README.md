@@ -897,7 +897,7 @@ end;
       .Delete;
   end;
   ```
-- You can set credentials using the `BasicAuthentication`, `Token` or `TokenBearer` method before making the first request:
+- You can set credentials using the **BasicAuthentication**, **Token** or **TokenBearer** method before making the first request:
 
 ```delphi
 begin
