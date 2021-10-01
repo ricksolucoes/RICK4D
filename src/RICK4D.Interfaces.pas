@@ -354,7 +354,7 @@ type
     function BasicAuthentication(const AUsername, APassword: string): iRICK4DRest;
     function Token(const AToken: string): iRICK4DRest;
     function TokenBearer(const AToken: string): iRICK4DRest;
-    function RenewTokenAutomatically: iRICK4DRest;
+    function RefreshTokenBearerAutomatically: iRICK4DRest;
     function AcceptEncoding(const AAcceptEncoding: string): iRICK4DRest; overload;
     function AcceptCharset(const AAcceptCharset: string): iRICK4DRest; overload;
     function Accept(const AAccept: string): iRICK4DRest; overload;

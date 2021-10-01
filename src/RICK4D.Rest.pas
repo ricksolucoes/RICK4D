@@ -21,10 +21,10 @@ type
     FParent : iRICK4D;
     FRequest: IRequest;
     FSESSION : TSession;
-    FRenewTokenAutomatically: Boolean;
+    FRefreshTokenBearerAutomatically: Boolean;
 
     procedure DoBeforeExecute;
-    function RenovarToken: boolean;
+    function RefreshTokenBearer: boolean;
     function Execute(AMethod: TRestRequestMethod): IResponse;
 
     function BaseURL(Const AValue: string): iRICK4DRest;
@@ -40,7 +40,7 @@ type
     function BasicAuthentication(const AUsername, APassword: string): iRICK4DRest;
     function Token(const AToken: string): iRICK4DRest;
     function TokenBearer(const AToken: string): iRICK4DRest;
-    function RenewTokenAutomatically: iRICK4DRest;
+    function RefreshTokenBearerAutomatically: iRICK4DRest;
     function AcceptEncoding(const AAcceptEncoding: string): iRICK4DRest; overload;
     function AcceptCharset(const AAcceptCharset: string): iRICK4DRest; overload;
     function Accept(const AAccept: string): iRICK4DRest; overload;
@@ -169,7 +169,7 @@ begin
   FParent:= AParent;
   FRequest:= TRequest.New;
   FSESSION:= TSession.GetInstance;
-  FRenewTokenAutomatically:= False;
+  FRefreshTokenBearerAutomatically:= False;
 end;
 
 function TRICK4DRest.Delete: IResponse;
@@ -186,8 +186,7 @@ end;
 procedure TRICK4DRest.DoBeforeExecute;
 begin
   if not FSESSION.TOKEN.ACCESS.Trim.IsEmpty then
-    FRequest.Token(Format('Bearer %s', [TSession.GetInstance.Token.Access]))
-
+    FRequest.TokenBearer(TSession.GetInstance.Token.Access);
 end;
 
 function TRICK4DRest.&End: iRICK4D;
@@ -198,7 +197,7 @@ end;
 function TRICK4DRest.Execute(AMethod: TRestRequestMethod): IResponse;
 begin
   //Token de acesso
-  if FRenewTokenAutomatically then
+  if FRefreshTokenBearerAutomatically then
     DoBeforeExecute;
 
   case AMethod of
@@ -209,10 +208,10 @@ begin
     TRestRequestMethod.rmPATCH:  Result:= FRequest.Patch;
   end;
 
-  if FRenewTokenAutomatically then
+  if FRefreshTokenBearerAutomatically then
     //Token Expirado
     if (Result.StatusCode = 401) then
-      if RenovarToken then
+      if RefreshTokenBearer then
         Result:= Execute(AMethod);
 
 end;
@@ -249,14 +248,14 @@ begin
   Result:= Execute(TRESTRequestMethod.rmPUT);
 end;
 
-function TRICK4DRest.RenovarToken: boolean;
+function TRICK4DRest.RefreshTokenBearer: boolean;
 var
   LResponse: IResponse;
 begin
   LResponse:= TRequest.New
       .BaseURL(FSESSION.URL.AUTHENTICATION)
       .Resource('refresh')
-      .Token(Format('Bearer %s', [FSESSION.TOKEN.REFRESH]))
+      .TokenBearer(FSESSION.TOKEN.REFRESH)
     .Get;
 
   Result:= (LResponse.StatusCode = 200);
@@ -303,7 +302,7 @@ begin
   FRequest.TokenBearer(AToken);
 end;
 
-function TRICK4DRest.RenewTokenAutomatically: iRICK4DRest;
+function TRICK4DRest.RefreshTokenBearerAutomatically: iRICK4DRest;
 begin
   Result:= Self;
 
@@ -316,7 +315,7 @@ begin
   if FSESSION.TOKEN.REFRESH.Trim.IsEmpty then
     raise Exception.Create('Inform the Token Refresh');
 
-  FRenewTokenAutomatically:= True;
+  FRefreshTokenBearerAutomatically:= True;
 end;
 
 function TRICK4DRest.AddHeader(const AName, AValue: string;
