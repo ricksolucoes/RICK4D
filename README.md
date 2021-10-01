@@ -14,7 +14,7 @@ Framework that customizes a series of everyday processes.
 
 RICK4D is intended to ease data transition in your system, assigning styles to components, performing connection checking, loading screen, custom message and more.
 
-##  📘 Library Functions
+##  📘 Framework Functions
 
 - **[ShowForm](#sample-show-form)** it was inspired by [RICKShowForm][1] where you can open a form as well as perform procedures before and after the opening.
 - **[Loading](#sample-loading)** It was inspired by [RICKLoading][2], which features a loading screen that can be customized.
