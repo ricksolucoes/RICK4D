@@ -6,6 +6,7 @@
 [5]: https://github.com/ricksolucoes/RickFormat "Site do Format"
 [6]: https://github.com/ricksolucoes/RICKDialog "Site do Dialogs"
 [7]: https://github.com/ricksolucoes/bcrypt "Site do BCrypt"
+[8]: https://github.com/ricksolucoes/RESTRequest4Delphi "Site do Rest"
 
 # RICK4D
 
@@ -22,11 +23,12 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 - **[Format](#sample-format)** It was inspired by [RICKFormat][5], where a mask is formatted in the Edit as it is typed.
 - **[Dialog](#sample-Dialog)** It was inspired by [RICKDialog][6], where a customized dialog screen is presented.
 - **[Encrypt HASH](#Encrypt-HASH)** It was inspired by [BCrypt][7], to help you hash passwords.
+- **[Rest](#Rest)** It was inspired by [RESTRequest4Delphi][8], to help you API to consume REST services written in any programming language.
 
 ## ⚙️ Pre-requisites
 
 1. Delphi FMX
-2. Framework: [RICKShowForm][1], [RICKLoading][2], [RICKLibrarys][3], [RICKCheckConnection][4], [RickFormat][5], [RICKDialog][6], [BCrypt][7]
+2. Framework: [RICKShowForm][1], [RICKLoading][2], [RICKLibrarys][3], [RICKCheckConnection][4], [RickFormat][5], [RICKDialog][6], [BCrypt][7], [RESTRequest4Delphi][8]
 3. If you choose to use [BOOS][0] ```https://github.com/ricksolucoes/boss or https://github.com/HashLoad/boss```  the dependency manager, you will have the facility to install all frameworks that are [Pre-requisites](#pre-requisites) for the project.
 
 ## 💻 Installation
@@ -45,6 +47,7 @@ boss install https://github.com/ricksolucoes/RICK4D
     - [RICKFormat][5] ``` https://github.com/ricksolucoes/RickFormat ```
     - [RICKDialog][6] ``` https://github.com/ricksolucoes/RICKDialog ```
     - [BCrypt][7] ``` https://github.com/ricksolucoes/bcrypt ```
+    - [RESTRequest4Delphi][8] ``` https://github.com/ricksolucoes/RESTRequest4Delphi ```
   - Add the following folders to your project, in <em>Project &gt; Options &gt; Resource Compiler &gt; Directories and Conditionals &gt; Include file search path
     - ``` ../RICK4D/src ```
     - ``` ../RICKShowForm/src ```
@@ -54,13 +57,14 @@ boss install https://github.com/ricksolucoes/RICK4D
     - ``` ../RICKFormat/src ```
     - ``` ../RICKDialog/src ```
     - ``` ../bcrypt/src ```
+    - ``` ../restrequest4delphi/src ```
 
 ## ⚡️ How to use the project
-Example of using the **RICK4D** library
+Example of using the **RICK4D** framework
 
 ## Sample Show Form
 
-- How to show a form
+- How to use show a form
 ```delphi  
   uses
     RICK4D;
@@ -75,7 +79,7 @@ Example of using the **RICK4D** library
         .Show;  //Open the formulary
   end;
 ```
-- How to show two or more forms
+- How to use show two or more forms
 ```delphi  
   uses
     RICK4D;
@@ -810,3 +814,94 @@ end;
     LVerify := TRICK4D.New.Encrypt.CompareHash(password, hash);
   end;
 ```
+## Rest
+
+- How to use Rest Method
+  1. Get
+  ```delphi  
+    uses
+      RICK4D,
+      RICK4D.Contract;
+  var
+    LResponse: IResponse;
+  begin
+    LResponse:= TRICK4D.New
+      .Rest
+        .BaseURL('http://localhost:8888/people')
+        .AddHeader('HeaderName', 'HeaderValue')
+        .AddParam('ParameterName', 'ParameterValue')
+        .Accept('application/json')
+      .Get;
+  end;
+  ```
+  2. Post
+  ```delphi  
+    uses
+      RICK4D,
+      RICK4D.Contract;
+  var
+    LResponse: IResponse;
+  begin
+    LResponse:= TRICK4D.New
+      .Rest
+        .BaseURL('http://localhost:8888/people')
+        .Accept('application/json')
+        .AddBody('{"name":"Rick","lastName":"Soluções"}')
+      .Post;
+  end;
+  ```
+  3. Put
+  ```delphi  
+    uses
+      RICK4D,
+      RICK4D.Contract;
+  var
+    LResponse: IResponse;
+  begin
+    LResponse:= TRICK4D.New
+      .Rest
+        .BaseURL('http://localhost:8888/people/1')
+        .Accept('application/json')
+        .AddBody('{"name":"Rick","lastName":"Soluções"}')
+      .Put;
+  end;
+  ```
+  4. Patch
+  ```delphi  
+    uses
+      RICK4D,
+      RICK4D.Contract;
+  var
+    LResponse: IResponse;
+  begin
+    LResponse:= TRICK4D.New
+      .Rest
+        .BaseURL('http://localhost:8888/people/1')
+        .Accept('application/json')
+        .AddBody('{"name":"Rick","lastName":"Soluções"}')
+      .Patch;
+  end;
+  ```
+  5. Patch
+  ```delphi  
+    uses
+      RICK4D,
+      RICK4D.Contract;
+  var
+    LResponse: IResponse;
+  begin
+    LResponse:= TRICK4D.New
+      .Rest
+        .BaseURL('http://localhost:8888/people/1')
+        .Accept('application/json')
+      .Delete;
+  end;
+  ```
+- You can set credentials using the `BasicAuthentication`, `Token` or `TokenBearer` method before making the first request:
+
+```delphi
+begin
+  TRICK4D.New.Rest.BasicAuthentication('username', 'password');
+  TRICK4D.New.Rest.Token('token-type ' + token);
+  TRICK4D.New.Rest.TokenBearer(token);
+end;
