@@ -4,6 +4,7 @@ interface
 
 uses
   FMX.Types,
+  FMX.Forms,
   FMX.Controls,
 
   System.JSON,
@@ -106,7 +107,8 @@ type
 
   iRICK4DLoading = interface
     ['{F26CEBE6-119A-4F19-9615-6B18266FE164}']
-    function Execute(const AProc: TProc): iRICK4DLoading;
+    function Execute(const AProc: TProc): iRICK4DLoading; overload;
+    function Execute(const AProc: TProc; ANotifyEvent: TNotifyEvent): iRICK4DLoading; overload;
     function DoMessage(const AValue: string): iRICK4DLoading;
     function ChangeMessage(const AValue: string): iRICK4DLoading;
     function SourceSize(const AValue: Integer): iRICK4DLoading;
@@ -116,6 +118,8 @@ type
     function BackgroundColor(Const AValue: TAlphaColor): iRICK4DLoading;
     function OpacityBackground(Const AValue: Single): iRICK4DLoading;
     function OpacityAnimationText(Const AValue: Single): iRICK4DLoading;
+
+    procedure DestroyAnimation;
 
     function &End: iRICK4D;
 
@@ -190,6 +194,7 @@ type
     ['{FE1E5611-AB76-40BD-9C66-6AFEF9EF6B18}']
     function CustomMain: iRICK4DDialogMain;
     function CustomDialog: iRICK4DDialogCustom;
+    function Form(AValue: TForm): iRICK4DDialog;
 
     function &End: iRICK4D; overload;
   end;

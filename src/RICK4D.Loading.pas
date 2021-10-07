@@ -4,6 +4,7 @@ interface
 
 uses
   System.UITypes,
+  System.Classes,
   System.SysUtils,
 
   RICK4D.Interfaces,
@@ -16,7 +17,8 @@ type
     FParent : iRICK4D;
     FLoading: iRICKLoading;
 
-    function Execute(const AProc: TProc): iRICK4DLoading;
+    function Execute(const AProc: TProc): iRICK4DLoading; overload;
+    function Execute(const AProc: TProc; ANotifyEvent: TNotifyEvent): iRICK4DLoading; overload;
     function DoMessage(const AValue: string): iRICK4DLoading;
     function ChangeMessage(const AValue: string): iRICK4DLoading;
     function SourceSize(const AValue: Integer): iRICK4DLoading;
@@ -26,14 +28,15 @@ type
     function BackgroundColor(Const AValue: TAlphaColor): iRICK4DLoading;
     function OpacityBackground(Const AValue: Single): iRICK4DLoading;
     function OpacityAnimationText(Const AValue: Single): iRICK4DLoading;
-
-
+    procedure DestroyAnimation;
 
     function &End: iRICK4D;
 
-    constructor Create(AParent: iRICK4D);
+    constructor Create(AParent: iRICK4D); overload;
+    constructor Create; overload;
   public
-    class function New(AParent: iRICK4D): iRICK4DLoading;
+    class function New(AParent: iRICK4D): iRICK4DLoading; overload;
+    class function New: iRICK4DLoading; overload;
     destructor Destroy; override;
   end;
 
@@ -64,6 +67,11 @@ begin
   FLoading.ChangeMessage(AValue);
 end;
 
+constructor TRICK4DLoading.Create;
+begin
+  FLoading:= TRICKLoading.New;
+end;
+
 constructor TRICK4DLoading.Create(AParent: iRICK4D);
 begin
   FParent := AParent;
@@ -74,6 +82,11 @@ destructor TRICK4DLoading.Destroy;
 begin
 
   inherited;
+end;
+
+procedure TRICK4DLoading.DestroyAnimation;
+begin
+  FLoading.DestroyAnimation;
 end;
 
 function TRICK4DLoading.DoMessage(const AValue: string): iRICK4DLoading;
@@ -87,11 +100,24 @@ begin
   Result:= FParent;
 end;
 
+function TRICK4DLoading.Execute(const AProc: TProc;
+  ANotifyEvent: TNotifyEvent): iRICK4DLoading;
+begin
+  Result:= Self;
+  FLoading.Execute(AProc, ANotifyEvent);
+end;
+
+class function TRICK4DLoading.New: iRICK4DLoading;
+begin
+  Result:= Self.Create;
+end;
+
 function TRICK4DLoading.Execute(const AProc: TProc): iRICK4DLoading;
 begin
   Result:= Self;
   FLoading.Execute(AProc);
 end;
+
 
 class function TRICK4DLoading.New(AParent: iRICK4D): iRICK4DLoading;
 begin

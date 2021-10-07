@@ -3,6 +3,8 @@ unit RICK4D.Dialog;
 interface
 
 uses
+  FMX.Forms,
+
   RICK4D.Interfaces,
   RICK.Dialog.Interfaces;
 type
@@ -16,6 +18,7 @@ type
 
     function CustomMain: iRICK4DDialogMain;
     function CustomDialog: iRICK4DDialogCustom;
+    function Form(AValue: TForm): iRICK4DDialog;
 
     function &End: iRICK4D;
 
@@ -57,6 +60,12 @@ end;
 function TRICK4DDialog.&End: iRICK4D;
 begin
   Result:= FParent;
+end;
+
+function TRICK4DDialog.Form(AValue: TForm): iRICK4DDialog;
+begin
+  Result:= Self;
+  FDialog.Form(AValue);
 end;
 
 function TRICK4DDialog.CustomMain: iRICK4DDialogMain;
