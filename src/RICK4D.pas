@@ -18,9 +18,9 @@ type
     FRest : iRICK4DRest;
 
     function ShowForm : iRICK4DShowForm;
-    function Loading : iRICK4DLoading;
+    function Loading : iRICK4DLoading; {$IFDEF DEBUG} deprecated 'Compatibility will not be maintained in version 2.0'; {$ENDIF}
     function Librarys : iRICK4DLibrarys;
-    function CheckConnection : iRICK4DCheckConnection;
+    function CheckConnection : iRICK4DCheckConnection; {$IFDEF DEBUG} deprecated 'Compatibility will not be maintained in version 2.0'; {$ENDIF}
     function Format : iRICK4DFormat;
     function Dialog : iRICK4DDialog;
     {$IFDEF MSWINDOWS OR MACOS OR LINUX}

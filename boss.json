@@ -1,7 +1,7 @@
 {
 	"name": "RICK4D",
 	"description": "Framework with all the Suites from RICK Soluções",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"homepage": "",
 	"mainsrc": "./src",
 	"projects": [],
