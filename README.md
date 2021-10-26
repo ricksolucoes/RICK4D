@@ -381,7 +381,7 @@ Example of using the **RICK4D** framework
       - ``` ../RICK4D/src/Interfaces/Dialog ```
       - ``` ../RICK4D/src/Contracts/Dialog ```
   1. How to use Info Dialog
-    1. One Button
+    - One Button
     ```delphi  
       uses
         RICK4D;
@@ -395,7 +395,7 @@ Example of using the **RICK4D** framework
             .&End
       end;
     ```
-    2. Two Button
+    - Two Button
     ```delphi  
       uses
         RICK4D;
@@ -414,7 +414,7 @@ Example of using the **RICK4D** framework
       end;
     ```
   2. How to use Success Dialog
-    1. One Button
+    - One Button
     ```delphi  
       uses
         RICK4D;
@@ -428,7 +428,7 @@ Example of using the **RICK4D** framework
             .&End
       end;
     ```
-    2. Two Button
+    - Two Button
     ```delphi  
       uses
         RICK4D;
@@ -447,7 +447,7 @@ Example of using the **RICK4D** framework
       end;
     ```
   2. How to use Warnig Dialog
-    1. One Button
+    - One Button
     ```delphi  
       uses
         RICK4D;
@@ -461,7 +461,7 @@ Example of using the **RICK4D** framework
             .&End
       end;
     ```
-    2. Two Button
+    - Two Button
     ```delphi  
       uses
         RICK4D;
@@ -480,7 +480,7 @@ Example of using the **RICK4D** framework
       end;
     ```
   4. How to use Error Dialog
-    1. One Button
+    - One Button
     ```delphi  
       uses
         RICK4D;
@@ -494,7 +494,7 @@ Example of using the **RICK4D** framework
             .&End
       end;
     ```
-    2. Two Button
+    - Two Button
     ```delphi  
       uses
         RICK4D;
