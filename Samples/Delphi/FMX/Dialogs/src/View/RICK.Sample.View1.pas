@@ -152,54 +152,31 @@ begin
   TRICK4D
     .New
       .Dialog
-        .CustomMain
-          .Background
-            .Opacity(0.7)
-            .Color(TAlphaColorRec.Blue)
-          .&End
-        .&End
-        .CustomDialog
-          .Background
-            .Color(TAlphaColorRec.White)
-          .&End
-          .Rectangle
-            .Width(Self.Width - 60)
-            .Height(Self.Height - 120)
-          .&End
-          .Icon
-            .Color(TAlphaColorRec.Coral)
-          .&End
-          .Title
-            .Text('Question')
-            .FontSize(24)
-            .FontColor(TAlphaColorRec.Black)
-          .&End
-          .Info
-            .Text('The policy of the War on Terror, undertaken by the United States at the beginning of the 21st century, culminated in one of the most important recent geopolitical conflicts. This conflict has become known as the')
-            .FontSize(12)
-            .FontColor(TAlphaColorRec.Darkcyan)
-          .&End
-          .Button
-            .First
-              .Color(TAlphaColorRec.Darkgray)
-              .Text('Afghan War')
-              .FontSize(14)
-              .FontColor(TAlphaColorRec.White)
-              .Process(FirstResponseProcedure)
-            .&End
-            .Second
-              .Color(TAlphaColorRec.Darkgray)
-              .Text('Syria''s War')
-              .FontSize(14)
-              .FontColor(TAlphaColorRec.White)
-              .Process(SecondResponseProcedure)
-            .&End
-          .&End
-          .Execute
-            .Question
-          .&End
-        .&End
-      .&End;
+        .Form(Self)
+          .BackgroundOpacity(0.7)
+          .BackgroundColor(TAlphaColorRec.Blue)
+            .MessageBoxColor(TAlphaColorRec.White)
+            .MessageBoxHeight(Self.Height - 120)
+            .MessageBoxWidth(Self.Width - 60)
+              .IconColor(TAlphaColorRec.Coral)
+                .TitleText('Question')
+                .TitleFontSize(24)
+                .TitleFontColor(TAlphaColorRec.Black)
+                  .MessageText('The policy of the War on Terror, undertaken by the United States at the beginning of the 21st century, culminated in one of the most important recent geopolitical conflicts. This conflict has become known as the')
+                  .MessageFontSize(12)
+                  .MessageFontColor(TAlphaColorRec.Darkcyan)
+                    .MainButtonColor(TAlphaColorRec.Darkgray)
+                    .MainButtonText('Afghan War')
+                    .MainButtonFontSize(14)
+                    .MainButtonFontColor(TAlphaColorRec.White)
+                    .MainButtonProcess(FirstResponseProcedure)
+                    .AuxiliaryButtonText('Syria''s War')
+                    .AuxiliaryButtonFontSize(14)
+                    .AuxiliaryButtonFontColor(TAlphaColorRec.White)
+                    .AuxiliaryButtonProcess(SecondResponseProcedure)
+        .ExecuteDialogQuestion
+      .&End
+
 end;
 
 procedure TPageView1.DialogErrorOne;
@@ -209,14 +186,9 @@ begin
   TRICK4D
     .New
       .Dialog
-        .CustomDialog
-          .Info
-            .Text('Your message here')
-          .&End
-          .Execute
-            .Error
-          .&End
-        .&End
+        .Form(Self)
+          .MessageText('Your message here')
+          .ExecuteDialogError
       .&End
 
 end;
@@ -228,72 +200,42 @@ begin
   TRICK4D
     .New
       .Dialog
-        .CustomDialog
-          .Info
-            .Text('Your message here')
-          .&End
-          .Button
-            .First
-              .Text('Yes')
-              .Process(FirstResponseProcedure)
-            .&End
-            .Second
-              .Text('No')
-              .Process(SecondResponseProcedure)
-            .&End
-          .&End
-          .Execute
-            .Error
-          .&End
-        .&End
-      .&End
-
+        .Form(Self)
+          .MessageText('Your message here')
+            .MainButtonText('Yes')
+            .MainButtonProcess(FirstResponseProcedure)
+            .AuxiliaryButtonText('No')
+            .AuxiliaryButtonProcess(SecondResponseProcedure)
+        .ExecuteDialogError
+      .&End;
 end;
 
 procedure TPageView1.DialogInfoOne;
 begin
   lblResponse.Text:= EmptyStr;
-
   TRICK4D
     .New
       .Dialog
-        .CustomDialog
-          .Info
-            .Text('Your message here')
-          .&End
-          .Execute
-            .Info
-          .&End
-        .&End
+        .Form(Self)
+          .MessageText('Your message here')
+          .ExecuteDialogInfo
       .&End
 end;
 
 procedure TPageView1.DialogInfoTwo;
 begin
   lblResponse.Text:= EmptyStr;
-
   TRICK4D
     .New
       .Dialog
-        .CustomDialog
-          .Info
-            .Text('Your message here')
-          .&End
-          .Button
-            .First
-              .Text('Yes')
-              .Process(FirstResponseProcedure)
-            .&End
-            .Second
-              .Text('No')
-              .Process(SecondResponseProcedure)
-            .&End
-          .&End
-          .Execute
-            .Info
-          .&End
-        .&End
-      .&End
+        .Form(Self)
+          .MessageText('Your message here')
+            .MainButtonText('Yes')
+            .MainButtonProcess(FirstResponseProcedure)
+            .AuxiliaryButtonText('No')
+            .AuxiliaryButtonProcess(SecondResponseProcedure)
+        .ExecuteDialogInfo
+      .&End;
 end;
 
 procedure TPageView1.DialogInterface;
@@ -304,96 +246,59 @@ begin
 
   LRICK4D:= TRICK4D.New;
 
+  //Parent form
+  LRICK4D.Dialog
+    .Form(Self);
+
   //Customizing Background
   LRICK4D.Dialog
-    .CustomMain
-      .Background
-        .Opacity(0.7)
-        .Color(TAlphaColorRec.Blue)
-      .&End
-    .&End;
+    .BackgroundOpacity(0.7)
+    .BackgroundColor(TAlphaColorRec.Blue);
 
   //Customizing the Message Window Background
   LRICK4D.Dialog
-    .CustomDialog
-      .Background
-        .Color(TAlphaColorRec.White)
-      .&End
-    .&End;
+    .MessageBoxColor(TAlphaColorRec.White);
 
   //Customizing the Message Window
   LRICK4D.Dialog
-    .CustomDialog
-      .Rectangle
-        .Width(Self.Width - 60)
-        .Height(Self.Height - 120)
-      .&End
-    .&End;
-
+    .MessageBoxWidth(Self.Width - 60)
+    .MessageBoxHeight(Self.Height - 120);
 
   //Customizing Icon
   LRICK4D.Dialog
-    .CustomDialog
-      .Icon
-        .Color(TAlphaColorRec.Coral)
-      .&End
-    .&End;
+    .IconColor(TAlphaColorRec.Coral);
 
   //Customizing Title
   LRICK4D.Dialog
-    .CustomDialog
-      .Title
-        .Text('Question')
-        .FontSize(24)
-        .FontColor(TAlphaColorRec.Black)
-      .&End
-    .&End;
+    .TitleText('Question')
+    .TitleFontSize(24)
+    .TitleFontColor(TAlphaColorRec.Black);
 
   //Customizing message
   LRICK4D.Dialog
-    .CustomDialog
-      .Info
-        .Text('The policy of the War on Terror, undertaken by the United States at the beginning of the 21st century, culminated in one of the most important recent geopolitical conflicts. This conflict has become known as the')
-        .FontSize(12)
-        .FontColor(TAlphaColorRec.Darkcyan)
-      .&End
-    .&End;
+    .MessageText('The policy of the War on Terror, undertaken by the United States at the beginning of the 21st century, culminated in one of the most important recent geopolitical conflicts. This conflict has become known as the')
+    .MessageFontSize(12)
+    .MessageFontColor(TAlphaColorRec.Darkcyan);
 
   //Customizing the First Button
   LRICK4D.Dialog
-    .CustomDialog
-      .Button
-        .First
-          .Color(TAlphaColorRec.Darkgray)
-          .Text('Afghan War')
-          .FontSize(14)
-          .FontColor(TAlphaColorRec.White)
-          .Process(FirstResponseProcedure)
-        .&End
-    .&End;
+    .MainButtonColor(TAlphaColorRec.Darkgray)
+    .MainButtonText('Afghan War')
+    .MainButtonFontSize(14)
+    .MainButtonFontColor(TAlphaColorRec.White)
+    .MainButtonProcess(FirstResponseProcedure);
 
   //Customizing the Second Button
   LRICK4D.Dialog
-    .CustomDialog
-      .Button
-        .Second
-          .Color(TAlphaColorRec.Darkgray)
-          .Text('Syria''s War')
-          .FontSize(14)
-          .FontColor(TAlphaColorRec.White)
-          .Process(SecondResponseProcedure)
-        .&End
-      .&End
-    .&End;
+    .AuxiliaryButtonColor(TAlphaColorRec.Darkgray)
+    .AuxiliaryButtonText('Syria''s War')
+    .AuxiliaryButtonFontSize(14)
+    .AuxiliaryButtonFontColor(TAlphaColorRec.White)
+    .AuxiliaryButtonProcess(SecondResponseProcedure);
 
   //Display screen
   LRICK4D.Dialog
-    .CustomDialog
-      .Execute
-        .Question
-      .&End
-    .&End;
-
+    .ExecuteDialogQuestion;
 end;
 
 procedure TPageView1.DialogQuestion;
@@ -403,90 +308,55 @@ begin
   TRICK4D
     .New
       .Dialog
-        .CustomDialog
-          .Info
-            .Text('Your message here')
-          .&End
-          .Button
-            .First
-              .Process(FirstResponseProcedure)
-            .&End
-            .Second
-              .Process(SecondResponseProcedure)
-            .&End
-          .&End
-          .Execute
-            .Question
-          .&End
-        .&End
+        .Form(Self)
+          .MessageText('Your message here')
+            .MainButtonText('Yes')
+            .MainButtonProcess(FirstResponseProcedure)
+            .AuxiliaryButtonText('No')
+            .AuxiliaryButtonProcess(SecondResponseProcedure)
+        .ExecuteDialogQuestion
       .&End;
 end;
 
 procedure TPageView1.DialogSuccessOne;
 begin
   lblResponse.Text:= EmptyStr;
-
   TRICK4D
     .New
       .Dialog
-        .CustomDialog
-          .Info
-            .Text('Your message here')
-          .&End
-          .Execute
-            .Success
-          .&End
-        .&End
+        .Form(Self)
+          .MessageText('Your message here')
+          .ExecuteDialogSuccess
       .&End
-
 end;
 
 procedure TPageView1.DialogSuccessTwo;
 begin
   lblResponse.Text:= EmptyStr;
-
   TRICK4D
     .New
       .Dialog
-        .CustomDialog
-          .Info
-            .Text('Your message here')
-          .&End
-          .Button
-            .First
-              .Text('Yes')
-              .Process(FirstResponseProcedure)
-            .&End
-            .Second
-              .Text('No')
-              .Process(SecondResponseProcedure)
-            .&End
-          .&End
-          .Execute
-            .Success
-          .&End
-        .&End
-      .&End
+        .Form(Self)
+          .MessageText('Your message here')
+            .MainButtonText('Yes')
+            .MainButtonProcess(FirstResponseProcedure)
+            .AuxiliaryButtonText('No')
+            .AuxiliaryButtonProcess(SecondResponseProcedure)
+        .ExecuteDialogSuccess
+      .&End;
 
 end;
 
 procedure TPageView1.DialogWarningOne;
 begin
   lblResponse.Text:= EmptyStr;
-
   TRICK4D
     .New
       .Dialog
-        .CustomDialog
-          .Info
-            .Text('Your message here')
-          .&End
-          .Execute
-            .Warnig
-          .&End
-        .&End
+        .Form(Self)
+          .MessageText('Your message here')
+          .ExecuteDialogWarnig
       .&End
-
 end;
 
 procedure TPageView1.DialogWarningTwo;
@@ -496,25 +366,14 @@ begin
   TRICK4D
     .New
       .Dialog
-        .CustomDialog
-          .Info
-            .Text('Your message here')
-          .&End
-          .Button
-            .First
-              .Text('Yes')
-              .Process(FirstResponseProcedure)
-            .&End
-            .Second
-              .Text('No')
-              .Process(SecondResponseProcedure)
-            .&End
-          .&End
-          .Execute
-            .Warnig
-          .&End
-        .&End
-      .&End
+        .Form(Self)
+          .MessageText('Your message here')
+            .MainButtonText('Yes')
+            .MainButtonProcess(FirstResponseProcedure)
+            .AuxiliaryButtonText('No')
+            .AuxiliaryButtonProcess(SecondResponseProcedure)
+        .ExecuteDialogWarnig
+      .&End;
 
 end;
 

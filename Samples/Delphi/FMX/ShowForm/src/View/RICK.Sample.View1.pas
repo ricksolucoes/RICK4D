@@ -70,7 +70,7 @@ begin
         .ExecuteBefore(BeforeShow) //Procedure to be performed before show form
         .ExecuteAfter(AfterShow) //Procedure to be performed after show form
       .Show //Open the formulary
-      .ShowOther //Prepare new form to show
+      .DoNewForm //Prepare new form to show
         .Formulary(TPageView3) //Inform the form's class
       .Show;  //Open the formulary}
 end;

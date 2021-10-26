@@ -1,7 +1,7 @@
 {
 	"name": "RICK4D",
 	"description": "Framework with all the Suites from RICK Soluções",
-	"version": "1.0.3",
+	"version": "2.0.0",
 	"homepage": "",
 	"mainsrc": "./src",
 	"projects": [],
@@ -9,10 +9,11 @@
 		"https://github.com/ricksolucoes/bcrypt": "^1.0.5",
 		"https://github.com/ricksolucoes/restrequest4delphi": "^3.0.11",
 		"https://github.com/ricksolucoes/rickcheckconnection": "^1.0.7",
-		"https://github.com/ricksolucoes/rickdialog": "^1.0.4",
-		"https://github.com/ricksolucoes/rickformat": "^1.0.4",
-		"https://github.com/ricksolucoes/ricklibrary": "^1.0.4",
-		"https://github.com/ricksolucoes/rickloading": "^1.1.3",
-		"https://github.com/ricksolucoes/rickshowform": "^1.0.1"
+		"https://github.com/ricksolucoes/rickdialog": "^2.0.0",
+		"https://github.com/ricksolucoes/rickformat": "^1.0.5",
+		"https://github.com/ricksolucoes/rickini": "^1.0.2",
+		"https://github.com/ricksolucoes/ricklibrary": "^1.0.5",
+		"https://github.com/ricksolucoes/rickloading": "^2.0.0",
+		"https://github.com/ricksolucoes/rickshowform": "^2.0.0"
 	}
 }

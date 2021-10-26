@@ -2,62 +2,125 @@ unit RICK4D;
 
 interface
 uses
-  RICK4D.Interfaces;
+  RICK4D.Interfaces,
+
+  RICK4D.Check.Connection,
+  RICK4D.Check.Connection.Interfaces,
+
+  RICK4D.Loading,
+  RICK4D.Loading.Interfaces,
+
+  RICK4D.Show.Form,
+  RICK4D.Show.Form.Interfaces,
+
+  RICK4D.Librarys,
+  RICK4D.Librarys.Interfaces,
+
+  RICK4D.Encrypt,
+  RICK4D.Encrypt.Interfaces,
+
+  RICK4D.Dialog,
+  RICK4D.Dialog.Interfaces,
+
+  RICK4D.Format,
+  RICK4D.Format.Interfaces,
+
+  RICK4D.Rest,
+  RICK4D.Rest.Interfaces,
+
+  RICK4D.INI,
+  RICK4D.INI.Interfaces;
+
 type
   TRICK4D = class(TInterfacedObject, iRICK4D)
   private
-    FShowForm : iRICK4DShowForm;
-    FLoading : iRICK4DLoading;
-    FLibrarys : iRICK4DLibrarys;
-    FCheckConnection : iRICK4DCheckConnection;
-    FFormat: iRICK4DFormat;
-    FDialog: iRICK4DDialog;
+    FCheckConnection         : iRICK4DCheckConnection<iRICK4D>;
+    FDialog                  : iRICK4DDialog<iRICK4D>;
     {$IFDEF MSWINDOWS OR MACOS OR LINUX}
-    FEncrypt: iRICK4DEncrypt;
+    FEncrypt                 : iRICK4DEncrypt<iRICK4D>;
     {$ENDIF}
-    FRest : iRICK4DRest;
+    FFormat                  : iRICK4DFormat<iRICK4D>;
+    FINI                     : iRICK4DINI<iRICK4D>;
+    FLibrarys                : iRICK4DLibrarys<iRICK4D>;
+    FLoading                 : iRICK4DLoading<iRICK4D>;
+    FRest                    : iRICK4DRest<iRICK4D>;
+    FShowForm                : iRICK4DShowForm<iRICK4D>;
 
-    function ShowForm : iRICK4DShowForm;
-    function Loading : iRICK4DLoading; {$IFDEF DEBUG} deprecated 'Compatibility will not be maintained in version 2.0'; {$ENDIF}
-    function Librarys : iRICK4DLibrarys;
-    function CheckConnection : iRICK4DCheckConnection; {$IFDEF DEBUG} deprecated 'Compatibility will not be maintained in version 2.0'; {$ENDIF}
-    function Format : iRICK4DFormat;
-    function Dialog : iRICK4DDialog;
+    function CheckConnection : iRICK4DCheckConnection<iRICK4D>;
+    function Dialog          : iRICK4DDialog<iRICK4D>;
     {$IFDEF MSWINDOWS OR MACOS OR LINUX}
-    function Encrypt: iRICK4DEncrypt;
+    function Encrypt         : iRICK4DEncrypt<iRICK4D>;
     {$ENDIF}
-    function Rest : iRICK4DRest;
+    function Format          : iRICK4DFormat<iRICK4D>;
+    function INI             : iRICK4DINI<iRICK4D>;
+    function Loading         : iRICK4DLoading<iRICK4D>;
+    function Librarys        : iRICK4DLibrarys<iRICK4D>;
+    function Rest            : iRICK4DRest<iRICK4D>;
+    function ShowForm        : iRICK4DShowForm<iRICK4D>;
+
+
+    function &End            : iRICK4D;
 
     constructor Create;
   public
-    class function New: iRICK4D;
+    class function New       : iRICK4D;
     destructor Destroy; override;
   end;
 
 implementation
 
-uses
-  RICK4D.Rest,
-  RICK4D.Format,
-  RICK4D.Dialog,
-  RICK4D.Loading,
-  RICK4D.Encrypt,
-  RICK4D.ShowForm,
-  RICK4D.Librarys,
-  RICK4D.CheckConnection;
+{ TRICK4D }
 
-function TRICK4D.CheckConnection: iRICK4DCheckConnection;
+function TRICK4D.CheckConnection: iRICK4DCheckConnection<iRICK4D>;
 begin
-   if not Assigned(FCheckConnection) then
-    FCheckConnection := TRICK4DCheckConnection.New(Self);
+  Result:= FCheckConnection;
+end;
 
-  Result := FCheckConnection;
+{$IFDEF MSWINDOWS OR MACOS OR LINUX}
+function TRICK4D.Encrypt: iRICK4DEncrypt<iRICK4D>;
+begin
+  Result:= FEncrypt;
+end;
+{$ENDIF}
 
+function TRICK4D.&End: iRICK4D;
+begin
+  Result:= Self;
+end;
+
+function TRICK4D.Format: iRICK4DFormat<iRICK4D>;
+begin
+  Result:= FFormat;
+end;
+
+function TRICK4D.INI: iRICK4DINI<iRICK4D>;
+begin
+  Result:= FINI;
+end;
+
+function TRICK4D.Librarys: iRICK4DLibrarys<iRICK4D>;
+begin
+  Result:= FLibrarys;
+end;
+
+function TRICK4D.Loading: iRICK4DLoading<iRICK4D>;
+begin
+  Result:= FLoading;
 end;
 
 constructor TRICK4D.Create;
 begin
-
+  FDialog            := TRICK4DDialog<iRICK4D>.New(Self);
+  FCheckConnection   := TRICK4DCheckConnection<iRICK4D>.New(Self);
+  {$IFDEF MSWINDOWS OR MACOS OR LINUX}
+  FEncrypt           := TRICK4DEncrypt<iRICK4D>.New(Self);
+  {$ENDIF}
+  FFormat            := TRICK4DFormat<iRICK4D>.New(Self);
+  FINI               := TRICK4DINI<iRICK4D>.New(Self);
+  FLoading           := TRICK4DLoading<iRICK4D>.New(Self);
+  FLibrarys          := TRICK4DLibrarys<iRICK4D>.New(Self);
+  FRest              := TRICK4DRest<iRICK4D>.New(Self);
+  FShowForm          := TRICK4DShowForm<iRICK4D>.New(Self);
 end;
 
 destructor TRICK4D.Destroy;
@@ -66,48 +129,9 @@ begin
   inherited;
 end;
 
-function TRICK4D.Dialog: iRICK4DDialog;
+function TRICK4D.Dialog: iRICK4DDialog<iRICK4D>;
 begin
-   if not Assigned(FDialog) then
-    FDialog := TRICK4DDialog.New(Self);
-
-  Result := FDialog;
-
-end;
-
-{$IFDEF MSWINDOWS OR MACOS OR LINUX}
-function TRICK4D.Encrypt: iRICK4DEncrypt;
-begin
-   if not Assigned(FEncrypt) then
-    FEncrypt := TRICK4DEncrypt.New(Self);
-
-  Result := FEncrypt;
-
-end;
-{$ENDIF}
-function TRICK4D.Format: iRICK4DFormat;
-begin
-   if not Assigned(FFormat) then
-    FFormat := TRICK4DFormat.New(Self);
-
-  Result := FFormat;
-end;
-
-function TRICK4D.Librarys: iRICK4DLibrarys;
-begin
-   if not Assigned(FLibrarys) then
-    FLibrarys := TRICK4DLibrarys.New(Self);
-
-  Result := FLibrarys;
-end;
-
-function TRICK4D.Loading: iRICK4DLoading;
-begin
-  if not Assigned(FLoading) then
-    FLoading := TRICK4DLoading.New(Self);
-
-  Result := FLoading;
-
+  Result:= FDialog;
 end;
 
 class function TRICK4D.New: iRICK4D;
@@ -115,21 +139,14 @@ begin
   Result:= Self.Create;
 end;
 
-function TRICK4D.Rest: iRICK4DRest;
+function TRICK4D.Rest: iRICK4DRest<iRICK4D>;
 begin
-  if not Assigned(FRest) then
-    FRest := TRICK4DRest.New(Self);
-
   Result := FRest;
-
 end;
 
-function TRICK4D.ShowForm: iRICK4DShowForm;
+function TRICK4D.ShowForm: iRICK4DShowForm<iRICK4D>;
 begin
-  if not Assigned(FShowForm) then
-    FShowForm := TRICK4DShowForm.New(Self);
-
-  Result := FShowForm;
+  Result:= FShowForm;
 end;
 
 end.

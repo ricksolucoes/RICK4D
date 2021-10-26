@@ -48,6 +48,7 @@ begin
   inherited;
 
   LRICK4D:= TRICK4D.New;
+  LRICK4D.Loading.Form(Self);
   LRICK4D.Loading.DoMessage('Loading Modified'); //Changes the initial loading message
   LRICK4D.Loading.SourceSize(32); //Change the font size
   LRICK4D.Loading.SourceName('Segoe UI'); //Change the font type
@@ -87,31 +88,30 @@ begin
   TRICK4D
     .New
       .Loading
-        .Execute(
-          procedure
-          begin
-            // Delayed Command
-            Sleep(500);
+        .Form(Self)
+          .Execute(
+            procedure
+            begin
+              // Delayed Command
+              Sleep(500);
 
-            TThread.Synchronize(TThread.Current,
-              procedure
-              begin
-                TRICK4D.New.Loading.ChangeMessage('Changing message');
-                // Change the message to the user
-              end);
+              TThread.Synchronize(TThread.Current,
+                procedure
+                begin
+                  TRICK4D.New.Loading.ChangeMessage('Changing message');
+                  // Change the message to the user
+                end);
 
-            // Another command if there is one
-            TThread.Sleep(1500);
+              // Another command if there is one
+              TThread.Sleep(1500);
 
-            TThread.Synchronize(TThread.Current,
-              procedure
-              begin
-                // Command to refresh the screen
-                ShowMessage('Command to refresh the screen here...');
-              end);
-          end);
-
-
+              TThread.Synchronize(TThread.Current,
+                procedure
+                begin
+                  // Command to refresh the screen
+                  ShowMessage('Command to refresh the screen here...');
+                end);
+            end);
 end;
 
 end.

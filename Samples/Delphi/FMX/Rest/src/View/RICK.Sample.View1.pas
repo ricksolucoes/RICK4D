@@ -58,7 +58,7 @@ implementation
 
 uses
   RICK4D,
-  RICK4D.Contract;
+  RICK4D.Types;
 
 {$R *.fmx}
 

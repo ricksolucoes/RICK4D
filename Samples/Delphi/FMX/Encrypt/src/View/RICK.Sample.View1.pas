@@ -44,24 +44,25 @@ implementation
 
 uses
   RICK4D,
-  RICK4D.Interfaces;
+  RICK4D.Interfaces,
+  RICK4D.Dialog.Interfaces;
 
 {$R *.fmx}
 
 procedure TPageView1.btComparehashClick(Sender: TObject);
 var
   LVerify : Boolean;
-  LRICK4D : iRICK4DDialogCustom;
+  LRICK4D : iRICK4DDialog<iRICK4D>;
 begin
   inherited;
 {$IFDEF MSWINDOWS OR MACOS OR LINUX}
-  LRICK4D:= TRICK4D.New.Dialog.CustomDialog;
+  LRICK4D:= TRICK4D.New.Dialog.Form(Self);
 
   LVerify := TRICK4D.New.Encrypt.CompareHash('Password', lblResponse.Text);
   if LVerify then
-    LRICK4D.Info.Text('Hash OK').&End.Execute.Success
+    LRICK4D.MessageText('Hash OK').ExecuteDialogSuccess
   else
-    LRICK4D.Info.Text('Hash Error').&End.Execute.Error;
+    LRICK4D.MessageText('Hash Error').ExecuteDialogError;
 {$ENDIF}
 end;
 
@@ -95,14 +96,9 @@ begin
   TRICK4D
     .New
       .Dialog
-        .CustomDialog
-          .Info
-            .Text('Your message here')
-          .&End
-          .Execute
-            .Info
-          .&End
-        .&End
+        .Form(Self)
+          .MessageText('Feature not implemented')
+          .ExecuteDialogInfo
       .&End
 end;
 {$ENDIF}

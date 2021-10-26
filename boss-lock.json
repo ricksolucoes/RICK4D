@@ -36,40 +36,48 @@
 		},
 		"https://github.com/ricksolucoes/rickdialog": {
 			"name": "rickdialog",
-			"version": "1.0.4",
-			"hash": "b2ef08c7aa46516d192e57cc1d206a12",
+			"version": "2.0.0",
+			"hash": "d95ab7bbeb493e5e991ce3766b7d09cb",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
 		},
 		"https://github.com/ricksolucoes/rickformat": {
 			"name": "rickformat",
-			"version": "1.0.4",
-			"hash": "8d4667c09989db702cd33e75c72d155c",
+			"version": "1.0.5",
+			"hash": "97c3624d097edba10af3bb380381a805",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/ricksolucoes/rickini": {
+			"name": "rickini",
+			"version": "1.0.2",
+			"hash": "f0257ee133e545e7f89761854798ebaf",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
 		},
 		"https://github.com/ricksolucoes/ricklibrary": {
 			"name": "ricklibrary",
-			"version": "1.0.4",
-			"hash": "0caaadd04490cde1b6b8161b08c032f4",
+			"version": "1.0.5",
+			"hash": "df7361c26dbe7097da4859078abe8d27",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
 		},
 		"https://github.com/ricksolucoes/rickloading": {
 			"name": "rickloading",
-			"version": "1.1.3",
-			"hash": "d93cc26a6d03143af7878e3e877b9a97",
+			"version": "2.0.0",
+			"hash": "ff1a33f6ffaf04419992651eb0e346ee",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
 		},
 		"https://github.com/ricksolucoes/rickshowform": {
 			"name": "rickshowform",
-			"version": "1.0.1",
-			"hash": "e0b0a73df65e31f0a27b94efa5dd8bc3",
+			"version": "2.0.0",
+			"hash": "bce23fe9adfda4515c6e11a85c8c9a10",
 			"artifacts": {},
 			"failed": false,
 			"changed": false

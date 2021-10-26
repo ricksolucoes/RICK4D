@@ -93,7 +93,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <SanitizedProjectName>RICK4Delphi</SanitizedProjectName>
-        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\bcrypt\samples\src;modules\bcrypt\src;modules\dataset-serialize\src;modules\restrequest4delphi\src;modules\rickcheckconnection\src;modules\rickdialog\src;modules\rickformat\src;modules\ricklibrary\src;modules\rickloading\src;modules\rickshowform\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>$(DCC_UnitSearchPath);modules\.dcp;modules\.dcu;modules;modules\bcrypt\samples\src;modules\bcrypt\src;modules\dataset-serialize\src;modules\restrequest4delphi\src;modules\rickcheckconnection\src;modules\rickdialog\src;modules\rickformat\src;modules\rickini\src;modules\ricklibrary\src;modules\rickloading\src;modules\rickshowform\src</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;IndyIPCommon;RESTComponents;bindcompdbx;DBXInterBaseDriver;IndyIPServer;IndySystem;tethering;fmxFireDAC;FireDAC;bindcompfmx;FireDACSqliteDriver;FMXTee;soaprtl;DbxCommonDriver;FmxTeeUI;fmx;FireDACIBDriver;xmlrtl;soapmidas;rtl;DbxClientDriver;CustomIPTransport;dbexpress;IndyCore;bindcomp;dsnap;FireDACCommon;IndyIPClient;RESTBackendComponents;soapserver;dbxcds;bindengine;CloudService;dsnapxml;dbrtl;IndyProtocols;FireDACCommonDriver;inet;$(DCC_UsePackage)</DCC_UsePackage>
@@ -202,33 +202,31 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="src\RICK4D.Interfaces.pas"/>
+        <DCCReference Include="src\Interfaces\RICK4D.Interfaces.pas"/>
+        <DCCReference Include="src\Interfaces\Check Connection\RICK4D.Check.Connection.Interfaces.pas"/>
         <DCCReference Include="src\RICK4D.pas"/>
-        <DCCReference Include="src\RICK4D.ShowForm.pas"/>
-        <DCCReference Include="src\RICK4D.CallBack.pas"/>
-        <DCCReference Include="src\RICK4D.Loading.pas"/>
-        <DCCReference Include="src\RICK4D.Librarys.pas"/>
-        <DCCReference Include="src\RICK4D.CheckConnection.pas"/>
-        <DCCReference Include="src\RICK4D.Format.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Main.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Main.Background.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Background.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Rectangle.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Icon.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Title.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Info.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Button.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Execute.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Button.First.pas"/>
-        <DCCReference Include="src\RICK4D.Dialog.Custom.Button.Second.pas"/>
-        <DCCReference Include="src\RICK4D.Encrypt.pas"/>
-        <DCCReference Include="src\RICK4D.Contract.pas"/>
-        <DCCReference Include="src\RICK4D.Rest.pas"/>
-        <DCCReference Include="src\RICK4D.Session.Token.pas"/>
-        <DCCReference Include="src\RICK4D.Session.URL.pas"/>
-        <DCCReference Include="src\RICK4D.Session.pas"/>
+        <DCCReference Include="src\Contracts\Check Connection\RICK4D.Check.Connection.pas"/>
+        <DCCReference Include="src\Interfaces\Loading\RICK4D.Loading.Interfaces.pas"/>
+        <DCCReference Include="src\Contracts\Loading\RICK4D.Loading.pas"/>
+        <DCCReference Include="src\Interfaces\Show Form\RICK4D.Show.Form.Interfaces.pas"/>
+        <DCCReference Include="src\Contracts\Show Form\RICK4D.Show.Form.pas"/>
+        <DCCReference Include="src\Interfaces\Librarys\RICK4D.Librarys.Interfaces.pas"/>
+        <DCCReference Include="src\Contracts\Librarys\RICK4D.Librarys.pas"/>
+        <DCCReference Include="src\Interfaces\Encrypt\RICK4D.Encrypt.Interfaces.pas"/>
+        <DCCReference Include="src\Contracts\Encrypt\RICK4D.Encrypt.pas"/>
+        <DCCReference Include="src\Contracts\RICK4D.Types.pas"/>
+        <DCCReference Include="src\Contracts\Format\RICK4D.Format.pas"/>
+        <DCCReference Include="src\Interfaces\Format\RICK4D.Format.Interfaces.pas"/>
+        <DCCReference Include="src\Contracts\RICK4D.Events.pas"/>
+        <DCCReference Include="src\Interfaces\Dialog\RICK4D.Dialog.Interfaces.pas"/>
+        <DCCReference Include="src\Contracts\Dialog\RICK4D.Dialog.pas"/>
+        <DCCReference Include="src\Interfaces\Rest\RICK4D.Rest.Interfaces.pas"/>
+        <DCCReference Include="src\Contracts\Rest\RICK4D.Rest.pas"/>
+        <DCCReference Include="src\Contracts\Session\RICK4D.Session.pas"/>
+        <DCCReference Include="src\Contracts\Session\Entity\RICK4D.Session.Entity.TOKEN.pas"/>
+        <DCCReference Include="src\Contracts\Session\Entity\RICK4D.Session.Entity.URL.pas"/>
+        <DCCReference Include="src\Contracts\File INI\RICK4D.INI.pas"/>
+        <DCCReference Include="src\Interfaces\File INI\RICK4D.INI.Interfaces.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

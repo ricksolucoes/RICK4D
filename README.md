@@ -7,6 +7,7 @@
 [6]: https://github.com/ricksolucoes/RICKDialog "Site do Dialogs"
 [7]: https://github.com/ricksolucoes/bcrypt "Site do BCrypt"
 [8]: https://github.com/ricksolucoes/RESTRequest4Delphi "Site do Rest"
+[9]: https://github.com/ricksolucoes/RICKINI "Site do INI"
 
 # RICK4D
 
@@ -22,13 +23,14 @@ RICK4D is intended to ease data transition in your system, assigning styles to c
 - **[CheckConnection](#sample-check-connection)** It was inspired by [RICKCheckConnection][4], where it allows you to check the internet status and the type (mobile only) of the connection.
 - **[Format](#sample-format)** It was inspired by [RICKFormat][5], where a mask is formatted in the Edit as it is typed.
 - **[Dialog](#sample-Dialog)** It was inspired by [RICKDialog][6], where a customized dialog screen is presented.
-- **[Encrypt](#Encrypt-HASH)** It was inspired by [BCrypt][7], to help you hash passwords.
-- **[Rest](#Rest)** It was inspired by [RESTRequest4Delphi][8], to help you API to consume REST services written in any programming language.
+- **[Encrypt](#Sample-Encrypt-HASH)** It was inspired by [BCrypt][7], to help you hash passwords.
+- **[Rest](#Sample-Rest)** It was inspired by [RESTRequest4Delphi][8], to help you API to consume REST services written in any programming language.
+- **[INI](#Sample-INI)** It was inspired by [RICKINI][9], to help you with writing and reading ini files.
 
 ## ⚙️ Pre-requisites
 
 1. Delphi FMX
-2. Framework: [RICKShowForm][1], [RICKLoading][2], [RICKLibrarys][3], [RICKCheckConnection][4], [RickFormat][5], [RICKDialog][6], [BCrypt][7], [RESTRequest4Delphi][8]
+2. Framework: [RICKShowForm][1], [RICKLoading][2], [RICKLibrarys][3], [RICKCheckConnection][4], [RickFormat][5], [RICKDialog][6], [BCrypt][7], [RESTRequest4Delphi][8], [RICKINI][9]
 3. If you choose to use [BOOS][0] ```https://github.com/ricksolucoes/boss or https://github.com/HashLoad/boss```  the dependency manager, you will have the facility to install all frameworks that are [Pre-requisites](#pre-requisites) for the project.
 
 ## 💻 Installation
@@ -48,8 +50,11 @@ boss install https://github.com/ricksolucoes/RICK4D
     - [RICKDialog][6] ``` https://github.com/ricksolucoes/RICKDialog ```
     - [BCrypt][7] ``` https://github.com/ricksolucoes/bcrypt ```
     - [RESTRequest4Delphi][8] ``` https://github.com/ricksolucoes/RESTRequest4Delphi ```
+    - [RICKINI][9] ``` https://github.com/ricksolucoes/RICKINI ```
+
   - Add the following folders to your project, in <em>Project &gt; Options &gt; Resource Compiler &gt; Directories and Conditionals &gt; Include file search path
     - ``` ../RICK4D/src ```
+    - ``` ../RICK4D/src/Interfaces ```
     - ``` ../RICKShowForm/src ```
     - ``` ../RICKLoading/src ```
     - ``` ../RICKLibrarys/src ```
@@ -58,13 +63,18 @@ boss install https://github.com/ricksolucoes/RICK4D
     - ``` ../RICKDialog/src ```
     - ``` ../bcrypt/src ```
     - ``` ../restrequest4delphi/src ```
+    - ``` ../RICKINI/src ```
 
 ## ⚡️ How to use the project
 Example of using the **RICK4D** framework
 
 ## Sample Show Form
 
-- How to use show a form
+- How to show a form
+  - Include file search path
+      - ``` ../RICK4D/src/Interfaces/Show Form ```
+      - ``` ../RICK4D/src/Contracts/Show Form ```
+1. How to use show a form
 ```delphi  
   uses
     RICK4D;
@@ -73,13 +83,14 @@ Example of using the **RICK4D** framework
       .New
         .ShowForm //Enable the Middleware
           .Formulary(TPageView2) //Inform the form's class
-          .ExecuteBefore(BeforeShow) //Procedure to be performed before show form
-          .ExecuteAfter(AfterShowClose) //Procedure to be performed after show form
-          .ChangeDefaultMainForm //Set the specified form as the main form
-        .Show;  //Open the formulary
+            .ExecuteBefore(BeforeShow) //Procedure to be performed before show form
+            .ExecuteAfter(AfterShowClose) //Procedure to be performed after show form
+            .ChangeDefaultMainForm //Set the specified form as the main form
+          .Show  //Open the formulary
+        .&End;
   end;
 ```
-- How to use show two or more forms
+2. How to use show two or more forms
 ```delphi  
   uses
     RICK4D;
@@ -88,28 +99,36 @@ Example of using the **RICK4D** framework
       .New
         .ShowForm //Enable the Middleware
           .Formulary(TPageView2) //Inform the form's class
-          .ExecuteBefore(BeforeShow) //Procedure to be performed before show form
-          .ExecuteAfter(AfterShow) //Procedure to be performed after show form
-        .Show //Open the formulary
-        .ShowOther //Prepare new form to show
-          .Formulary(TPageView3) //Inform the form's class
-        .Show;  //Open the formulary}
+            .ExecuteBefore(BeforeShow) //Procedure to be performed before show form
+            .ExecuteAfter(AfterShow) //Procedure to be performed after show form
+          .Show //Open the formulary
+          .DoNewForm //Prepare new form to show
+            .Formulary(TPageView3) //Inform the form's class
+          .Show  //Open the formulary}
+        .&End;
   end;
 ```
+
 ## Sample Loading
 
-- How to use Loading
+- How to Loading
+  - Include file search path
+      - ``` ../RICK4D/src/Interfaces/Loading ```
+      - ``` ../RICK4D/src/Contracts/Loading ```
+1. How to use Loading
 ```delphi  
   uses
     RICK4D;
   begin
     TRICK4D
       .New
-        .Loading
-          .Execute("Create Procedure");
+        .Form(Self)
+          .Loading
+            .Execute("Create Procedure")
+          .&End;
   end;
 ```
-- Another way to perform Loading
+2. Another way to perform Loading
 ```delphi  
   uses
     RICK4D;
@@ -117,22 +136,23 @@ Example of using the **RICK4D** framework
     TRICK4D
       .New
         .Loading
-          .Execute(
-            procedure
-            begin
-              // Delayed Command
-              Sleep(500);
-              TThread.Synchronize(TThread.Current,
-                procedure
-                begin
-                  // Command to refresh the screen
-                  ShowMessage('Command to refresh the screen here...');
-                end);
-            end);
-    end;
+          .Form(Self)
+            .Execute(
+              procedure
+              begin
+                // Delayed Command
+                Sleep(500);
+                TThread.Synchronize(TThread.Current,
+                  procedure
+                  begin
+                    // Command to refresh the screen
+                    ShowMessage('Command to refresh the screen here...');
+                  end);
+              end)
+        .&End;
+  end;
 ```
-
-- Modify the Loading message
+3. Modify the Loading message
 ```delphi  
   uses
     RICK4D;
@@ -140,33 +160,34 @@ Example of using the **RICK4D** framework
     TRICK4D
       .New
         .Loading
-          .Execute(
-            procedure
-            begin
-              // Delayed Command
-              Sleep(500);
+          .Form(Self)
+            .Execute(
+              procedure
+              begin
+                // Delayed Command
+                Sleep(500);
 
-              TThread.Synchronize(TThread.Current,
-                procedure
-                begin
-                  TRICK4D.New.Loading.ChangeMessage('Changing message');
-                  // Change the message to the user
-                end);
+                TThread.Synchronize(TThread.Current,
+                  procedure
+                  begin
+                    TRICK4D.New.Loading.ChangeMessage('Changing message');
+                    // Change the message to the user
+                  end);
 
-              // Another command if there is one
-              TThread.Sleep(1500);
+                // Another command if there is one
+                TThread.Sleep(1500);
 
-              TThread.Synchronize(TThread.Current,
-                procedure
-                begin
-                  // Command to refresh the screen
-                  ShowMessage('Command to refresh the screen here...');
-                end);
-            end);
-    end;
+                TThread.Synchronize(TThread.Current,
+                  procedure
+                  begin
+                    // Command to refresh the screen
+                    ShowMessage('Command to refresh the screen here...');
+                  end);
+              end)
+          .&End;
+  end;
 ```
-  
-- Customize the Loading screen using the interface
+4. Customize the Loading screen using the interface
 ```delphi  
   uses
     RICK4D,
@@ -175,6 +196,7 @@ Example of using the **RICK4D** framework
     LRICK4D: iRICK4D;
   begin
     LRICK4D:= TRICK4D.New;
+    LRICK4D.Loading.Form(Self);
     LRICK4D.Loading.DoMessage('Loading Modified'); //Changes the initial loading message
     LRICK4D.Loading.SourceSize(32); //Change the font size
     LRICK4D.Loading.SourceName('Segoe UI'); //Change the font type
@@ -210,7 +232,11 @@ Example of using the **RICK4D** framework
 
 ## Sample Library
 
-- How to use the library to Show Keyboard
+- How to use Library
+  - Include file search path
+      - ``` ../RICK4D/src/Interfaces/Library ```
+      - ``` ../RICK4D/src/Contracts/Library ```
+1. Use to Show Keyboard
 ```delphi  
   uses
     RICK.Librarys;
@@ -218,7 +244,7 @@ Example of using the **RICK4D** framework
     TRICKLibrarys.New.ShowKeyboard(edtData);
   end;
 ```
-- How to use the library to Hide Keyboard
+2. Use to Hide Keyboard
 ```delphi  
   uses
     RICK.Librarys;
@@ -226,8 +252,7 @@ Example of using the **RICK4D** framework
     TRICKLibrarys.New.HideKeyboard(edtData);
   end;
 ```
-- How to use the library to Other actions
-
+3. Use to Other actions
 ```delphi  
   uses
     RICK4D,
@@ -263,10 +288,13 @@ Example of using the **RICK4D** framework
     end;
   end;
 ```
-## Sample Check Connection
 
+## Sample Check Connection
 - How to Check Connection
-  
+  - Include file search path
+      - ``` ../RICK4D/src/Interfaces/Check Connection ```
+      - ``` ../RICK4D/src/Contracts/Check Connection ```
+1. How to uses Check Connection
 ```delphi  
   uses
     RICK4D,
@@ -286,9 +314,7 @@ Example of using the **RICK4D** framework
     lblConn.Text:= LRICK4D.CheckConnection.ConnectionType;
   end;
 ```
-
-- How to Connection Type
-  
+2. How to use Connection Type
 ```delphi  
   uses
     RICK4D;
@@ -296,9 +322,7 @@ Example of using the **RICK4D** framework
     lblConn.Text:= TRICK4D.New.CheckConnection.ConnectionType;
   end;
 ```
-
-- How to check url
-  
+3. How to use check url
 ```delphi  
   uses
     RICK4D,
@@ -323,8 +347,11 @@ Example of using the **RICK4D** framework
 ```
 
 ## Sample Format
-- How to use the format. Use Edit's "EditDataTyping" property
-  
+- How to use the format.
+  - Include file search path
+      - ``` ../RICK4D/src/Interfaces/Format ```
+      - ``` ../RICK4D/src/Contracts/Format ```  
+
 ```delphi  
   uses
     RICK4D,
@@ -351,156 +378,78 @@ Example of using the **RICK4D** framework
 end;
 ```
 
- ## Sample Dialog
+## Sample Dialog
+- How to Dialog
+  - Include file search path
+      - ``` ../RICK4D/src/Interfaces/Dialog ```
+      - ``` ../RICK4D/src/Contracts/Dialog ```
 - How to use Info Dialog
-  1. One Button
-  ```delphi  
-    uses
-      RICK4D;
-    begin
-      TRICK4D
-        .New
-          .Dialog
-            .CustomDialog
-              .Info
-                .Text('Your message here')
-              .&End
-              .Execute
-                .Info
-              .&End
-            .&End
-          .&End
-    end;
-  ```
-  2. Two Button
-  ```delphi  
-    uses
-      RICK4D;
-    begin
-      TRICK4D
-        .New
-          .Dialog
-            .CustomDialog
-              .Info
-                .Text('Your message here')
-              .&End
-              .Button
-                .First
-                  .Text('Yes')
-                  .Process(FirstResponseProcedure)
-                .&End
-                .Second
-                  .Text('No')
-                  .Process(SecondResponseProcedure)
-                .&End
-              .&End
-              .Execute
-                .Info
-              .&End
-            .&End
-          .&End
-    end;
-  ```
-- How to use Success Dialog
-  1. One Button
-  ```delphi  
-    uses
-      RICK4D;
-    begin
-      TRICK4D
-        .New
-          .Dialog
-            .CustomDialog
-              .Info
-                .Text('Your message here')
-              .&End
-              .Execute
-                .Success
-              .&End
-            .&End
-          .&End
-    end;
-  ```
-  2. Two Button
-  ```delphi  
-    uses
-      RICK4D;
-    begin
-      TRICK4D
-        .New
-          .Dialog
-            .CustomDialog
-              .Info
-                .Text('Your message here')
-              .&End
-              .Button
-                .First
-                  .Text('Yes')
-                  .Process(FirstResponseProcedure)
-                .&End
-                .Second
-                  .Text('No')
-                  .Process(SecondResponseProcedure)
-                .&End
-              .&End
-              .Execute
-                .Success
-              .&End
-            .&End
-          .&End
-    end;
-  ```
-  
-- How to use Success Dialog
-  1. One Button
-  ```delphi  
-    uses
-      RICK4D;
-    begin
-      TRICK4D
-        .New
-          .Dialog
-            .CustomDialog
-              .Info
-                .Text('Your message here')
-              .&End
-              .Execute
-                .Success
-              .&End
-            .&End
-          .&End
-    end;
-  ```
-  2. Two Button
-  ```delphi  
-    uses
-      RICK4D;
-    begin
-      TRICK4D
-        .New
-          .Dialog
-            .CustomDialog
-              .Info
-                .Text('Your message here')
-              .&End
-              .Button
-                .First
-                  .Text('Yes')
-                  .Process(FirstResponseProcedure)
-                .&End
-                .Second
-                  .Text('No')
-                  .Process(SecondResponseProcedure)
-                .&End
-              .&End
-              .Execute
-                .Success
-              .&End
-            .&End
-          .&End
-    end;
-  ```
 
+  1. One Button
+  ```delphi  
+    uses
+      RICK4D;
+    begin
+      TRICK4D
+        .New
+          .Dialog
+            .Form(Self)
+              .MessageText('Your message here')
+              .ExecuteDialogInfo
+          .&End
+    end;
+  ```
+  2. Two Button
+  ```delphi  
+    uses
+      RICK4D;
+    begin
+      TRICK4D
+        .New
+          .Dialog
+            .Form(Self)
+              .MessageText('Your message here')
+                .MainButtonText('Yes')
+                .MainButtonProcess(FirstResponseProcedure)
+                .AuxiliaryButtonText('No')
+                .AuxiliaryButtonProcess(SecondResponseProcedure)
+            .ExecuteDialogInfo
+          .&End;
+    end;
+  ```
+- How to use Success Dialog
+  1. One Button
+  ```delphi  
+    uses
+      RICK4D;
+    begin
+      TRICK4D
+        .New
+          .Dialog
+            .Form(Self)
+              .MessageText('Your message here')
+              .ExecuteDialogSuccess
+          .&End
+    end;
+  ```
+  2. Two Button
+  ```delphi  
+    uses
+      RICK4D;
+    begin
+      TRICK4D
+        .New
+          .Dialog
+            .Form(Self)
+              .MessageText('Your message here')
+                .MainButtonText('Yes')
+                .MainButtonProcess(FirstResponseProcedure)
+                .AuxiliaryButtonText('No')
+                .AuxiliaryButtonProcess(SecondResponseProcedure)
+            .ExecuteDialogSuccess
+          .&End;
+    end;
+  ```
 - How to use Warnig Dialog
   1. One Button
   ```delphi  
@@ -510,14 +459,9 @@ end;
       TRICK4D
         .New
           .Dialog
-            .CustomDialog
-              .Info
-                .Text('Your message here')
-              .&End
-              .Execute
-                .Warnig
-              .&End
-            .&End
+            .Form(Self)
+              .MessageText('Your message here')
+              .ExecuteDialogWarnig
           .&End
     end;
   ```
@@ -529,25 +473,14 @@ end;
       TRICK4D
         .New
           .Dialog
-            .CustomDialog
-              .Info
-                .Text('Your message here')
-              .&End
-              .Button
-                .First
-                  .Text('Yes')
-                  .Process(FirstResponseProcedure)
-                .&End
-                .Second
-                  .Text('No')
-                  .Process(SecondResponseProcedure)
-                .&End
-              .&End
-              .Execute
-                .Warnig
-              .&End
-            .&End
-          .&End
+            .Form(Self)
+              .MessageText('Your message here')
+                .MainButtonText('Yes')
+                .MainButtonProcess(FirstResponseProcedure)
+                .AuxiliaryButtonText('No')
+                .AuxiliaryButtonProcess(SecondResponseProcedure)
+            .ExecuteDialogWarnig
+          .&End;
     end;
   ```
 - How to use Error Dialog
@@ -559,14 +492,9 @@ end;
       TRICK4D
         .New
           .Dialog
-            .CustomDialog
-              .Info
-                .Text('Your message here')
-              .&End
-              .Execute
-                .Error
-              .&End
-            .&End
+            .Form(Self)
+              .MessageText('Your message here')
+              .ExecuteDialogError
           .&End
     end;
   ```
@@ -578,28 +506,16 @@ end;
       TRICK4D
         .New
           .Dialog
-            .CustomDialog
-              .Info
-                .Text('Your message here')
-              .&End
-              .Button
-                .First
-                  .Text('Yes')
-                  .Process(FirstResponseProcedure)
-                .&End
-                .Second
-                  .Text('No')
-                  .Process(SecondResponseProcedure)
-                .&End
-              .&End
-              .Execute
-                .Error
-              .&End
-            .&End
-          .&End
+            .Form(Self)
+              .MessageText('Your message here')
+                .MainButtonText('Yes')
+                .MainButtonProcess(FirstResponseProcedure)
+                .AuxiliaryButtonText('No')
+                .AuxiliaryButtonProcess(SecondResponseProcedure)
+            .ExecuteDialogError
+          .&End;
     end;
   ```
-
 - How to use Question Dialog
 ```delphi  
   uses
@@ -608,26 +524,16 @@ end;
     TRICK4D
       .New
         .Dialog
-          .CustomDialog
-            .Info
-              .Text('Your message here')
-            .&End
-            .Button
-              .First
-                .Process(FirstResponseProcedure)
-              .&End
-              .Second
-                .Process(SecondResponseProcedure)
-              .&End
-            .&End
-            .Execute
-              .Question
-            .&End
-          .&End
+          .Form(Self)
+            .MessageText('Your message here')
+              .MainButtonText('Yes')
+              .MainButtonProcess(FirstResponseProcedure)
+              .AuxiliaryButtonText('No')
+              .AuxiliaryButtonProcess(SecondResponseProcedure)
+          .ExecuteDialogQuestion
         .&End;
   end;
 ```
-
 - How to use Custom Dialog
 ```delphi  
   uses
@@ -636,58 +542,32 @@ end;
     TRICK4D
       .New
         .Dialog
-          .CustomMain
-            .Background
-              .Opacity(0.7)
-              .Color(TAlphaColorRec.Blue)
-            .&End
-          .&End
-          .CustomDialog
-            .Background
-              .Color(TAlphaColorRec.White)
-            .&End
-            .Rectangle
-              .Width(Self.Width - 60)
-              .Height(Self.Height - 120)
-            .&End
-            .Icon
-              .Color(TAlphaColorRec.Coral)
-            .&End
-            .Title
-              .Text('Question')
-              .FontSize(24)
-              .FontColor(TAlphaColorRec.Black)
-            .&End
-            .Info
-              .Text('The policy of the War on Terror, undertaken by the United States at the beginning of the 21st century, culminated in one of the most important recent geopolitical conflicts. This conflict has become known as the')
-              .FontSize(12)
-              .FontColor(TAlphaColorRec.Darkcyan)
-            .&End
-            .Button
-              .First
-                .Color(TAlphaColorRec.Darkgray)
-                .Text('Afghan War')
-                .FontSize(14)
-                .FontColor(TAlphaColorRec.White)
-                .Process(FirstResponseProcedure)
-              .&End
-              .Second
-                .Color(TAlphaColorRec.Darkgray)
-                .Text('Syria''s War')
-                .FontSize(14)
-                .FontColor(TAlphaColorRec.White)
-                .Process(SecondResponseProcedure)
-              .&End
-            .&End
-            .Execute
-              .Question
-            .&End
-          .&End
-        .&End;
+          .Form(Self)
+            .BackgroundOpacity(0.7)
+            .BackgroundColor(TAlphaColorRec.Blue)
+              .MessageBoxColor(TAlphaColorRec.White)
+              .MessageBoxHeight(Self.Height - 120)
+              .MessageBoxWidth(Self.Width - 60)
+                .IconColor(TAlphaColorRec.Coral)
+                  .TitleText('Question')
+                  .TitleFontSize(24)
+                  .TitleFontColor(TAlphaColorRec.Black)
+                    .MessageText('The policy of the War on Terror, undertaken by the United States at the beginning of the 21st century, culminated in one of the most important recent geopolitical conflicts. This conflict has become known as the')
+                    .MessageFontSize(12)
+                    .MessageFontColor(TAlphaColorRec.Darkcyan)
+                      .MainButtonColor(TAlphaColorRec.Darkgray)
+                      .MainButtonText('Afghan War')
+                      .MainButtonFontSize(14)
+                      .MainButtonFontColor(TAlphaColorRec.White)
+                      .MainButtonProcess(FirstResponseProcedure)
+                      .AuxiliaryButtonText('Syria''s War')
+                      .AuxiliaryButtonFontSize(14)
+                      .AuxiliaryButtonFontColor(TAlphaColorRec.White)
+                      .AuxiliaryButtonProcess(SecondResponseProcedure)
+          .ExecuteDialogQuestion
+        .&End
   end;
 ```
-
-
 - How to use Interface
 ```delphi  
   uses
@@ -696,132 +576,106 @@ end;
   var
     LRICK4D: iRICK4D;
   begin
-    LRICK4D:= TRICK4D.New;
+  lblResponse.Text:= EmptyStr;
 
-    //Customizing Background
-    LRICK4D.Dialog
-      .CustomMain
-        .Background
-          .Opacity(0.7)
-          .Color(TAlphaColorRec.Blue)
-        .&End
-      .&End;
+  LRICK4D:= TRICK4D.New;
 
-    //Customizing the Message Window Background
-    LRICK4D.Dialog
-      .CustomDialog
-        .Background
-          .Color(TAlphaColorRec.White)
-        .&End
-      .&End;
+  //Parent form
+  LRICK4D.Dialog
+    .Form(Self);
 
-    //Customizing the Message Window
-    LRICK4D.Dialog
-      .CustomDialog
-        .Rectangle
-          .Width(Self.Width - 60)
-          .Height(Self.Height - 120)
-        .&End
-      .&End;
+  //Customizing Background
+  LRICK4D.Dialog
+    .BackgroundOpacity(0.7)
+    .BackgroundColor(TAlphaColorRec.Blue);
 
+  //Customizing the Message Window Background
+  LRICK4D.Dialog
+    .MessageBoxColor(TAlphaColorRec.White);
 
-    //Customizing Icon
-    LRICK4D.Dialog
-      .CustomDialog
-        .Icon
-          .Color(TAlphaColorRec.Coral)
-        .&End
-      .&End;
+  //Customizing the Message Window
+  LRICK4D.Dialog
+    .MessageBoxWidth(Self.Width - 60)
+    .MessageBoxHeight(Self.Height - 120);
 
-    //Customizing Title
-    LRICK4D.Dialog
-      .CustomDialog
-        .Title
-          .Text('Question')
-          .FontSize(24)
-          .FontColor(TAlphaColorRec.Black)
-        .&End
-      .&End;
+  //Customizing Icon
+  LRICK4D.Dialog
+    .IconColor(TAlphaColorRec.Coral);
 
-    //Customizing message
-    LRICK4D.Dialog
-      .CustomDialog
-        .Info
-          .Text('The policy of the War on Terror, undertaken by the United States at the beginning of the 21st century, culminated in one of the most important recent geopolitical conflicts. This conflict has become known as the')
-          .FontSize(12)
-          .FontColor(TAlphaColorRec.Darkcyan)
-        .&End
-      .&End;
+  //Customizing Title
+  LRICK4D.Dialog
+    .TitleText('Question')
+    .TitleFontSize(24)
+    .TitleFontColor(TAlphaColorRec.Black);
 
-    //Customizing the First Button
-    LRICK4D.Dialog
-      .CustomDialog
-        .Button
-          .First
-            .Color(TAlphaColorRec.Darkgray)
-            .Text('Afghan War')
-            .FontSize(14)
-            .FontColor(TAlphaColorRec.White)
-            .Process(FirstResponseProcedure)
-          .&End
-      .&End;
+  //Customizing message
+  LRICK4D.Dialog
+    .MessageText('The policy of the War on Terror, undertaken by the United States at the beginning of the 21st century, culminated in one of the most important recent geopolitical conflicts. This conflict has become known as the')
+    .MessageFontSize(12)
+    .MessageFontColor(TAlphaColorRec.Darkcyan);
 
-    //Customizing the Second Button
-    LRICK4D.Dialog
-      .CustomDialog
-        .Button
-          .Second
-            .Color(TAlphaColorRec.Darkgray)
-            .Text('Syria''s War')
-            .FontSize(14)
-            .FontColor(TAlphaColorRec.White)
-            .Process(SecondResponseProcedure)
-          .&End
-        .&End
-      .&End;
+  //Customizing the First Button
+  LRICK4D.Dialog
+    .MainButtonColor(TAlphaColorRec.Darkgray)
+    .MainButtonText('Afghan War')
+    .MainButtonFontSize(14)
+    .MainButtonFontColor(TAlphaColorRec.White)
+    .MainButtonProcess(FirstResponseProcedure);
 
-    //Display screen
-    LRICK4D.Dialog
-      .CustomDialog
-        .Execute
-          .Question
-        .&End
-      .&End;
+  //Customizing the Second Button
+  LRICK4D.Dialog
+    .AuxiliaryButtonColor(TAlphaColorRec.Darkgray)
+    .AuxiliaryButtonText('Syria''s War')
+    .AuxiliaryButtonFontSize(14)
+    .AuxiliaryButtonFontColor(TAlphaColorRec.White)
+    .AuxiliaryButtonProcess(SecondResponseProcedure);
+
+  //Display screen
+  LRICK4D.Dialog
+    .ExecuteDialogQuestion;
   end;
 ```
- ## Encrypt HASH
-  
-- How to use Generate hash
 
-```delphi 
-  uses
-    RICK4D;
-  var
-    LHash: string;
-  begin
-    LHash := TRICK4D.New.Encrypt.GenerateHash(password, cost, type);
-  end;
-```
+## Sample Encrypt HASH
   
- - How to use Compare hash
-  
-```delphi 
-  uses
-    RICK4D;
-  var
-    LVerify : Boolean;
-  begin
-    LVerify := TRICK4D.New.Encrypt.CompareHash(password, hash);
-  end;
-```
-## Rest
+- How to use Encrypt hash
+  - Include file search path
+      - ``` ../RICK4D/src/Interfaces/Encrypt ```
+      - ``` ../RICK4D/src/Contracts/Encrypt ```
+  1. Generate hash
+  ```delphi 
+    uses
+      RICK4D;
+    var
+      LHash: string;
+    begin
+      LHash := TRICK4D.New.Encrypt.GenerateHash(password, cost, type);
+    end;
+  ```
+  2. Compare hash
+  ```delphi 
+    uses
+      RICK4D;
+    var
+      LVerify : Boolean;
+    begin
+      LVerify := TRICK4D.New.Encrypt.CompareHash(password, hash);
+    end;
+  ```
+
+## Sample Rest
 
 - How to use Rest Method
+  - Include file search path
+      - ``` ../RICK4D/src/Interfaces/Rest ```
+      - ``` ../RICK4D/src/Contracts/Rest ```
+      - ``` ../RICK4D/src/Contracts/Session ```
+      - ``` ../RICK4D/src/Contracts/Session/Entity ```           
   1. Get
   ```delphi  
     uses
       RICK4D,
-      RICK4D.Contract;
+      RICK4D.Types;
   var
     LResponse: IResponse;
   begin
@@ -838,7 +692,7 @@ end;
   ```delphi  
     uses
       RICK4D,
-      RICK4D.Contract;
+      RICK4D.Types;
   var
     LResponse: IResponse;
   begin
@@ -854,7 +708,7 @@ end;
   ```delphi  
     uses
       RICK4D,
-      RICK4D.Contract;
+      RICK4D.Types;
   var
     LResponse: IResponse;
   begin
@@ -870,7 +724,7 @@ end;
   ```delphi  
     uses
       RICK4D,
-      RICK4D.Contract;
+      RICK4D.Types;
   var
     LResponse: IResponse;
   begin
@@ -886,7 +740,7 @@ end;
   ```delphi  
     uses
       RICK4D,
-      RICK4D.Contract;
+      RICK4D.Types;
   var
     LResponse: IResponse;
   begin
@@ -905,3 +759,80 @@ begin
   TRICK4D.New.Rest.Token('token-type ' + token);
   TRICK4D.New.Rest.TokenBearer(token);
 end;
+```
+
+**Parameters**
+* `AOwns` - Indicates who is responsible for destroying the passed OBJECT as a parameter;
+
+**Automatically Renew Token Bearer**
+* `RefreshTokenBearerAutomatically` - Indicates whether you will work with automatic token renewal;
+* `FieldByNameAccessToken` - Indicates the name of the field that has the access token;
+* `RICK4D.Session.TSession.GetInstance.TOKEN.ACCESS` - This session stores the access token;
+* `FieldByNameRefreshToken` - Indicates the name of the field that has the Refresh token;
+* `RICK4D.Session.TSession.GetInstance.TOKEN.REFRESH` - This session stores the refresh token;
+
+## Sample INI
+
+- How to use Rest Method
+  - Include file search path
+      - ``` ../RICK4D/src/Interfaces/File INI ```
+      - ``` ../RICK4D/src/Contracts/File INI ```
+        
+  1. Create the File
+
+  ```delphi  
+    uses
+      RICK4D;
+   begin
+    TRICK4D
+      .New
+        .INI
+          .FilePath(ExtractFilePath(ParamStr(0)))
+          .FileName(ChangeFileExt(ExtractFileName(ParamStr(0)), EmptyStr))
+        .OpenINI
+          .Section('String')
+            .Identify('Name')
+            .ADD('RICK4D')
+          .Section('Float')
+            .Identify('Value')
+            .ADD(1.12)
+          .Section('Date')
+            .Identify('Now')
+            .ADD(Now)
+          .Section('Boolean')
+            .Identify('Message')
+            .ADD(True)
+          .Section('Integer')
+            .Identify('Age')
+            .ADD(13)
+          .Section('Stream')
+            .Identify('Photo')
+            .ADD('No generate')
+        .&End
+  end;
+  ```
+  2. Read the File
+
+  ```delphi  
+    uses
+      RICK4D,
+      RICK4D.Interfaces,
+      RICK4D.INI.Interfaces;
+  var
+    LINI : iRICK4DINI<iRICK4D>;
+  begin
+    LINI:= TRICK4D
+        .New
+          .INI
+            .FilePath(ExtractFilePath(ParamStr(0)))
+            .FileName(ChangeFileExt(ExtractFileName(ParamStr(0)), EmptyStr))
+          .OpenINI;
+
+      mmResponse.Lines.Add('String     :  ' + LINI.Section('String').Identify('Name').Read(EmptyStr));
+      mmResponse.Lines.Add('Float       :  ' + LINI.Section('Float').Identify('Value').Read(0.00).ToString);
+      mmResponse.Lines.Add('Date       :  ' + DateTimeToStr(LINI.Section('Date').Identify('Now').Read(Now)));
+      mmResponse.Lines.Add('Boolean  :  ' + LINI.Section('Boolean').Identify('Message').Read(True).ToString);
+      mmResponse.Lines.Add('Integer    :  ' + LINI.Section('Integer').Identify('Age').Read(0).ToString);
+      mmResponse.Lines.Add('Stream    :  ' + LINI.Section('Stream').Identify('Photo').Read(EmptyStr));
+  end;
+  ```

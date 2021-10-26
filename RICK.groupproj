@@ -1,33 +1,36 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{BF896A75-CE63-411C-BD0F-0C654CFA4743}</ProjectGuid>
+        <ProjectGuid>{5B8C72A2-7E8B-4BD9-AF65-B3793635D587}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
         <Projects Include="RICK4Delphi.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj">
+        <Projects Include="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Samples\Delphi\FMX\Format\RICKSampleFormat.dproj">
+        <Projects Include="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Samples\Delphi\FMX\Librarys\RICKSampleLibrarys.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="Samples\Delphi\FMX\Encrypt\RICKEncrypt.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="Samples\Delphi\FMX\Rest\RICKRest.dproj">
+        <Projects Include="Samples\Delphi\FMX\Format\RICKSampleFormat.dproj">
             <Dependencies/>
         </Projects>
         <Projects Include="Samples\Delphi\FMX\Dialogs\RICKSampleDialog.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Samples\Delphi\FMX\Rest\RICKSampleRest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Samples\Delphi\FMX\INI\RICKSampleINI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Samples\Delphi\FMX\Encrypt\RICKSampleEncrypt.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -47,14 +50,14 @@
     <Target Name="RICK4Delphi:Make">
         <MSBuild Projects="RICK4Delphi.dproj" Targets="Make"/>
     </Target>
-    <Target Name="RICKSampleFormShow">
-        <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj"/>
+    <Target Name="RICKSampleCheckConnetion">
+        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj"/>
     </Target>
-    <Target Name="RICKSampleFormShow:Clean">
-        <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj" Targets="Clean"/>
+    <Target Name="RICKSampleCheckConnetion:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="RICKSampleFormShow:Make">
-        <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj" Targets="Make"/>
+    <Target Name="RICKSampleCheckConnetion:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj" Targets="Make"/>
     </Target>
     <Target Name="RICKSampleLoading">
         <MSBuild Projects="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj"/>
@@ -65,14 +68,14 @@
     <Target Name="RICKSampleLoading:Make">
         <MSBuild Projects="Samples\Delphi\FMX\Loading\RICKSampleLoading.dproj" Targets="Make"/>
     </Target>
-    <Target Name="RICKSampleFormat">
-        <MSBuild Projects="Samples\Delphi\FMX\Format\RICKSampleFormat.dproj"/>
+    <Target Name="RICKSampleFormShow">
+        <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj"/>
     </Target>
-    <Target Name="RICKSampleFormat:Clean">
-        <MSBuild Projects="Samples\Delphi\FMX\Format\RICKSampleFormat.dproj" Targets="Clean"/>
+    <Target Name="RICKSampleFormShow:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="RICKSampleFormat:Make">
-        <MSBuild Projects="Samples\Delphi\FMX\Format\RICKSampleFormat.dproj" Targets="Make"/>
+    <Target Name="RICKSampleFormShow:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\ShowForm\RICKSampleFormShow.dproj" Targets="Make"/>
     </Target>
     <Target Name="RICKSampleLibrarys">
         <MSBuild Projects="Samples\Delphi\FMX\Librarys\RICKSampleLibrarys.dproj"/>
@@ -83,32 +86,14 @@
     <Target Name="RICKSampleLibrarys:Make">
         <MSBuild Projects="Samples\Delphi\FMX\Librarys\RICKSampleLibrarys.dproj" Targets="Make"/>
     </Target>
-    <Target Name="RICKSampleCheckConnetion">
-        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj"/>
+    <Target Name="RICKSampleFormat">
+        <MSBuild Projects="Samples\Delphi\FMX\Format\RICKSampleFormat.dproj"/>
     </Target>
-    <Target Name="RICKSampleCheckConnetion:Clean">
-        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj" Targets="Clean"/>
+    <Target Name="RICKSampleFormat:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\Format\RICKSampleFormat.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="RICKSampleCheckConnetion:Make">
-        <MSBuild Projects="Samples\Delphi\FMX\Check Connection\RICKSampleCheckConnetion.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="RICKEncrypt">
-        <MSBuild Projects="Samples\Delphi\FMX\Encrypt\RICKEncrypt.dproj"/>
-    </Target>
-    <Target Name="RICKEncrypt:Clean">
-        <MSBuild Projects="Samples\Delphi\FMX\Encrypt\RICKEncrypt.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="RICKEncrypt:Make">
-        <MSBuild Projects="Samples\Delphi\FMX\Encrypt\RICKEncrypt.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="RICKRest">
-        <MSBuild Projects="Samples\Delphi\FMX\Rest\RICKRest.dproj"/>
-    </Target>
-    <Target Name="RICKRest:Clean">
-        <MSBuild Projects="Samples\Delphi\FMX\Rest\RICKRest.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="RICKRest:Make">
-        <MSBuild Projects="Samples\Delphi\FMX\Rest\RICKRest.dproj" Targets="Make"/>
+    <Target Name="RICKSampleFormat:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\Format\RICKSampleFormat.dproj" Targets="Make"/>
     </Target>
     <Target Name="RICKSampleDialog">
         <MSBuild Projects="Samples\Delphi\FMX\Dialogs\RICKSampleDialog.dproj"/>
@@ -119,14 +104,41 @@
     <Target Name="RICKSampleDialog:Make">
         <MSBuild Projects="Samples\Delphi\FMX\Dialogs\RICKSampleDialog.dproj" Targets="Make"/>
     </Target>
+    <Target Name="RICKSampleRest">
+        <MSBuild Projects="Samples\Delphi\FMX\Rest\RICKSampleRest.dproj"/>
+    </Target>
+    <Target Name="RICKSampleRest:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\Rest\RICKSampleRest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKSampleRest:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\Rest\RICKSampleRest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RICKSampleINI">
+        <MSBuild Projects="Samples\Delphi\FMX\INI\RICKSampleINI.dproj"/>
+    </Target>
+    <Target Name="RICKSampleINI:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\INI\RICKSampleINI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKSampleINI:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\INI\RICKSampleINI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RICKSampleEncrypt">
+        <MSBuild Projects="Samples\Delphi\FMX\Encrypt\RICKSampleEncrypt.dproj"/>
+    </Target>
+    <Target Name="RICKSampleEncrypt:Clean">
+        <MSBuild Projects="Samples\Delphi\FMX\Encrypt\RICKSampleEncrypt.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKSampleEncrypt:Make">
+        <MSBuild Projects="Samples\Delphi\FMX\Encrypt\RICKSampleEncrypt.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="RICK4Delphi;RICKSampleFormShow;RICKSampleLoading;RICKSampleFormat;RICKSampleLibrarys;RICKSampleCheckConnetion;RICKEncrypt;RICKRest;RICKSampleDialog"/>
+        <CallTarget Targets="RICK4Delphi;RICKSampleCheckConnetion;RICKSampleLoading;RICKSampleFormShow;RICKSampleLibrarys;RICKSampleFormat;RICKSampleDialog;RICKSampleRest;RICKSampleINI;RICKSampleEncrypt"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="RICK4Delphi:Clean;RICKSampleFormShow:Clean;RICKSampleLoading:Clean;RICKSampleFormat:Clean;RICKSampleLibrarys:Clean;RICKSampleCheckConnetion:Clean;RICKEncrypt:Clean;RICKRest:Clean;RICKSampleDialog:Clean"/>
+        <CallTarget Targets="RICK4Delphi:Clean;RICKSampleCheckConnetion:Clean;RICKSampleLoading:Clean;RICKSampleFormShow:Clean;RICKSampleLibrarys:Clean;RICKSampleFormat:Clean;RICKSampleDialog:Clean;RICKSampleRest:Clean;RICKSampleINI:Clean;RICKSampleEncrypt:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="RICK4Delphi:Make;RICKSampleFormShow:Make;RICKSampleLoading:Make;RICKSampleFormat:Make;RICKSampleLibrarys:Make;RICKSampleCheckConnetion:Make;RICKEncrypt:Make;RICKRest:Make;RICKSampleDialog:Make"/>
+        <CallTarget Targets="RICK4Delphi:Make;RICKSampleCheckConnetion:Make;RICKSampleLoading:Make;RICKSampleFormShow:Make;RICKSampleLibrarys:Make;RICKSampleFormat:Make;RICKSampleDialog:Make;RICKSampleRest:Make;RICKSampleINI:Make;RICKSampleEncrypt:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

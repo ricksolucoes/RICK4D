@@ -96,6 +96,8 @@ begin
     5:
       lblResult.Text:= LRICK4D.Librarys.FormatDate(edtData.Text);
     6:
+      lblResult.Text:= LRICK4D.Librarys.FormatDate(edtData.Text, True);
+    7:
       lblResult.Text:= LRICK4D.Librarys.FormatPeso(edtData.Text);
   end;
 
@@ -125,10 +127,11 @@ begin
     3: edtData.Text:= '12312313';
     4: edtData.Text:= '123123232123';
     5: edtData.Text:= '31122100';
-    6: edtData.Text:= '233821';
-    7: TRICK4D.New.Librarys.DelayedSetFocus(edtData); //Dealy on Focus
-    8: TRICK4D.New.Librarys.HideKeyboard(edtData); //Close Keyboard
-    9: TRICK4D.New.Librarys.ShowKeyboard(edtData); //Open Keyboard
+    6: edtData.Text:= '010121';
+    7: edtData.Text:= '233821';
+    8: TRICK4D.New.Librarys.DelayedSetFocus(edtData); //Dealy on Focus
+    9: TRICK4D.New.Librarys.HideKeyboard(edtData); //Close Keyboard
+    10: TRICK4D.New.Librarys.ShowKeyboard(edtData); //Open Keyboard
   end;
 
   if AItem.Index > -1 then
@@ -163,6 +166,7 @@ begin
     ListView.Items.Add.Text:= 'Formatar IE';
     ListView.Items.Add.Text:= 'Formatar Valor';
     ListView.Items.Add.Text:= 'Formatar Data';
+    ListView.Items.Add.Text:= 'Formatar Data 8 Caracteres';
     ListView.Items.Add.Text:= 'Formatar Peso';
     ListView.Items.Add.Text:= 'Dealy no Focus';
     ListView.Items.Add.Text:= 'Fechar Teclado Virtual';
@@ -182,6 +186,7 @@ begin
     ListView.Items.Add.Text:= 'Formatting IE';
     ListView.Items.Add.Text:= 'Formatting Value';
     ListView.Items.Add.Text:= 'Formatting Date';
+    ListView.Items.Add.Text:= 'Formatting Date 8 Char';
     ListView.Items.Add.Text:= 'Formatting Weight';
     ListView.Items.Add.Text:= 'Dealy on Focus';
     ListView.Items.Add.Text:= 'Hide Keyboard';

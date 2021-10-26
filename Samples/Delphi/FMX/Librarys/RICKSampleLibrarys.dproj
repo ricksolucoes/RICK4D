@@ -6,7 +6,7 @@
         <MainSource>RICKSampleLibrarys.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Android64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>32787</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -111,7 +111,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <SanitizedProjectName>RICKSampleLibrarys</SanitizedProjectName>
-        <DCC_UnitSearchPath>.\..\..\..\..\src;.\..\..\..\..\modules\rickshowform\src;.\..\..\..\..\modules\rickloading\src;.\..\..\..\..\modules\ricklibrary\src;.\..\..\..\..\modules\rickformat\src;.\..\..\..\..\modules\rickcheckconnection\src;.\..\..\..\..\modules\rickdialog\src;.\..\..\..\..\modules\bcrypt\src;.\..\..\..\..\modules\dataset-serialize\src;.\..\..\..\..\modules\restrequest4delphi\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>.\..\..\..\..\src;.\..\..\..\..\src\Interfaces;.\..\..\..\..\src\Contracts;.\..\..\..\..\src\Interfaces\Check Connection;.\..\..\..\..\src\Contracts\Check Connection;.\..\..\..\..\src\Interfaces\Dialog;.\..\..\..\..\src\Contracts\Dialog;.\..\..\..\..\src\Interfaces\Encrypt;.\..\..\..\..\src\Contracts\Encrypt;.\..\..\..\..\src\Interfaces\File INI;.\..\..\..\..\src\Contracts\File INI;.\..\..\..\..\src\Interfaces\Format;.\..\..\..\..\src\Contracts\Format;.\..\..\..\..\src\Interfaces\Loading;.\..\..\..\..\src\Contracts\Loading;.\..\..\..\..\src\Interfaces\Librarys;.\..\..\..\..\src\Contracts\Librarys;.\..\..\..\..\src\Interfaces\Rest;.\..\..\..\..\src\Contracts\Rest;.\..\..\..\..\src\Contracts\Session;.\..\..\..\..\src\Contracts\Session\Entity;.\..\..\..\..\src\Interfaces\Show Form;.\..\..\..\..\src\Contracts\Show Form;.\..\..\..\..\modules\rickshowform\src;.\..\..\..\..\modules\rickloading\src;.\..\..\..\..\modules\ricklibrary\src;.\..\..\..\..\modules\rickformat\src;.\..\..\..\..\modules\rickcheckconnection\src;.\..\..\..\..\modules\rickdialog\src;.\..\..\..\..\modules\bcrypt\src;.\..\..\..\..\modules\dataset-serialize\src;.\..\..\..\..\modules\restrequest4delphi\src;.\..\..\..\..\modules\rickini\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;IndyIPCommon;RESTComponents;bindcompdbx;DBXInterBaseDriver;IndyIPServer;IndySystem;tethering;fmxFireDAC;FireDAC;bindcompfmx;FireDACSqliteDriver;FMXTee;soaprtl;DbxCommonDriver;FmxTeeUI;fmx;FireDACIBDriver;xmlrtl;soapmidas;rtl;DbxClientDriver;CustomIPTransport;dbexpress;IndyCore;bindcomp;dsnap;FireDACCommon;IndyIPClient;RESTBackendComponents;soapserver;dbxcds;bindengine;CloudService;dsnapxml;dbrtl;IndyProtocols;FireDACCommonDriver;inet;$(DCC_UsePackage)</DCC_UsePackage>
